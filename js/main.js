@@ -57,7 +57,11 @@
   }));
   // Primero quienes tienen foto, luego quienes tienen reseña; dentro de cada grupo, por número de actividades.
   const ponentes = [...mapa.values()].sort((a, b) => (!!b.foto - !!a.foto) || (!!b.bio - !!a.bio) || (b.n - a.n) || a.nombre.localeCompare(b.nombre, "es"));
-  const INICIAL = 12;
+  // Al inicio solo dos filas de tarjetas; en celular (una columna), cuatro.
+  const inicial = () => {
+    const cols = getComputedStyle($("#people")).gridTemplateColumns.split(" ").length;
+    return cols > 1 ? cols * 2 : 4;
+  };
   let verTodos = false, paisSel = "";
 
   const iniciales = (n) => n.replace(/«.*?»/g, "").trim().split(/\s+/).filter((w) => /^[A-ZÁÉÍÓÚÑ]/.test(w)).slice(0, 2).map((w) => w[0]).join("");
@@ -66,6 +70,7 @@
     const q = norm($("#buscar-ponente").value.trim());
     let lista = ponentes.filter((p) => (!q || norm(p.nombre + " " + (p.alias || "")).includes(q)) && (!paisSel || p.pais === paisSel));
     const total = lista.length;
+    const INICIAL = inicial();
     if (!q && !paisSel && !verTodos) lista = lista.slice(0, INICIAL);
     $("#people").innerHTML = lista.length ? lista.map((p) => `
       <article class="person">
@@ -87,6 +92,8 @@
     btn.textContent = verTodos ? "Ver menos" : `Ver las ${total} voces invitadas`;
   }
   $("#buscar-ponente").addEventListener("input", pintarPonentes);
+  let anchoPrevio = window.innerWidth;
+  window.addEventListener("resize", () => { if (window.innerWidth !== anchoPrevio) { anchoPrevio = window.innerWidth; pintarPonentes(); } });
 
   // Filtro por país: primero el país sede, luego los demás por orden alfabético.
   const paises = [...new Set(ponentes.map((p) => p.pais).filter(Boolean))].sort((a, b) => (b === PAIS_SEDE) - (a === PAIS_SEDE) || a.localeCompare(b, "es"));
@@ -261,6 +268,10 @@
   document.querySelectorAll("[data-stat-dia]").forEach((el) => {
     const d = Number(el.dataset.statDia), lugares = new Set(PROGRAMA.filter((b) => b.dia === d).map((b) => b.esc)).size;
     el.textContent = `${nAct(d, "", "")} actividades en ${lugares} ${lugares === 1 ? "lugar" : "lugares"}`;
+  });
+  document.querySelectorAll("[data-tipos]").forEach((el) => {
+    const tipos = el.dataset.tipos.split(",");
+    el.textContent = PROGRAMA.reduce((n, b) => n + b.sesiones.filter((s) => tipos.includes(s.tipo)).length, 0);
   });
   $("#st-esc").textContent = Object.keys(ESCENARIOS).length;
   $("#st-act").textContent = PROGRAMA.reduce((n, b) => n + b.sesiones.length, 0);

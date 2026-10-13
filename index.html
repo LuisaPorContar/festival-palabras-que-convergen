@@ -7,14 +7,19 @@
   <meta name="description" content="Palabras que Convergen: Manifiesto de la esperanza. Tres días de poesía, narración, cuentería y talleres en teatros, universidades y bibliotecas de Santiago de Cali. 5, 6 y 7 de noviembre de 2026.">
   <meta property="og:title" content="Festival Palabras que Convergen · Cali, 5 al 7 de noviembre de 2026">
   <meta property="og:description" content="Manifiesto de la esperanza. Recitales, conversatorios, cuentería y talleres de escritura en Santiago de Cali.">
-  <meta property="og:image" content="assets/logo.png">
+  <meta property="og:image" content="https://festival-palabras-que-convergen.netlify.app/assets/og.jpg">
+  <meta property="og:url" content="https://festival-palabras-que-convergen.netlify.app/">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#0B1E5B">
-  <link rel="icon" href="assets/logo.png">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=2">
 </head>
 <body>
   <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -30,6 +35,7 @@
       </div>
       <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú"><span></span><span></span><span></span></button>
       <nav class="nav" id="nav" aria-label="Principal">
+        <a href="#vive">El festival</a>
         <a href="#fechas">Fechas</a>
         <a href="#ponentes">Ponentes</a>
         <a href="#agenda">Agenda</a>
@@ -96,6 +102,29 @@
         </div>
       </div>
       <div class="feat__track" id="feat-track" tabindex="0" aria-label="Carrusel de voces destacadas"></div>
+    </section>
+
+    <!-- POR QUÉ VENIR -->
+    <section class="sec why" id="vive">
+      <div class="wrap">
+        <div class="sec__head">
+          <p class="kicker"><i class="bars" aria-hidden="true"></i>Vive el festival</p>
+          <h2>Tres días para vivir la palabra</h2>
+          <p class="sec__sub">Ven a escuchar, a conversar y a escribir. Elige lo que más te guste o quédate a todo.</p>
+        </div>
+        <div class="why__grid">
+          <article class="why__card"><b data-tipos="Recital"></b><h3>Recitales</h3><p>Poesía dicha en voz alta por sus autores y por declamadores de varias regiones y países.</p></article>
+          <article class="why__card"><b data-tipos="Taller"></b><h3>Talleres de escritura</h3><p>Para jóvenes, adultos y adultos mayores. Llegas a escuchar y sales con un texto tuyo.</p></article>
+          <article class="why__card"><b data-tipos="Conversatorio"></b><h3>Conversatorios</h3><p>Escritores, músicos y gente de teatro hablando de su oficio, cara a cara con el público.</p></article>
+          <article class="why__card"><b data-tipos="Libro"></b><h3>Presentaciones de libros</h3><p>Conoce las obras nuevas de la mano de quienes las escribieron.</p></article>
+          <article class="why__card"><b data-tipos="Cuentería,Lectura"></b><h3>Cuentería y lecturas</h3><p>Historias contadas y leídas para todas las edades.</p></article>
+          <article class="why__card"><b data-tipos="Música,Escena"></b><h3>Música y escena</h3><p>Intervenciones artísticas que acompañan cada jornada.</p></article>
+        </div>
+        <div class="why__cta">
+          <p>Reserva tu lugar y recibe la programación en tu correo.</p>
+          <a class="btn btn--sun" href="#inscripcion">Inscríbete al festival</a>
+        </div>
+      </div>
     </section>
 
     <!-- FECHAS -->
@@ -333,7 +362,7 @@
 
   <a class="fab btn btn--sun" href="#inscripcion">Inscríbete</a>
 
-  <script src="js/data.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/data.js?v=2"></script>
+  <script src="js/main.js?v=2"></script>
 </body>
 </html>
