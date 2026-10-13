@@ -40,8 +40,7 @@ const GRUPOS_ESC = [
 ];
 
 /* Cada bloque = un escenario en una jornada.
-   Sesión: h = hora, tipo, t = título, p = participantes, mod = modera/presenta, nota = texto adicional.
-   porConfirmar: true muestra el aviso «Fecha por confirmar». */
+   Sesión: h = hora, tipo, t = título, p = participantes, mod = modera/presenta, nota = texto adicional. */
 const PROGRAMA = [
   {
     dia: 5, esc: "presagio", jornada: "Mañana", titulo: "Programación inaugural",
@@ -58,7 +57,7 @@ const PROGRAMA = [
     ]
   },
   {
-    dia: 5, esc: "cultores", jornada: "Mañana", porConfirmar: true,
+    dia: 5, esc: "cultores", jornada: "Mañana",
     sesiones: [
       { h: "8:00 – 8:10 a. m.", tipo: "Acto", t: "Palabras iniciales", p: ["Jhelga Lorena Pineda", "Camuli Zamudio"] },
       { h: "8:15 – 9:15 a. m.", tipo: "Lectura", t: "Lectura de poemas y narraciones", p: ["Jhelga Lorena Pineda", "Johana Marulanda Botero", "Julieta Henao Muñoz"] },
@@ -67,7 +66,7 @@ const PROGRAMA = [
     ]
   },
   {
-    dia: 5, esc: "deporte", jornada: "Mañana", porConfirmar: true,
+    dia: 5, esc: "deporte", jornada: "Mañana",
     sesiones: [
       { h: "8:00 – 8:10 a. m.", tipo: "Acto", t: "Palabras iniciales", p: ["María Adiela Londoño de Copete", "Roxi Gómez"] },
       { h: "8:10 – 9:05 a. m.", tipo: "Recital", t: "Recital poético 5", p: ["María Adiela Londoño de Copete", "María Florenia Vivas Bohórquez", "Luz Dolly Atehortúa", "Nataly Tabima Suárez", "Darinel Restrepo", "Judith Cartagena"], mod: "Judith Cartagena" },
@@ -117,7 +116,7 @@ const PROGRAMA = [
     ]
   },
   {
-    dia: 6, esc: "sena", jornada: "Mañana", porConfirmar: true,
+    dia: 6, esc: "sena", jornada: "Mañana",
     sesiones: [
       { h: "8:00 – 8:10 a. m.", tipo: "Acto", t: "Palabras iniciales", p: ["Yarleidy Solar Uribe", "Norma Constanza Calderón"] },
       { h: "8:15 – 9:15 a. m.", tipo: "Recital", t: "Recital y lectura de relatos por la esperanza", p: ["Geraudi Gonzáles Olivares", "Lina María Pérez", "Gloria Elena Gutiérrez", "María Ximena Hoyos Mazuera", "Yarleidy Solar Uribe"] },

@@ -207,34 +207,40 @@
 
       if (b.dia !== diaActual) { diaActual = b.dia; html += `<h3 class="dayhead">${DIAS[b.dia].largo}</h3>`; }
       const mapaUrl = e.dir ? "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(e.nombre.split(" · ")[0] + ", Cali, Colombia") : "";
+      // Cada sede es una fila que se abre al tocarla; así la lista completa cabe en una pantalla.
+      let desde = sesiones[0].h.split(" – ")[0];
+      const hasta = sesiones[sesiones.length - 1].h.split(" – ").pop();
+      if (!/[ap]\. m\.|m\.$/.test(desde) && b.jornada === "Mañana" && !/a\. m\./.test(hasta)) desde += " a. m.";
       html += `
-      <article class="block">
-        <div class="block__side"><div class="block__stick">
-          <span class="block__jornada">${esc(b.jornada)}</span>
-          <h3>${esc(e.nombre)}</h3>
-          ${b.titulo ? `<p class="block__titulo">${esc(b.titulo)}</p>` : ""}
-          ${e.dir ? `<p class="block__dir">${esc(e.dir)}</p><a class="block__map" href="${mapaUrl}" target="_blank" rel="noopener">Cómo llegar ↗</a>` : ""}
-          <div class="block__badges">
-            ${b.publico ? `<span class="badge">${esc(b.publico)}</span>` : ""}
-            ${b.porConfirmar ? `<span class="badge badge--warn">Fecha por confirmar</span>` : ""}
-          </div>
-        </div></div>
-        <div class="sessions">
-          ${sesiones.map((s) => `
-          <div class="session">
-            <div class="session__time">${esc(s.h)}</div>
-            <div>
-              <span class="tag tag--${esc(s.tipo)}">${esc(s.tipo)}</span>
-              <h4>${resaltar(s.t, q)}</h4>
-              ${s.p.length ? `<p class="session__people">${s.p.map((n) => resaltar(n, q)).join(" · ")}</p>` : ""}
-              ${s.mod ? `<p class="session__mod"><b>Modera:</b> ${resaltar(s.mod, q)}</p>` : ""}
-              ${s.nota ? `<p class="session__nota">${esc(s.nota)}</p>` : ""}
-            </div>
-          </div>`).join("")}
+      <details class="blk" data-abrir>
+        <summary>
+          <span class="blk__jor blk__jor--${b.jornada === "Tarde" ? "t" : "m"}">${esc(b.jornada)}</span>
+          <span class="blk__main">
+            <b>${esc(e.nombre)}</b>
+            <small>${desde === hasta ? esc(desde) : esc(desde) + " – " + esc(hasta)} · ${sesiones.length} ${sesiones.length === 1 ? "actividad" : "actividades"}${b.publico ? " · " + esc(b.publico) : ""}</small>
+          </span>
+
+          <span class="blk__toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="blk__body">
+          ${e.dir ? `<p class="blk__dir">${esc(e.dir)} · <a href="${mapaUrl}" target="_blank" rel="noopener">Cómo llegar ↗</a></p>` : ""}
+          <ol class="ses">
+            ${sesiones.map((s) => `
+            <li>
+              <time>${esc(s.h)}</time>
+              <div>
+                <h4>${resaltar(s.t, q)}</h4>
+                ${s.p.length ? `<p>${s.p.map((n) => resaltar(n, q)).join(", ")}</p>` : ""}
+                ${s.mod ? `<p class="ses__mod">Modera: ${resaltar(s.mod, q)}</p>` : ""}
+                ${s.nota ? `<p class="ses__mod">${esc(s.nota)}</p>` : ""}
+              </div>
+            </li>`).join("")}
+          </ol>
         </div>
-      </article>`;
+      </details>`;
     });
 
+    html = html.replace(/ data-abrir/g, q || nBloques <= 2 ? " open" : "");
     $("#agenda-lista").innerHTML = html || `<p class="empty">No encontramos actividades con esa búsqueda. <button type="button" class="btn-clear" id="limpiar">Ver todas otra vez</button></p>`;
     const activos = [estado.dia ? "el " + DIAS[estado.dia].largo.toLowerCase() : "", estado.jor ? "en la " + estado.jor.toLowerCase() : "", estado.esc ? "en " + ESCENARIOS[estado.esc].nombre : "", q ? `con «${$("#buscar-agenda").value.trim()}»` : ""].filter(Boolean);
     $("#resultados").innerHTML = !nSes ? "" : activos.length
