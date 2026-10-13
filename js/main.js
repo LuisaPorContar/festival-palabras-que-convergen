@@ -161,6 +161,21 @@
     setInterval(() => { if (!enPausa && !document.hidden) mover(1); }, 3500);
   }
 
+  /* ---------- Quienes hacen posible el festival ---------- */
+  $("#organizadores").innerHTML = ORGANIZADORES.filter((o) => mapa.has(o.nombre)).map((o) => {
+    const p = mapa.get(o.nombre);
+    return `
+      <article class="org">
+        ${p.foto ? `<img src="${esc(p.foto)}" alt="Retrato de ${esc(p.nombre)}" width="400" height="400" loading="lazy">` : ""}
+        <div>
+          <p class="org__rol">${esc(o.rol)}</p>
+          <h3>${esc(p.nombre)}</h3>
+          ${p.bio ? `<p class="org__bio">${esc(p.bio)}</p>` : ""}
+          <button class="link" data-ponente="${esc(p.nombre)}">Ver sus actividades (${p.n}) →</button>
+        </div>
+      </article>`;
+  }).join("");
+
   /* ---------- Agenda ---------- */
   const estado = { dia: 0, esc: "", jor: "" };
 

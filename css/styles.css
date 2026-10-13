@@ -188,6 +188,20 @@ button, input, select { font: inherit; color: inherit; }
   .chips--pais .chip { flex: none; }
 }
 
+/* Organizadores */
+.orgs { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.org { display: flex; align-items: center; gap: 26px; padding: 28px; background: #fff; border: 1px solid var(--line); border-radius: 18px; }
+.org img { flex: none; width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid var(--cyan); }
+.org__rol { font-family: var(--display); font-weight: 700; font-size: .95rem; letter-spacing: .1em; text-transform: uppercase; color: var(--teal); }
+.org h3 { margin-top: 4px; font-family: var(--display); font-weight: 800; font-size: 1.9rem; line-height: 1.02; text-transform: uppercase; color: var(--navy); }
+.org__bio { margin: 10px 0 12px; color: var(--muted); font-size: .97rem; }
+@media (max-width: 1020px) { .orgs { grid-template-columns: 1fr; } }
+@media (max-width: 560px) {
+  .org { flex-direction: column; align-items: flex-start; gap: 16px; padding: 22px; }
+  .org img { width: 110px; height: 110px; }
+  .org h3 { font-size: 1.6rem; }
+}
+
 /* Buscadores */
 .search input { width: 280px; max-width: 100%; padding: 12px 18px; border-radius: 999px; border: 2px solid var(--line); background: #fff; }
 .search input:focus { border-color: var(--cyan); outline: 0; }

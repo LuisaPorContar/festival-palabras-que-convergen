@@ -256,6 +256,12 @@ const PERFILES = {
   "Luz Stella Salazar López": { foto: "assets/ponentes/luz-stella-salazar.jpg", bio: "Pluma, verso y canción." }
 };
 
+/* Quienes organizan el festival: aparecen en su propia sección, antes de la inscripción. */
+const ORGANIZADORES = [
+  { nombre: "Miriam Castillo Mendoza", rol: "Coordinadora del festival" },
+  { nombre: "Robinson Villalobos Velásquez", rol: "Organizador" }
+];
+
 /* Carrusel de voces destacadas, en este orden. rol = etiqueta sobre el nombre. */
 const DESTACADOS = [
   { nombre: "Miriam Castillo Mendoza", rol: "Coordinadora del festival" },
