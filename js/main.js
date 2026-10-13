@@ -297,14 +297,11 @@
         <summary><b>${esc(g.titulo)}</b><small>${items.length} ${items.length === 1 ? "sede" : "sedes"}</small><span class="blk__toggle" aria-hidden="true"></span></summary>
         <ul class="venues">${items.map((k) => {
           const e = ESCENARIOS[k];
-          const cuando = PROGRAMA.filter((b) => b.esc === k).map((b) => `${DIAS[b.dia].corto}, ${esc(b.jornada.toLowerCase())}`).join(" · ");
+          const mapa = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(e.nombre.split(" · ")[0] + ", Cali, Colombia");
           return `
-          <li>
-            <button type="button" class="venue" data-ir-esc="${k}">
-              <span class="venue__main"><b>${resaltar(e.nombre, q)}</b>${e.dir ? `<small>${esc(e.dir)}</small>` : ""}</span>
-              <span class="venue__when">${cuando}</span>
-              <span class="venue__go" aria-hidden="true">→</span>
-            </button>
+          <li class="venue">
+            <button type="button" class="venue__main" data-ir-esc="${k}" title="Ver la programación de esta sede"><b>${resaltar(e.nombre, q)}</b>${e.dir ? `<small>${esc(e.dir)}</small>` : ""}</button>
+            <a class="venue__map" href="${mapa}" target="_blank" rel="noopener">Google Maps ↗</a>
           </li>`;
         }).join("")}</ul>
       </details>`;
