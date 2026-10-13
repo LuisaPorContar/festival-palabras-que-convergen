@@ -284,15 +284,15 @@
   $("#st-voc").textContent = ponentes.length;
   $("#lista-sedes").innerHTML = GRUPOS_ESC.map((g) => g.items.map((k) => {
     const e = ESCENARIOS[k];
-    const cuando = PROGRAMA.filter((b) => b.esc === k).map((b) => `<span>${DIAS[b.dia].corto} · ${esc(b.jornada.toLowerCase())}</span>`).join("");
+    const cuando = PROGRAMA.filter((b) => b.esc === k).map((b) => `${DIAS[b.dia].corto}, ${esc(b.jornada.toLowerCase())}`).join(" · ");
     return `
-      <article class="venue">
-        <p class="venue__tipo">${esc(g.uno)}</p>
-        <h4>${esc(e.nombre)}</h4>
-        ${e.dir ? `<p class="venue__dir">${esc(e.dir)}</p>` : ""}
-        <div class="venue__when">${cuando}</div>
-        <button class="link" data-ir-esc="${k}">Ver programación (${nAct(0, k)}) →</button>
-      </article>`;
+      <li>
+        <button type="button" class="venue" data-ir-esc="${k}">
+          <span class="venue__main"><b>${esc(e.nombre)}</b>${e.dir ? `<small>${esc(e.dir)}</small>` : ""}</span>
+          <span class="venue__when">${cuando}</span>
+          <span class="venue__go" aria-hidden="true">→</span>
+        </button>
+      </li>`;
   }).join("")).join("");
   $("#lista-sedes").addEventListener("click", (ev) => {
     const b = ev.target.closest("[data-ir-esc]");
