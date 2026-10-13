@@ -321,7 +321,8 @@
     pintarAgenda();
     $("#agenda").scrollIntoView();
   });
-  $("#lista-colectivos").innerHTML = COLECTIVOS.map((c) => `<li>${esc(c)}</li>`).join("");
+  // La lista va dos veces seguidas para que la cinta gire sin saltos; la copia se oculta a los lectores de pantalla.
+  $("#lista-colectivos").innerHTML = COLECTIVOS.map((c) => `<li>${esc(c)}</li>`).join("") + COLECTIVOS.map((c) => `<li aria-hidden="true">${esc(c)}</li>`).join("");
   $("#form-esc").insertAdjacentHTML("beforeend", Object.values(ESCENARIOS).map((e) => `<option>${esc(e.nombre)}</option>`).join(""));
   $("#btn-patrocinio").href = "https://wa.me/" + CONFIG.whatsappPatrocinio + "?text=" + encodeURIComponent("Hola, quiero ser patrocinador del Festival Palabras que Convergen.");
 

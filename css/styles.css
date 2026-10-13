@@ -347,6 +347,17 @@ mark { background: #ffe9a8; color: inherit; border-radius: 3px; padding: 0 2px; 
 .venue__dir { font-size: .86rem; color: var(--muted); }
 .venue__when { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 8px; }
 .venue__when span { font-size: .76rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; background: var(--cyan-soft); color: var(--teal); }
+/* Colectivos: cinta en movimiento continuo; se detiene al pasar el cursor */
+.marq { overflow: hidden; padding: 6px 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.marq__track { display: flex; width: max-content; animation: marq 60s linear infinite; }
+.marq:hover .marq__track { animation-play-state: paused; }
+.marq__track li { flex: none; margin-right: 12px; padding: 11px 22px; border: 1px solid var(--line); border-radius: 999px; background: #fff; font-weight: 600; font-size: .98rem; color: var(--navy); white-space: nowrap; }
+@keyframes marq { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+  .marq { -webkit-mask-image: none; mask-image: none; }
+  .marq__track { animation: none; width: auto; flex-wrap: wrap; gap: 8px 0; }
+  .marq__track li[aria-hidden] { display: none; }
+}
 .search--sede { display: block; margin-bottom: 14px; }
 .search--sede input { width: min(420px, 100%); }
 .vgroup { border-bottom: 1px solid var(--line); }
@@ -373,8 +384,6 @@ mark { background: #ffe9a8; color: inherit; border-radius: 3px; padding: 0 2px; 
   .venue__main { flex-basis: calc(100% - 30px); }
   .venue__when { order: 3; text-align: left; flex-basis: 100%; }
 }.cols { columns: 4 200px; column-gap: 28px; }
-.cols li { position: relative; padding: 7px 0 7px 20px; font-weight: 600; font-size: .95rem; color: var(--ink); break-inside: avoid; border-bottom: 1px solid var(--line); }
-.cols li::before { content: ""; position: absolute; left: 0; top: 1.05em; width: 10px; height: 3px; background: var(--cyan); }
 .tags { display: flex; flex-wrap: wrap; gap: 8px; }
 .tags li { padding: 9px 16px; border-radius: 999px; background: var(--navy); color: #fff; font-weight: 600; font-size: .9rem; }
 .tags--soft li { background: var(--cyan-soft); color: var(--teal); }
