@@ -282,18 +282,37 @@
   $("#st-esc").textContent = Object.keys(ESCENARIOS).length;
   $("#st-act").textContent = PROGRAMA.reduce((n, b) => n + b.sesiones.length, 0);
   $("#st-voc").textContent = ponentes.length;
-  $("#lista-sedes").innerHTML = GRUPOS_ESC.map((g) => g.items.map((k) => {
-    const e = ESCENARIOS[k];
-    const cuando = PROGRAMA.filter((b) => b.esc === k).map((b) => `${DIAS[b.dia].corto}, ${esc(b.jornada.toLowerCase())}`).join(" · ");
-    return `
-      <li>
-        <button type="button" class="venue" data-ir-esc="${k}">
-          <span class="venue__main"><b>${esc(e.nombre)}</b>${e.dir ? `<small>${esc(e.dir)}</small>` : ""}</span>
-          <span class="venue__when">${cuando}</span>
-          <span class="venue__go" aria-hidden="true">→</span>
-        </button>
-      </li>`;
-  }).join("")).join("");
+  // Sedes: dos grupos plegables y un buscador por nombre, dirección o barrio.
+  const GRUPOS_SEDES = [
+    { titulo: "Bibliotecas", items: GRUPOS_ESC[0].items },
+    { titulo: "Teatro, universidad y colegio", items: GRUPOS_ESC.slice(1).flatMap((g) => g.items) }
+  ];
+  function pintarSedes() {
+    const q = norm($("#buscar-sede").value.trim());
+    const html = GRUPOS_SEDES.map((g) => {
+      const items = g.items.filter((k) => !q || norm(ESCENARIOS[k].nombre + " " + ESCENARIOS[k].dir).includes(q));
+      if (!items.length) return "";
+      return `
+      <details class="vgroup"${q ? " open" : ""}>
+        <summary><b>${esc(g.titulo)}</b><small>${items.length} ${items.length === 1 ? "sede" : "sedes"}</small><span class="blk__toggle" aria-hidden="true"></span></summary>
+        <ul class="venues">${items.map((k) => {
+          const e = ESCENARIOS[k];
+          const cuando = PROGRAMA.filter((b) => b.esc === k).map((b) => `${DIAS[b.dia].corto}, ${esc(b.jornada.toLowerCase())}`).join(" · ");
+          return `
+          <li>
+            <button type="button" class="venue" data-ir-esc="${k}">
+              <span class="venue__main"><b>${resaltar(e.nombre, q)}</b>${e.dir ? `<small>${esc(e.dir)}</small>` : ""}</span>
+              <span class="venue__when">${cuando}</span>
+              <span class="venue__go" aria-hidden="true">→</span>
+            </button>
+          </li>`;
+        }).join("")}</ul>
+      </details>`;
+    }).join("");
+    $("#lista-sedes").innerHTML = html || `<p class="empty">No encontramos una sede con ese nombre.</p>`;
+  }
+  $("#buscar-sede").addEventListener("input", pintarSedes);
+  pintarSedes();
   $("#lista-sedes").addEventListener("click", (ev) => {
     const b = ev.target.closest("[data-ir-esc]");
     if (!b) return;

@@ -347,7 +347,18 @@ mark { background: #ffe9a8; color: inherit; border-radius: 3px; padding: 0 2px; 
 .venue__dir { font-size: .86rem; color: var(--muted); }
 .venue__when { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 8px; }
 .venue__when span { font-size: .76rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; background: var(--cyan-soft); color: var(--teal); }
-.venues { columns: 2 420px; column-gap: 48px; }
+.search--sede { display: block; margin-bottom: 14px; }
+.search--sede input { width: min(420px, 100%); }
+.vgroup { border-bottom: 1px solid var(--line); }
+.vgroup:first-of-type { border-top: 1px solid var(--line); }
+.vgroup summary { list-style: none; display: flex; align-items: center; gap: 14px; padding: 16px 6px; cursor: pointer; }
+.vgroup summary::-webkit-details-marker { display: none; }
+.vgroup summary:hover, .vgroup[open] summary { background: var(--paper); }
+.vgroup summary b { font-size: 1.12rem; color: var(--navy); }
+.vgroup summary small { flex: 1; font-size: .92rem; color: var(--muted); }
+.vgroup[open] .blk__toggle::after { transform: rotate(0); }
+.venues { columns: 2 420px; column-gap: 48px; padding: 4px 6px 16px; }
+.venues li:last-child { border-bottom: 0; }
 .venues li { break-inside: avoid; border-bottom: 1px solid var(--line); }
 .venue { width: 100%; display: flex; align-items: center; gap: 16px; padding: 14px 4px; border: 0; background: none; text-align: left; cursor: pointer; }
 .venue:hover { background: var(--paper); }
