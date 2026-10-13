@@ -3,8 +3,8 @@
 
 const CONFIG = {
   // URL del Web App (Google Apps Script u otro) que recibe las inscripciones.
-  // Mientras esté vacío, el formulario funciona en modo demostración y NO guarda datos.
-  endpoint: "",
+  // Si se deja vacío, el formulario funciona en modo demostración y NO guarda datos.
+  endpoint: "https://script.google.com/macros/s/AKfycbzrDA20faw2Munc0q40IjXI2pacOvBxCx7fdKD0lMAN2uAAecAYcrEtKcyHVnYoYYvh/exec",
   inicio: "2026-11-05T08:20:00-05:00",
   // WhatsApp para quienes quieran patrocinar el evento (solo dígitos, con indicativo del país).
   whatsappPatrocinio: "573177220302"

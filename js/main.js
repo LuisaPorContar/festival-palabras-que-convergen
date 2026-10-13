@@ -348,6 +348,8 @@
     datos.delete("dias");
     datos.set("dias", dias.join(", "));
     datos.set("fecha", new Date().toISOString());
+    // Identificador del envío: el script de la hoja lo usa para no guardar dos veces la misma inscripción.
+    datos.set("id", Date.now().toString(36) + Math.random().toString(36).slice(2, 10));
 
     if (CONFIG.endpoint) {
       btn.disabled = true; btn.textContent = "Enviando…";
