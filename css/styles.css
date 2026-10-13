@@ -348,6 +348,8 @@ mark { background: #ffe9a8; color: inherit; border-radius: 3px; padding: 0 2px; 
 .venue__when { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 8px; }
 .venue__when span { font-size: .76rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; background: var(--cyan-soft); color: var(--teal); }
 /* Colectivos: cinta en movimiento continuo; se detiene al pasar el cursor */
+.sponsors { grid-template-columns: minmax(0, 1fr); }
+.sponsors__row { min-width: 0; }
 .marq { overflow: hidden; padding: 6px 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
 .marq__track { display: flex; width: max-content; animation: marq 60s linear infinite; }
 .marq:hover .marq__track { animation-play-state: paused; }
