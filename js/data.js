@@ -207,7 +207,7 @@ const PERFILES = {
   "Martha Eugenia Uribe Mutis": { foto: "assets/ponentes/martha-eugenia-uribe.jpg" },
   "Dora Luz Muñoz de Cobo": { foto: "assets/ponentes/dora-luz-munoz.jpg" },
   "Ángela Penagos Londoño": { foto: "assets/ponentes/angela-penagos.jpg" },
-  "Alexis Ocoró Bonilla": { alias: "Alexis Orilla", bio: "Poeta, cantautor, escritor, declamador y agrónomo del Pacífico colombiano." },
+  "Alexis Ocoró Bonilla": { foto: "assets/ponentes/alexis-ocoro.jpg", alias: "Alexis Orilla", bio: "Poeta, cantautor, escritor, declamador y agrónomo del Pacífico colombiano." },
   "Félix Domingo Cabezas": { foto: "assets/ponentes/felix-domingo-cabezas.jpg", bio: "Narrador, investigador cultural, docente, rector y gestor cultural." },
   "Susana María Moreno Palacios": { foto: "assets/ponentes/susana-moreno-palacios.jpg", bio: "Escritora, poeta y educadora de Quibdó. Dirige la Red Étnica de Escritores del Chocó." },
   "Luz Stella Vargas Vásquez": { bio: "Declamadora artística, conocida por su interpretación de poesía andaluza y lírica clásica." },
@@ -254,7 +254,7 @@ const PERFILES = {
   "José Ignacio Cáceres Serna": { alias: "Nacho" },
   "Marisol Quiroga": { alias: "Guatipana" },
   "Feliciano Saa Riascos": { alias: "Cheo Saa" },
-  "Luz Stella Salazar López": { bio: "Pluma, verso y canción." }
+  "Luz Stella Salazar López": { foto: "assets/ponentes/luz-stella-salazar.jpg", bio: "Pluma, verso y canción." }
 };
 
 /* Carrusel de voces destacadas, en este orden. rol = etiqueta sobre el nombre. */
