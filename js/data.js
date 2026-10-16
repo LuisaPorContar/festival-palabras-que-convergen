@@ -103,8 +103,8 @@ const PROGRAMA = [
     sesiones: [
       { h: "8:00 – 8:10 a. m.", tipo: "Acto", t: "Saludo inicial", p: ["Alfredo «Cheo» Angulo", "Andrés Acosta"] },
       { h: "8:15 – 9:15 a. m.", tipo: "Recital", t: "Recital poético declamatorio del Pacífico colombiano", p: ["Alexis Ocoró Bonilla", "Félix Domingo Cabezas", "Alfredo «Cheo» Angulo", "Mónica Patricia Ossa Graín"] },
-      { h: "9:20 – 10:20 a. m.", tipo: "Cuentería", t: "Acto de cuentería · Viento de palabras", p: ["Claudia Torres", "Sor María Jiménez", "María Fabiola Serna González"] },
-      { h: "10:30 a. m. – 12:00 m.", tipo: "Taller", t: "Taller de escritura · Tejedores de esperanza", p: ["Alexis Ocoró Bonilla", "Félix Domingo Cabezas", "Alfredo «Cheo» Angulo", "Mónica Patricia Ossa Graín", "Claudia Torres", "Sor María Jiménez", "María Fabiola Serna González"] }
+      { h: "9:20 – 10:20 a. m.", tipo: "Cuentería", t: "Acto de cuentería · Viento de palabras", p: ["Claudia Andrea Torres", "Sor María Jiménez", "María Fabiola Serna González"] },
+      { h: "10:30 a. m. – 12:00 m.", tipo: "Taller", t: "Taller de escritura · Tejedores de esperanza", p: ["Alexis Ocoró Bonilla", "Félix Domingo Cabezas", "Alfredo «Cheo» Angulo", "Mónica Patricia Ossa Graín", "Claudia Andrea Torres", "Sor María Jiménez", "María Fabiola Serna González"] }
     ]
   },
   {
@@ -232,7 +232,7 @@ const PERFILES = {
   "María Dolly Montes Tangarife": { bio: "Escritora, pintora, escultora y gestora cultural de Caldas. Creadora del premio de literatura DOMOTA." },
   "Lina Johana Pérez Montoya": { alias: "Lilimar", bio: "Poeta de Remart. Une la palabra con la psicología del bienestar, el mindfulness y la inteligencia emocional." },
   "Roberto Toala Núñez": { bio: "Escritor de microrrelatos vinculado a la identidad de Cali y el Valle." },
-  "Claudia Torres": { bio: "Narradora oral, cuentera y pedagoga infantil. Fundación Cultural Viva Palabra." },
+  "Claudia Andrea Torres": { foto: "assets/ponentes/claudia-torres.jpg", bio: "Narradora oral, cuentera y pedagoga infantil. Fundación Cultural Viva Palabra." },
   "María Fabiola Serna González": { foto: "assets/ponentes/fabiola-serna.jpg", bio: "Cuentera, poeta y gestora cultural. Ganadora del festival Entre Cuentos y Flores." },
   "Constanza Eugenia Muñoz Flórez": { alias: "Luna de Nácar", bio: "Educadora, escritora y poeta caleña de Poetas de la Calle, residente en Medellín." },
   "Margarita Rosa Patiño": { bio: "Poeta, escritora y ensayista. Participante del Encuentro de Mujeres Poetas Colombianas del Museo Rayo." },
@@ -252,14 +252,14 @@ const PERFILES = {
   "Jaime Eduardo Muñoz Flórez": { bio: "Poetas de la Calle de Palmira." },
   "María Antonia Ledesma": { bio: "Grupo Libertad Poética Femenina." },
   "Martha Estela Aguilar Guayara": { alias: "Mares", bio: "Integrante de Poetas de la Calle." },
-  "María de los Ángeles Londoño": { bio: "Poeta y declamadora independiente, impulsora de la literatura digital audiovisual." },
+  "María de los Ángeles Londoño": { foto: "assets/ponentes/maria-angeles-londono.jpg", bio: "Poeta y declamadora independiente, impulsora de la literatura digital audiovisual." },
   "Jhelga Lorena Pineda": { bio: "Integrante de la Red de Escritoras de Caldas. Trabaja las narrativas femeninas." },
   "Johana Marulanda Botero": { bio: "Psicóloga vinculada al área de salud y bienestar." },
   "Guillermo Fabián Hoyos": { bio: "Artista visual y pedagogo. Integrante del Salón de Artistas Intercontinental de Cali." },
   "Lina María Pérez": { bio: "Poeta de Remart y del nodo de literatura." },
   "Gloria Elena Gutiérrez": { alias: "Guty" },
   "José Ignacio Cáceres Serna": { alias: "Nacho" },
-  "Marisol Quiroga": { alias: "Guatipana" },
+  "Marisol Quiroga": { foto: "assets/ponentes/marisol-quiroga.jpg", alias: "Guatipana" },
   "Feliciano Saa Riascos": { alias: "Cheo Saa" },
   "Luz Stella Salazar López": { foto: "assets/ponentes/luz-stella-salazar.jpg", bio: "Pluma, verso y canción." }
 };
