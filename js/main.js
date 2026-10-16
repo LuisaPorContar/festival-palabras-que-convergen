@@ -279,7 +279,15 @@
     if (b) { estado.jor = b.dataset.jor; pintarAgenda(); }
   });
   $("#select-esc").addEventListener("change", (e) => { estado.esc = e.target.value; pintarAgenda(); });
-  $("#buscar-agenda").addEventListener("input", pintarAgenda);
+  // Si la búsqueda no encuentra nada con los filtros puestos, se buscan todos los días y lugares.
+  $("#buscar-agenda").addEventListener("input", () => {
+    pintarAgenda();
+    const q = $("#buscar-agenda").value.trim();
+    if (q && !document.querySelector("#agenda-lista .blk") && (estado.dia || estado.jor || estado.esc)) {
+      estado.dia = 0; estado.jor = ""; estado.esc = "";
+      pintarAgenda();
+    }
+  });
   $("#agenda").addEventListener("click", (e) => {
     if (e.target.id === "limpiar") { estado.jor = ""; estado.dia = 0; estado.esc = ""; $("#buscar-agenda").value = ""; pintarAgenda(); }
   });

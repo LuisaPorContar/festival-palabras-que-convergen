@@ -306,7 +306,7 @@ const ORGANIZADORES = [
 /* Carrusel de voces destacadas, en este orden. rol = etiqueta sobre el nombre. */
 const DESTACADOS = [
   { nombre: "Miriam Castillo Mendoza", rol: "Coordinadora del festival" },
-  { nombre: "Robinson Villalobos Velásquez", rol: "Organizador · Cali" },
+  { nombre: "Robinson Villalobos Velásquez", rol: "Coordinador del festival" },
   { nombre: "Mary Grueso", rol: "Academia Colombiana de la Lengua" },
   { nombre: "Roberto Montes Mathieu", rol: "Microficción · Caribe" },
   { nombre: "Alfredo «Cheo» Angulo", rol: "Compositor · Pacífico" },

@@ -378,7 +378,7 @@ mark { background: #ffe9a8; color: inherit; border-radius: 3px; padding: 0 2px; 
 .vgroup summary::-webkit-details-marker { display: none; }
 .vgroup summary:hover, .vgroup[open] summary { background: var(--paper); }
 .vgroup summary b { font-size: 1.12rem; color: var(--navy); }
-.vgroup summary small { flex: 1; font-size: .92rem; color: var(--muted); }
+.vgroup summary small { flex: 1; white-space: nowrap; font-size: .92rem; color: var(--muted); }
 .vgroup[open] .blk__toggle::after { transform: rotate(0); }
 .venues { columns: 2 420px; column-gap: 48px; padding: 4px 6px 16px; }
 .venues li:last-child { border-bottom: 0; }
