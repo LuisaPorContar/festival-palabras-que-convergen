@@ -18,22 +18,24 @@ const DIAS = {
 
 const ESCENARIOS = {
   presagio:     { nombre: "Teatro El Presagio", dir: "Av. 9A Norte #10N-50, barrio Granada" },
-  unilibre:     { nombre: "Universidad Libre Seccional Cali", dir: "Carrera 37A #3-29" },
-  cultores:     { nombre: "Centro Cultural Comuna 1 · Cultores y Cuidarte", dir: "Av. 5A Oeste #44-69, barrio Vista Hermosa" },
-  deporte:      { nombre: "Biblioteca de la Recreación y el Deporte", dir: "Carrera 34 con Calle 5B, San Fernando · Tribuna occidental del Estadio Pascual Guerrero" },
+  unilibre:     { nombre: "Universidad Libre Seccional Cali", dir: "Carrera 37A #3-29, La Chacra" },
   eldorado:     { nombre: "Biblioteca El Dorado", dir: "Calle 13C #36A-31, barrio El Dorado, Comuna 10" },
+  deporte:      { nombre: "Biblioteca de la Recreación y el Deporte", dir: "Carrera 34 con Calle 5B, San Fernando · Tribuna occidental del Estadio Pascual Guerrero" },
+  eljardin:     { nombre: "Biblioteca El Jardín", dir: "Av. 2 Norte #10-70, Centro Administrativo Municipal (CAM)" },
   sanluis:      { nombre: "Biblioteca Pública San Luis", dir: "Calle 71 #1A-10, barrio San Luis, Comuna 6" },
-  lamaria:      { nombre: "La María", dir: "Carrera 5 #2-69, barrio San Antonio, Comuna 3" },
+  lamaria:      { nombre: "Biblioteca La María", dir: "Carrera 5 #2-69, barrio San Antonio, Comuna 3" },
   vistahermosa: { nombre: "Biblioteca de Vista Hermosa (Biblioteca Verde)", dir: "Centro Cultural Comuna 1 · Av. 5A Oeste #44-69, barrio Vista Hermosa" },
+  acacias:      { nombre: "Biblioteca Centro Cultural Las Acacias", dir: "Carrera 24B, Comuna 10" },
+  sena:         { nombre: "Biblioteca Municipal SENA", dir: "Carrera 3 con Calle 47, Esmeralda" },
+  rigoberta:    { nombre: "Biblioteca Municipal Rigoberta Menchú", dir: "Carrera 32A #49-50, barrio Laureano Gómez / El Retiro, Comuna 15" },
   sannicolas:   { nombre: "Biblioteca San Nicolás", dir: "Calle 20 #5-63, Comuna 3" },
-  sena:         { nombre: "Biblioteca Municipal SENA", dir: "Carrera 3 con Calle 47" },
-  carbonell:    { nombre: "I.E. José María Carbonell", dir: "" },
-  eljardin:     { nombre: "Biblioteca El Jardín", dir: "Av. 2 Norte #10-70, Centro Administrativo Municipal (CAM)" }
+  campina:      { nombre: "Biblioteca La Campiña", dir: "" },
+  carbonell:    { nombre: "I.E. José María Carbonell", dir: "" }
 };
 
-/* Desplegables del filtro de la agenda. uno = etiqueta en singular para las tarjetas de sedes. */
+/* Grupos de sedes (filtro de la agenda y lista de sedes). uno = etiqueta en singular. */
 const GRUPOS_ESC = [
-  { titulo: "Bibliotecas", uno: "Biblioteca", items: ["deporte", "eldorado", "sanluis", "vistahermosa", "sannicolas", "sena", "eljardin", "lamaria", "cultores"] },
+  { titulo: "Bibliotecas", uno: "Biblioteca", items: ["eldorado", "deporte", "eljardin", "sanluis", "lamaria", "vistahermosa", "acacias", "sena", "rigoberta", "sannicolas", "campina"] },
   { titulo: "Universidades", uno: "Universidad", items: ["unilibre"] },
   { titulo: "Teatros", uno: "Teatro", items: ["presagio"] },
   { titulo: "Colegios", uno: "Colegio", items: ["carbonell"] }
@@ -49,28 +51,11 @@ const PROGRAMA = [
       { h: "8:25 – 8:50 a. m.", tipo: "Acto", t: "Acto de instalación y reconocimiento «Palabras que convergen: Manifiesto de la esperanza»", p: ["Germán Félix Calvo Sarmiento", "Miriam Castillo Mendoza", "Robinson Villalobos Velásquez"] },
       { h: "8:55 – 9:45 a. m.", tipo: "Recital", t: "Recital 1 · Manifiesto de la esperanza", p: ["Ángela Penagos Londoño", "Edinson Tello Bedón", "Dora Luz Muñoz de Cobo", "Roger Lázaro Ynca", "Adalgiza Charria Quintero", "Mario Mathor", "Alfredo «Cheo» Angulo", "Wilson Blandón Caicedo"], mod: "Gloria Judith López Soto" },
       { h: "9:50 – 10:05 a. m.", tipo: "Escena", t: "Intervención escénica · Vuela con tus sueños", p: ["Luz Stella Salazar López"], mod: "Gloria Judith López Soto" },
-      { h: "10:10 – 10:50 a. m.", tipo: "Conversatorio", t: "Conversatorio 1 · La poesía, un lenguaje para el teatro", p: ["Alejandro Buenaventura Aldeano", "Carlos Manuel Rivera Rosado"], mod: "Daniel Rivera Meza" },
+      { h: "10:10 – 10:50 a. m.", tipo: "Escena", t: "Salsa caleña al escenario", p: [], nota: "Bailarines de la Junta de Acción Comunal." },
       { h: "10:55 – 11:15 a. m.", tipo: "Recital", t: "Recital declamatorio 1 · Voces de la esperanza", p: ["Diego Jaramillo", "Luz Stella Vargas Vásquez", "Jim Persal"], mod: "Diomar Leclerc Martínez" },
-      { h: "11:20 – 11:45 a. m.", tipo: "Recital", t: "Recital poético 2 · Palabras que convergen", p: ["Franz Wisley Aguirre Muñoz", "María Adiela Londoño de Copete", "Alfredo Otero Ortega", "Gloria Elena Gutiérrez", "Istina Valoyes Waldo", "Liliana Varón Villamizar", "John Raigoza", "Tatiana Suárez Vásquez"], mod: "Judith Cartagena", nota: "Colectivos: Poetas de la Calle de Palmira, Crisálidas Poéticas de Cartago, Colectivo Caribe, Universo de Palabras, Colectivo Escritoras del Chocó, Asociación Casa de Piedra, Taller literario Alfabeto del Mundo y Remart." },
-      { h: "11:50 a. m. – 12:30 p. m.", tipo: "Libro", t: "Presentación del libro «El mundo en llamas»", p: ["Félix Manzur Jattin"], mod: "Judith Cartagena" },
-      { h: "12:35 – 1:00 p. m.", tipo: "Música", t: "Presentación musical", p: ["Marisol Quiroga"] }
-    ]
-  },
-  {
-    dia: 5, esc: "cultores", jornada: "Mañana",
-    sesiones: [
-      { h: "8:00 – 8:10 a. m.", tipo: "Acto", t: "Palabras iniciales", p: ["Jhelga Lorena Pineda", "Camuli Zamudio"] },
-      { h: "8:15 – 9:15 a. m.", tipo: "Lectura", t: "Lectura de poemas y narraciones", p: ["Jhelga Lorena Pineda", "Johana Marulanda Botero", "Julieta Henao Muñoz"] },
-      { h: "9:20 – 10:05 a. m.", tipo: "Conversatorio", t: "Conversación sobre el arte plástico, la poesía y la educación", p: ["Guillermo Fabián Hoyos"] },
-      { h: "10:10 – 11:35 a. m.", tipo: "Taller", t: "Taller · La palabra escrita como herramienta de transformación personal", p: ["Jhelga Lorena Pineda", "Johana Marulanda Botero", "Nataly Tabima Suárez", "Guillermo Fabián Hoyos"] }
-    ]
-  },
-  {
-    dia: 5, esc: "deporte", jornada: "Mañana",
-    sesiones: [
-      { h: "8:00 – 8:10 a. m.", tipo: "Acto", t: "Palabras iniciales", p: ["María Adiela Londoño de Copete", "Roxi Gómez"] },
-      { h: "8:10 – 9:05 a. m.", tipo: "Recital", t: "Recital poético 5", p: ["María Adiela Londoño de Copete", "María Florenia Vivas Bohórquez", "Luz Dolly Atehortúa", "Nataly Tabima Suárez", "Darinel Restrepo", "Judith Cartagena"], mod: "Judith Cartagena" },
-      { h: "9:05 – 10:05 a. m.", tipo: "Taller", t: "Taller 2 · Reparemos las grietas del alma y socialización de producción escrita", p: ["María Adiela Londoño de Copete", "Judith Cartagena", "Nataly Tabima Suárez", "María Florenia Vivas Bohórquez", "Luz Dolly Atehortúa"], mod: "Darinel Restrepo" }
+      { h: "11:15 – 11:40 a. m.", tipo: "Recital", t: "Recital poético 2 · Palabras que convergen", p: ["Franz Wisley Aguirre Muñoz", "María Adiela Londoño de Copete", "Alfredo Otero Ortega", "Gloria Elena Gutiérrez", "Istina Valoyes Waldo", "Liliana Varón Villamizar", "John Raigoza", "Tatiana Suárez Vásquez"], mod: "Judith Cartagena", nota: "Colectivos: Poetas de la Calle de Palmira, Crisálidas Poéticas de Cartago, Colectivo Caribe, Universo de Palabras, Colectivo Escritoras del Chocó, Asociación Casa de Piedra, Taller literario Alfabeto del Mundo y Remart." },
+      { h: "11:45 a. m. – 12:25 p. m.", tipo: "Libro", t: "Presentación del libro «El mundo en llamas»", p: ["Félix Manzur Jattin"], mod: "Judith Cartagena" },
+      { h: "12:30 – 1:00 p. m.", tipo: "Música", t: "Presentación musical", p: ["Sandra Patricia «La Voz»"] }
     ]
   },
   {
@@ -80,10 +65,9 @@ const PROGRAMA = [
       { h: "2:40 – 3:20 p. m.", tipo: "Recital", t: "Recital 3 · Manifiesto de la esperanza", p: ["Joseph Berolo Ramos", "Miriam Castillo Mendoza", "Mary Grueso", "Daniel Rivera Meza", "Gloria Judith López Soto", "Nauro Torres Quintero"], mod: "Pablo Emilio Beltrán Bejarano" },
       { h: "3:25 – 3:55 p. m.", tipo: "Recital", t: "Recital declamatorio 2", p: ["Germán Félix Calvo Sarmiento", "Marco Rogelio Rubio López", "Martha Luz De León Naar", "José Fernando Cano"], mod: "Gloria Inés Sánchez Duque" },
       { h: "3:55 – 4:30 p. m.", tipo: "Libro", t: "Presentación del libro «El faro del lobo»", p: ["Robinson Villalobos Velásquez"], mod: "Roberto Montes Mathieu" },
-      { h: "4:30 – 5:10 p. m.", tipo: "Conversatorio", t: "Entrevista", p: ["Alberto Rodríguez"] },
-      { h: "5:15 – 5:35 p. m.", tipo: "Recital", t: "Recital 4 · Manifiesto de la esperanza", p: ["Martha Eugenia Uribe Mutis", "Laureano León Valencia", "Diomar Leclerc Martínez", "Félix Domingo Cabezas", "Lucero Jordán Molina", "José Ignacio Cáceres Serna"], mod: "Ángela Penagos Londoño", nota: "Colectivos: Abe'scritos, Gremio Poético Colombiano, Colectivo Caribe, Fuespacol, Verbum y Casa de Piedra." },
-      { h: "5:35 – 5:45 p. m.", tipo: "Cuentería", t: "La cuentería 1 · Palabras que convergen", p: ["Sor María Jiménez"], mod: "Ángela Penagos Londoño" },
-      { h: "5:45 – 6:00 p. m.", tipo: "Música", t: "Intervención musical", p: ["Sandra Patricia «La Voz»"], mod: "Robinson Villalobos Velásquez" }
+      { h: "4:30 – 5:10 p. m.", tipo: "Escena", t: "Recital escénico «Raúl Gómez Jattin siempre vivo» · Anecdotario", p: ["Mateo Rose", "Antonio Prada Fortul"] },
+      { h: "5:15 – 5:25 p. m.", tipo: "Cuentería", t: "En la cuentería las palabras convergen", p: ["Sor María Jiménez"], mod: "Ángela Penagos Londoño" },
+      { h: "5:15 – 6:00 p. m.", tipo: "Recital", t: "Concierto de colectivos · Manifiesto de la esperanza", p: ["Martha Eugenia Uribe Mutis", "Robinson Villalobos Velásquez", "Laureano León Valencia", "Alexis Ocoró Bonilla", "Alfredo Otero Ortega", "Diomar Leclerc Martínez", "Félix Domingo Cabezas", "Leticia Truque Vélez", "Lucero Jordán Molina", "Julieta Henao Muñoz", "José Ignacio Cáceres Serna", "Liliana Varón Villamizar", "María Florenia Vivas Bohórquez", "Judith Cartagena", "Lina Johana Pérez Montoya", "Tatiana Suárez Vásquez", "Susana María Moreno Palacios", "Istina Valoyes Waldo", "Jaime Eduardo Muñoz Flórez", "Margarita Rosa Patiño Arbeláez", "Mónica Patricia Ossa Graín", "Dora Luz Muñoz de Cobo"], mod: "Ángela Penagos Londoño", nota: "Tres minutos por voz. Colectivos: Abe'scritos, Gremio Poético Colombiano, Colectivo Caribe, Fuespacol, Verbum, Casa de Piedra, Crisálidas Poéticas, Remart, Red de Escritores del Chocó, Poetas de la Calle y Lenguaje de Esperanzas." }
     ]
   },
 
@@ -94,8 +78,33 @@ const PROGRAMA = [
       { h: "8:15 – 9:00 a. m.", tipo: "Conversatorio", t: "Conversatorio 3 · La escritura de vida en la población de adultos mayores", p: ["Roberto Montes Mathieu", "Alberto Rodríguez"] },
       { h: "9:00 – 9:20 a. m.", tipo: "Lectura", t: "Lectura de cuento", p: ["Robinson Villalobos Velásquez"] },
       { h: "9:25 – 10:10 a. m.", tipo: "Libro", t: "Presentación del libro «Polonia la cimarrona»", p: ["Antonio Prada Fortul"], mod: "Miriam Castillo Mendoza" },
-      { h: "10:15 – 11:15 a. m.", tipo: "Taller", t: "Taller de la esperanza · El oro está en las manos de los que comparten", p: ["Diomar Leclerc Martínez", "Pablo Emilio Beltrán Bejarano", "Lucero Jordán Molina", "Laureano León Barrera"] },
+      { h: "10:15 – 11:15 a. m.", tipo: "Taller", t: "Recital y taller de la esperanza · El oro está en las manos de los que comparten", p: ["Diomar Leclerc Martínez", "Pablo Emilio Beltrán Bejarano", "Lucero Jordán Molina", "Laureano León Barrera", "José Ignacio Cáceres Serna"] },
       { h: "11:15 – 11:30 a. m.", tipo: "Lectura", t: "Lectura de textos de los participantes", p: [], nota: "Compartir de producción y opiniones de los asistentes." }
+    ]
+  },
+  {
+    dia: 6, esc: "deporte", jornada: "Mañana",
+    sesiones: [
+      { h: "8:00 – 8:10 a. m.", tipo: "Acto", t: "Palabras iniciales", p: ["María Adiela Londoño de Copete", "Roxi Gómez"] },
+      { h: "8:10 – 9:05 a. m.", tipo: "Recital", t: "Recital poético 5", p: ["María Adiela Londoño de Copete", "María Florenia Vivas Bohórquez", "Luz Dolly Atehortúa", "Nataly Tabima Suárez", "Darinel Restrepo", "Judith Cartagena"], mod: "Judith Cartagena" },
+      { h: "9:05 – 10:05 a. m.", tipo: "Taller", t: "Taller 2 · Reparemos las grietas del alma y socialización de producción escrita", p: ["María Adiela Londoño de Copete", "Judith Cartagena", "Nataly Tabima Suárez", "María Florenia Vivas Bohórquez", "Luz Dolly Atehortúa"], mod: "Darinel Restrepo" }
+    ]
+  },
+  {
+    dia: 6, esc: "sanluis", jornada: "Mañana", publico: "Niños y jóvenes de 10 a 17 años",
+    sesiones: [
+      { h: "9:00 – 9:10 a. m.", tipo: "Acto", t: "Palabras de apertura", p: ["Edinson Tello Bedón"] },
+      { h: "9:10 – 10:15 a. m.", tipo: "Recital", t: "Recital poético de la esperanza", p: ["Edinson Tello Bedón", "Constanza Eugenia Muñoz Flórez", "Margarita Rosa Patiño Arbeláez", "María Teresa Casas Figueroa", "Tito Nelio Cuero Murillo", "Henry Patiño Montoya"] },
+      { h: "10:20 – 11:00 a. m.", tipo: "Recital", t: "Recital declamatorio", p: ["Aníbal Gilberto Pantoja Ríos", "Martha Luz De León Naar", "Marino Díaz Antía"] },
+      { h: "11:05 a. m. – 12:00 m.", tipo: "Taller", t: "Taller de escritura · La alegría de escribir", p: ["Tito Nelio Cuero Murillo", "Marino Díaz Antía", "Aníbal Gilberto Pantoja Ríos", "Martha Luz De León Naar", "Henry Patiño Montoya", "María Teresa Casas Figueroa", "Constanza Eugenia Muñoz Flórez", "Edinson Tello Bedón", "Margarita Rosa Patiño Arbeláez"] }
+    ]
+  },
+  {
+    dia: 6, esc: "lamaria", jornada: "Mañana", publico: "Jóvenes de 11 a 17 años",
+    sesiones: [
+      { h: "9:00 – 9:10 a. m.", tipo: "Acto", t: "Palabras iniciales", p: ["Leticia Truque Vélez", "Melisa Castaño"] },
+      { h: "9:15 – 10:00 a. m.", tipo: "Recital", t: "Recital poético y lectura de cuentos y relatos", p: ["Lina Johana Pérez Montoya", "Leticia Truque Vélez", "Tatiana Suárez Vásquez", "María Dolly Montes Tangarife", "Roberto Toala Núñez", "Milton Fabián Solano"] },
+      { h: "10:00 – 11:00 a. m.", tipo: "Taller", t: "Taller de escritura para la esperanza · Donde nacen los dragones", p: ["Lina Johana Pérez Montoya", "Leticia Truque Vélez", "María Dolly Montes Tangarife", "Roberto Toala Núñez", "Milton Fabián Solano", "Tatiana Suárez Vásquez"] }
     ]
   },
   {
@@ -108,35 +117,54 @@ const PROGRAMA = [
     ]
   },
   {
-    dia: 6, esc: "sannicolas", jornada: "Mañana", publico: "Jóvenes de 11 a 17 años",
+    dia: 6, esc: "acacias", jornada: "Mañana",
     sesiones: [
-      { h: "8:00 – 8:10 a. m.", tipo: "Acto", t: "Palabras iniciales", p: ["Susana María Moreno Palacios", "Sandra Patricia Koson"] },
-      { h: "8:15 – 9:40 a. m.", tipo: "Recital", t: "Recital y conversatorio sobre la poesía del Chocó", p: ["Susana María Moreno Palacios", "Istina Valoyes Waldo", "Yendier Mosquera Lemus"] },
-      { h: "9:45 – 10:45 a. m.", tipo: "Taller", t: "Taller de escritura · Cuánto quiero a mi tierra", p: ["Yendier Mosquera Lemus", "Susana María Moreno Palacios", "Istina Valoyes Waldo"] }
+      { h: "8:00 – 8:10 a. m.", tipo: "Acto", t: "Palabras iniciales", p: ["Jhelga Lorena Pineda", "Jheni Amelia Velazco"] },
+      { h: "8:15 – 9:15 a. m.", tipo: "Lectura", t: "Lectura de poemas y narraciones", p: ["Jhelga Lorena Pineda", "Johana Marulanda Botero", "Julieta Henao Muñoz", "Nataly Tabima Suárez", "Gloria Inés Sánchez Duque"] },
+      { h: "9:20 – 10:05 a. m.", tipo: "Conversatorio", t: "Conversación sobre el arte plástico, la poesía y la educación", p: ["Guillermo Fabián Hoyos"] },
+      { h: "10:10 – 11:35 a. m.", tipo: "Taller", t: "Taller · La palabra escrita para transformar mi persona", p: ["Jhelga Lorena Pineda", "Johana Marulanda Botero", "Nataly Tabima Suárez", "Guillermo Fabián Hoyos", "Gloria Inés Sánchez Duque"] }
     ]
   },
   {
     dia: 6, esc: "sena", jornada: "Mañana",
     sesiones: [
       { h: "8:00 – 8:10 a. m.", tipo: "Acto", t: "Palabras iniciales", p: ["Yarleidy Solar Uribe", "Norma Constanza Calderón"] },
-      { h: "8:15 – 9:15 a. m.", tipo: "Recital", t: "Recital y lectura de relatos por la esperanza", p: ["Geraudi Gonzáles Olivares", "Lina María Pérez", "Gloria Elena Gutiérrez", "María Ximena Hoyos Mazuera", "Yarleidy Solar Uribe"] },
-      { h: "9:20 – 11:20 a. m.", tipo: "Taller", t: "Taller de escritura · Mi infancia, un motivo para escribir", p: ["María Ximena Hoyos Mazuera", "Yarleidy Solar Uribe", "Lina María Pérez", "Gloria Elena Gutiérrez", "Geraudi Gonzáles Olivares"] }
+      { h: "8:15 – 9:15 a. m.", tipo: "Recital", t: "Recital y lectura de relatos por la esperanza", p: ["Geraudi Gonzáles Olivares", "Lina María Pérez", "Gloria Elena Gutiérrez", "María Ximena Hoyos Mazuera", "Alfredo Otero Ortega", "Néstor Mendoza", "Yarleidy Solar Uribe"] },
+      { h: "9:20 – 11:20 a. m.", tipo: "Taller", t: "Taller de escritura · Mi infancia, un motivo para escribir", p: ["María Ximena Hoyos Mazuera", "Yarleidy Solar Uribe", "Lina María Pérez", "Alfredo Otero Ortega", "Gloria Elena Gutiérrez", "Geraudi Gonzáles Olivares"] }
     ]
   },
   {
-    dia: 6, esc: "sanluis", jornada: "Mañana", publico: "Niños y jóvenes de 10 a 17 años",
+    dia: 6, esc: "rigoberta", jornada: "Mañana",
     sesiones: [
-      { h: "9:00 – 9:10 a. m.", tipo: "Acto", t: "Palabras de apertura", p: ["Edinson Tello Bedón"] },
-      { h: "9:10 – 10:15 a. m.", tipo: "Recital", t: "Recital poético de la esperanza", p: ["Edinson Tello Bedón", "Constanza Eugenia Muñoz Flórez", "Margarita Rosa Patiño", "María Teresa Casas Figueroa", "Tito Nelio Cuero Murillo", "Henry Patiño Montoya"] },
-      { h: "10:20 – 11:00 a. m.", tipo: "Recital", t: "Recital declamatorio", p: ["Aníbal Gilberto Pantoja Ríos", "Martha Luz De León Naar", "Marino Díaz Antía"] }
+      { h: "8:00 – 8:10 a. m.", tipo: "Acto", t: "Palabras iniciales", p: ["Jaime Eduardo Muñoz Flórez", "Eccehomo Hazzi"] },
+      { h: "8:15 – 9:15 a. m.", tipo: "Recital", t: "Recital poético de la esperanza", p: ["Alejandrino Santos Hurtado", "Israel Agudelo Castro", "Margarita Peñalosa Flórez", "Jaime Eduardo Muñoz Flórez", "María Antonia Ledesma", "Martha Estela Aguilar Guayara"], mod: "Luz Stella Vargas Vásquez" },
+      { h: "9:20 – 10:05 a. m.", tipo: "Recital", t: "Recital declamatorio", p: ["Luz Stella Vargas Vásquez", "Franz Wisley Aguirre Muñoz", "María de los Ángeles Londoño"] },
+      { h: "10:05 – 11:00 a. m.", tipo: "Taller", t: "Taller de escritura · Así expreso mi amor por Cali", p: ["Alejandrino Santos Hurtado", "Israel Agudelo Castro", "Margarita Peñalosa Flórez", "Jaime Eduardo Muñoz Flórez", "María Antonia Ledesma", "Martha Estela Aguilar Guayara", "María de los Ángeles Londoño", "Luz Stella Vargas Vásquez", "Franz Wisley Aguirre Muñoz"] }
     ]
   },
   {
-    dia: 6, esc: "lamaria", jornada: "Mañana", publico: "Jóvenes de 11 a 17 años",
+    dia: 6, esc: "sannicolas", jornada: "Mañana", publico: "Jóvenes de 11 a 17 años",
     sesiones: [
-      { h: "9:00 – 9:10 a. m.", tipo: "Acto", t: "Palabras iniciales", p: ["Leticia Truque Vélez", "Melisa Castaño"] },
-      { h: "9:15 – 10:00 a. m.", tipo: "Recital", t: "Recital poético y lectura de cuentos y relatos", p: ["Lina Johana Pérez Montoya", "Leticia Truque Vélez", "María Dolly Montes Tangarife", "Roberto Toala Núñez", "Milton Fabián Solano"] },
-      { h: "10:00 – 11:00 a. m.", tipo: "Taller", t: "Taller de escritura para la esperanza · Donde nacen los dragones", p: ["Lina Johana Pérez Montoya", "Leticia Truque Vélez", "María Dolly Montes Tangarife", "Roberto Toala Núñez", "Milton Fabián Solano"] }
+      { h: "8:00 – 8:10 a. m.", tipo: "Acto", t: "Palabras iniciales", p: ["Susana María Moreno Palacios", "Sandra Patricia Koson"] },
+      { h: "8:15 – 9:40 a. m.", tipo: "Recital", t: "Recital y conversatorio sobre la poesía del Chocó", p: ["Liliana Varón Villamizar", "Martha Eugenia Uribe Mutis", "Susana María Moreno Palacios", "Istina Valoyes Waldo", "Yendier Mosquera Lemus"] },
+      { h: "9:45 – 10:45 a. m.", tipo: "Taller", t: "Taller de escritura · Cuánto quiero a mi tierra, y presentación del libro de Yendier Mosquera Lemus", p: ["Yendier Mosquera Lemus", "Susana María Moreno Palacios", "Istina Valoyes Waldo", "Liliana Varón Villamizar", "Martha Eugenia Uribe Mutis"] }
+    ]
+  },
+  {
+    dia: 6, esc: "campina", jornada: "Mañana",
+    sesiones: [
+      { h: "8:00 – 8:10 a. m.", tipo: "Acto", t: "Palabras iniciales", p: ["Margarita Peñalosa Flórez"], nota: "Con la coordinación de la biblioteca." },
+      { h: "8:15 – 9:15 a. m.", tipo: "Recital", t: "Recital poético de la esperanza", p: ["Alejandrino Santos Hurtado", "Israel Agudelo Castro", "Margarita Peñalosa Flórez", "Jaime Eduardo Muñoz Flórez", "María Antonia Ledesma", "Martha Estela Aguilar Guayara"], mod: "Luz Stella Vargas Vásquez" },
+      { h: "9:20 – 9:40 a. m.", tipo: "Recital", t: "Recital declamatorio", p: ["Luz Stella Vargas Vásquez", "Franz Wisley Aguirre Muñoz", "María de los Ángeles Londoño"] },
+      { h: "9:45 – 10:35 a. m.", tipo: "Taller", t: "Taller de escritura · Unas palabras a mi comuna", p: ["Margarita Peñalosa Flórez", "Alejandrino Santos Hurtado", "Israel Agudelo Castro", "Jaime Eduardo Muñoz Flórez", "María Antonia Ledesma", "Martha Estela Aguilar Guayara"] }
+    ]
+  },
+  {
+    dia: 6, esc: "rigoberta", jornada: "Tarde",
+    sesiones: [
+      { h: "2:00 – 2:10 p. m.", tipo: "Acto", t: "Palabras iniciales", p: ["Sor María Jiménez", "Eccehomo Hazzi"] },
+      { h: "2:15 – 3:15 p. m.", tipo: "Cuentería", t: "Presentación especial de cuentería", p: ["Claudia Andrea Torres", "Sor María Jiménez", "María Fabiola Serna González"] },
+      { h: "3:20 – 4:20 p. m.", tipo: "Taller", t: "Taller de escritura · Mi comunidad, un motivo para escribir, y lectura de textos", p: ["María Fabiola Serna González", "Claudia Andrea Torres", "Sor María Jiménez"] }
     ]
   },
   {
@@ -144,10 +172,11 @@ const PROGRAMA = [
     sesiones: [
       { h: "2:00 – 2:15 p. m.", tipo: "Acto", t: "Palabras iniciales, saludo protocolario y entrega del libro «Poemas contra la guerra»", p: ["Miriam Castillo Mendoza"], mod: "Robinson Villalobos Velásquez" },
       { h: "2:20 – 2:50 p. m.", tipo: "Libro", t: "Presentación especial · Lectura de poemas y presentación de libros", p: ["Robinson Villalobos Velásquez"], mod: "Miriam Castillo Mendoza" },
-      { h: "2:55 – 3:15 p. m.", tipo: "Recital", t: "Recital declamatorio", p: ["Marco Rogelio Rubio López", "Martha Luz De León Naar", "Jim Persal", "José Fernando Cano"] },
-      { h: "3:20 – 4:00 p. m.", tipo: "Recital", t: "Recital poético", p: ["Maya Chalez", "Gloria Judith López Soto", "José Ignacio Cáceres Serna", "Alfredo Otero Ortega", "Susana María Moreno Palacios", "Ángela Penagos Londoño", "Joseph Berolo Ramos"] },
+      { h: "2:55 – 3:15 p. m.", tipo: "Recital", t: "Recital declamatorio", p: ["Marco Rogelio Rubio López", "Martha Luz De León Naar", "Jim Persal", "José Fernando Cano", "Alejandrino Santos Hurtado"] },
+      { h: "3:20 – 4:00 p. m.", tipo: "Recital", t: "Recital poético", p: ["Maya Chalez", "Gloria Judith López Soto", "José Ignacio Cáceres Serna", "Alfredo Otero Ortega", "Susana María Moreno Palacios", "Ángela Penagos Londoño", "Joseph Berolo Ramos", "Roger Lázaro Ynca", "John Raigoza"] },
       { h: "4:05 – 4:20 p. m.", tipo: "Escena", t: "Intervención artística", p: ["Luz Stella Salazar López"] },
       { h: "4:20 – 4:40 p. m.", tipo: "Lectura", t: "Lectura de estudiantes y profesores", p: [], nota: "Tres estudiantes y dos profesores leen sus cuentos cortos o poemas." },
+      { h: "4:25 – 4:35 p. m.", tipo: "Escena", t: "Presentación especial", p: ["Carlos Manuel Rivera Rosado"] },
       { h: "4:40 – 5:00 p. m.", tipo: "Música", t: "Intervención musical", p: ["Marisol Quiroga"] }
     ]
   },
@@ -163,18 +192,20 @@ const PROGRAMA = [
   {
     dia: 7, esc: "unilibre", jornada: "Mañana", titulo: "Jornada de clausura · Auditorio",
     sesiones: [
-      { h: "8:00 – 8:30 a. m.", tipo: "Libro", t: "Palabras iniciales, presentación del libro «Palabras que convergen» y apertura de la exposición de pinturas contra la guerra (écfrasis)", p: ["Miriam Castillo Mendoza", "Robinson Villalobos Velásquez"], nota: "Incluye la lectura de cinco poemas." },
-      { h: "8:35 – 9:30 a. m.", tipo: "Conversatorio", t: "Conversatorio · Mejora de textos: cómo corregir, pulir y estructurar una obra sin perder la voz del autor", p: ["Joseph Berolo Ramos", "Mónica Patricia Ossa Graín", "Milton Fabián Solano"], mod: "Pablo Emilio Beltrán Bejarano" },
-      { h: "9:35 – 9:50 a. m.", tipo: "Escena", t: "Intervención artística", p: ["Robinson Villalobos Velásquez"] },
+      { h: "8:00 – 8:30 a. m.", tipo: "Libro", t: "Palabras iniciales, presentación del libro «Palabras que convergen» y apertura de la exposición de pinturas contra la guerra (écfrasis)", p: ["Miriam Castillo Mendoza", "Robinson Villalobos Velásquez", "Diomar Leclerc Martínez", "Pablo Emilio Beltrán Bejarano", "Dora Luz Muñoz de Cobo", "Germán Félix Calvo Sarmiento", "Nauro Torres Quintero"], nota: "Incluye la lectura de cinco poemas." },
+      { h: "8:35 – 9:30 a. m.", tipo: "Conversatorio", t: "Conversatorio · Mejora de textos: cómo corregir, pulir y estructurar una obra sin perder la voz del autor", p: ["Joseph Berolo Ramos", "Mónica Patricia Ossa Graín", "Milton Fabián Solano"] },
+      { h: "9:35 – 9:50 a. m.", tipo: "Escena", t: "Intervención artística", p: ["Néstor Mendoza", "Robinson Villalobos Velásquez"] },
+      { h: "9:55 – 10:10 a. m.", tipo: "Música", t: "Intervención musical", p: ["Alexis Ocoró Bonilla"] },
       { h: "9:55 – 10:30 a. m.", tipo: "Conversatorio", t: "Charla · En nuestras regiones los muertos cantan y bailan", p: ["Miriam Castillo Mendoza", "Félix Domingo Cabezas"] },
       { h: "10:35 – 11:15 a. m.", tipo: "Conversatorio", t: "Conversatorio · El punto y la nota, una conversación entre escritores y músicos", p: ["Alfredo «Cheo» Angulo", "Alexis Ocoró Bonilla", "Feliciano Saa Riascos", "Carlos Manuel Rivera Rosado"] },
-      { h: "11:20 a. m. – 12:35 p. m.", tipo: "Acto", t: "Clausura del evento · Entrega de reconocimientos y homenajes", p: [], nota: "Entrega de recordatorio, libro y diploma a los participantes." }
+      { h: "11:20 – 11:30 a. m.", tipo: "Lectura", t: "De Cali para Palabras que convergen · Comentarios y entrega de textos", p: [], nota: "Coordinadores de los talleres en las bibliotecas de la Red Municipal de Cali." },
+      { h: "11:35 a. m. – 1:00 p. m.", tipo: "Acto", t: "Clausura del evento · Entrega de reconocimientos y homenajes", p: [], nota: "Entrega de recordatorio, libro y diploma a los participantes." }
     ]
   }
 ];
 
 /* Anfitriones de cada sede: aparecen en la agenda pero no en la sección de ponentes. */
-const ANFITRIONES = ["Marcela Obando", "Roxi Gómez", "Alicia Gómez", "Melisa Castaño", "Andrés Acosta", "Camuli Zamudio", "Norma Constanza Calderón", "Sandra Patricia Koson"];
+const ANFITRIONES = ["Marcela Obando", "Roxi Gómez", "Alicia Gómez", "Melisa Castaño", "Andrés Acosta", "Jheni Amelia Velazco", "Norma Constanza Calderón", "Eccehomo Hazzi", "Sandra Patricia Koson"];
 
 /* Reseñas. alias = nombre artístico. foto = retrato cuadrado en assets/ponentes/ (opcional).
    pais = país de origen; si no se indica, se asume PAIS_SEDE. */
@@ -184,8 +215,8 @@ const PAISES = ["Colombia", "México", "Panamá", "Perú", "Puerto Rico", "Venez
 // Archivo de bandera de cada país, en assets/banderas/.
 const BANDERAS = { "Colombia": "co", "México": "mx", "Panamá": "pa", "Perú": "pe", "Puerto Rico": "pr", "Venezuela": "ve" };
 const PERFILES = {
-  "Miriam Castillo Mendoza": { foto: "assets/ponentes/miriam-castillo.jpg", bio: "Coordinadora de Palabras que Convergen. Premio Nacional de Literatura, embajadora hispanomundial de paz y medalla Enrique Jatib a la excelencia cultural." },
-  "Robinson Villalobos Velásquez": { foto: "assets/ponentes/robinson-villalobos.jpg", bio: "Novelista, poeta, cuentista y aforista residente en Cali, ganador de reconocimientos nacionales e internacionales." },
+  "Miriam Castillo Mendoza": { foto: "assets/ponentes/miriam-castillo.jpg", bio: "Coordinadora de Palabras que Convergen. Trabajadora social, investigadora, poeta y gestora cultural nacida en Sincelejo y radicada en Chinú, Córdoba; firma como Mara Castell. Premio Nacional de Literatura y embajadora hispanomundial de paz." },
+  "Robinson Villalobos Velásquez": { foto: "assets/ponentes/robinson-villalobos.jpg", bio: "Coordinador de Palabras que Convergen. Escritor y poeta nacido en Medellín y residente en Cali, autor de libros de literatura fantástica y de realismo social." },
   "Roberto Montes Mathieu": { foto: "assets/ponentes/roberto-montes.jpg", bio: "Narrador, cuentista, novelista e historiador literario. Padre de la microficción en Colombia y director del Magazín del Caribe." },
   "Alberto Rodríguez": { foto: "assets/ponentes/alberto-rodriguez.jpg", bio: "Filósofo, educador, investigador y escritor. Director de La Casa de la Lectura de Cali." },
   "Mary Grueso": { foto: "assets/ponentes/mary-grueso.jpg", bio: "Poeta y narradora oral de Guapi, Cauca. Autora de «Negra soy» y primera mujer afrocolombiana en la Academia Colombiana de la Lengua." },
@@ -200,18 +231,20 @@ const PERFILES = {
   "Joseph Berolo Ramos": { pais: "" },
   "Jim Persal": { pais: "" },
   "Maya Chalez": { pais: "", foto: "assets/ponentes/maya-chalez.jpg" },
-  "Tatiana Suárez Vásquez": { foto: "assets/ponentes/tatiana-suarez.jpg" },
+  "Tatiana Suárez Vásquez": { foto: "assets/ponentes/tatiana-suarez.jpg", bio: "Poeta, escritora infantil, gestora cultural y terapeuta espiritual." },
   "Mario Mathor": { pais: "" },
   "Martha Eugenia Uribe Mutis": { foto: "assets/ponentes/martha-eugenia-uribe.jpg" },
-  "Germán Félix Calvo Sarmiento": { foto: "assets/ponentes/german-calvo.jpg" },
+  "Germán Félix Calvo Sarmiento": { foto: "assets/ponentes/german-calvo.jpg", alias: "El Trueno del Capitolio", bio: "Poeta y maestro declamador nacido en Ibagué. Fundador y director del Centro Cultural El Capitolio de Cali." },
   "Sandra Patricia «La Voz»": { foto: "assets/ponentes/sandra-patricia.jpg" },
   "Gloria Amparo Murillo": { foto: "assets/ponentes/gloria-amparo-murillo.jpg" },
-  "Alfredo Otero Ortega": { foto: "assets/ponentes/alfredo-otero.jpg" },
+  "Alfredo Otero Ortega": { foto: "assets/ponentes/alfredo-otero.jpg", bio: "Escritor, humanista y gestor cultural, ganador de premios nacionales e internacionales. Investigador reconocido por Minciencias." },
   "Daniel Rivera Meza": { foto: "assets/ponentes/daniel-rivera-meza.jpg" },
   "Diomar Leclerc Martínez": { foto: "assets/ponentes/diomar-leclerc.jpg" },
   "Adalgiza Charria Quintero": { foto: "assets/ponentes/adalgiza-charria.jpg" },
   "Pablo Emilio Beltrán Bejarano": { foto: "assets/ponentes/pablo-emilio-beltran.jpg" },
   "Roger Lázaro Ynca": { foto: "assets/ponentes/roger-lazaro-ynca.jpg", pais: "Perú", bio: "Poeta y narrador de Trujillo, Perú. Primer premio OROLA 2016 (Madrid) y del Certamen de Poesía Enrique Pleguezuelo 2021 (Córdoba, España)." },
+  "Néstor Mendoza": { pais: "Venezuela", foto: "assets/ponentes/nestor-mendoza.jpg", bio: "Poeta, ensayista, editor y gestor cultural venezolano. Uno de sus libros de poemas está traducido al alemán, al inglés y al francés." },
+  "Gloria Inés Sánchez Duque": { bio: "Escritora, poeta y artista plástica de Buga." },
   "Dora Luz Muñoz de Cobo": { foto: "assets/ponentes/dora-luz-munoz.jpg" },
   "Ángela Penagos Londoño": { foto: "assets/ponentes/angela-penagos.jpg" },
   "Alexis Ocoró Bonilla": { foto: "assets/ponentes/alexis-ocoro.jpg", alias: "Alexis Orilla", bio: "Poeta, cantautor, escritor, declamador y agrónomo del Pacífico colombiano." },
@@ -235,7 +268,7 @@ const PERFILES = {
   "Claudia Andrea Torres": { foto: "assets/ponentes/claudia-torres.jpg", bio: "Narradora oral, cuentera y pedagoga infantil. Fundación Cultural Viva Palabra." },
   "María Fabiola Serna González": { foto: "assets/ponentes/fabiola-serna.jpg", bio: "Cuentera, poeta y gestora cultural. Ganadora del festival Entre Cuentos y Flores." },
   "Constanza Eugenia Muñoz Flórez": { alias: "Luna de Nácar", bio: "Educadora, escritora y poeta caleña de Poetas de la Calle, residente en Medellín." },
-  "Margarita Rosa Patiño": { bio: "Poeta, escritora y ensayista. Participante del Encuentro de Mujeres Poetas Colombianas del Museo Rayo." },
+  "Margarita Rosa Patiño Arbeláez": { bio: "Poeta, escritora y ensayista. Participante del Encuentro de Mujeres Poetas Colombianas del Museo Rayo." },
   "María Teresa Casas Figueroa": { bio: "Poeta y escritora caleña con trayectoria en recitales, talleres y festivales culturales." },
   "Tito Nelio Cuero Murillo": { bio: "Poeta y gestor cultural del Valle del Cauca. Integrante de Poetas de la Calle." },
   "Henry Patiño Montoya": { bio: "Escritor, poeta y narrador de Armenia. Autor de «Antología solitaria»." },
@@ -267,7 +300,7 @@ const PERFILES = {
 /* Quienes organizan el festival: aparecen en su propia sección, antes de la inscripción. */
 const ORGANIZADORES = [
   { nombre: "Miriam Castillo Mendoza", rol: "Coordinadora del festival" },
-  { nombre: "Robinson Villalobos Velásquez", rol: "Organizador" }
+  { nombre: "Robinson Villalobos Velásquez", rol: "Coordinador del festival" }
 ];
 
 /* Carrusel de voces destacadas, en este orden. rol = etiqueta sobre el nombre. */
@@ -290,4 +323,4 @@ const DESTACADOS = [
   { nombre: "Geraudi Gonzáles Olivares", rol: "Invitada internacional" }
 ];
 
-const COLECTIVOS =["Poetas de la Calle", "Crisálidas Poéticas de Cartago", "Colectivo Caribe", "Universo de Palabras", "Colectivo Escritoras del Chocó", "Asociación Casa de Piedra", "Alfabeto del Mundo", "Remart", "Abe'scritos", "Gremio Poético Colombiano", "Fuespacol", "Verbum", "Fundación Cultural Viva Palabra", "Red Étnica de Escritores del Chocó", "Libertad Poética Femenina", "Grupo Plenilunio"];
+const COLECTIVOS =["Poetas de la Calle", "Crisálidas Poéticas de Cartago", "Colectivo Caribe", "Universo de Palabras", "Colectivo Escritoras del Chocó", "Asociación Casa de Piedra", "Alfabeto del Mundo", "Remart", "Abe'scritos", "Gremio Poético Colombiano", "Fuespacol", "Verbum", "Fundación Cultural Viva Palabra", "Red Étnica de Escritores del Chocó", "Libertad Poética Femenina", "Grupo Plenilunio", "Lenguaje de Esperanzas"];
