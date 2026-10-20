@@ -49,7 +49,7 @@
   /* ---------- Ponentes (se derivan del programa) ---------- */
   const mapa = new Map();
   PROGRAMA.forEach((b) => b.sesiones.forEach((s) => {
-    s.p.concat(s.mod ? [s.mod] : []).forEach((n) => {
+    s.p.concat(s.mod || []).forEach((n) => {
       if (ANFITRIONES.includes(n)) return;
       if (!mapa.has(n)) mapa.set(n, { nombre: n, n: 0, pais: PAIS_SEDE, ...(PERFILES[n] || {}) });
       mapa.get(n).n++;
@@ -216,7 +216,7 @@
       if (estado.esc && b.esc !== estado.esc) return;
       if (estado.jor && b.jornada !== estado.jor) return;
       const e = ESCENARIOS[b.esc];
-      const sesiones = b.sesiones.filter((s) => !q || norm([s.t, s.tipo, s.mod || "", s.nota || "", e.nombre].concat(s.p).join(" ")).includes(q));
+      const sesiones = b.sesiones.filter((s) => !q || norm([s.t, s.tipo, s.nota || "", e.nombre].concat(s.p, s.mod || []).join(" ")).includes(q));
       if (!sesiones.length) return;
       nSes += sesiones.length; nBloques++;
 
@@ -246,7 +246,7 @@
               <div>
                 <h4>${resaltar(s.t, q)}</h4>
                 ${s.p.length ? `<p>${s.p.map((n) => resaltar(n, q)).join(", ")}</p>` : ""}
-                ${s.mod ? `<p class="ses__mod">Modera: ${resaltar(s.mod, q)}</p>` : ""}
+                ${s.mod ? `<p class="ses__mod">${Array.isArray(s.mod) ? "Moderan" : "Modera"}: ${[].concat(s.mod).map((n) => resaltar(n, q)).join(" y ")}</p>` : ""}
                 ${s.nota ? `<p class="ses__mod">${esc(s.nota)}</p>` : ""}
               </div>
             </li>`).join("")}
@@ -305,10 +305,11 @@
   $("#st-esc").textContent = Object.keys(ESCENARIOS).length;
   $("#st-act").textContent = PROGRAMA.reduce((n, b) => n + b.sesiones.length, 0);
   $("#st-voc").textContent = ponentes.length;
-  // Sedes: dos grupos plegables y un buscador por nombre, dirección o barrio.
+  // Sedes: tres grupos plegables y un buscador por nombre, dirección o barrio.
   const GRUPOS_SEDES = [
     { titulo: "Bibliotecas", items: GRUPOS_ESC[0].items },
-    { titulo: "Teatro, universidad y colegio", items: GRUPOS_ESC.slice(1).flatMap((g) => g.items) }
+    { titulo: "Librerías y centros culturales", items: GRUPOS_ESC[1].items },
+    { titulo: "Teatro, universidad y colegio", items: GRUPOS_ESC.slice(2).flatMap((g) => g.items) }
   ];
   function pintarSedes() {
     const q = norm($("#buscar-sede").value.trim());
