@@ -137,8 +137,8 @@ const PROGRAMA = [
     dia: 6, esc: "sena", jornada: "Mañana",
     sesiones: [
       { h: "8:00 – 8:10 a. m.", tipo: "Acto", t: "Palabras iniciales", p: ["Yarleidy Solar Uribe", "Norma Constanza Calderón"] },
-      { h: "8:15 – 9:15 a. m.", tipo: "Recital", t: "Recital y lectura de relatos por la esperanza", p: ["Geraudi Gonzáles Olivares", "Lina María Pérez", "Gloria Elena Gutiérrez", "Yarleidy Solar Uribe", "Amelia Restrepo Hincapié"], nota: "Doce minutos por voz." },
-      { h: "9:20 – 11:20 a. m.", tipo: "Taller", t: "Taller de escritura · Mi infancia, un motivo para escribir", p: ["Yarleidy Solar Uribe", "Lina María Pérez", "Gloria Elena Gutiérrez", "Geraudi Gonzáles Olivares", "Amelia Restrepo Hincapié"] }
+      { h: "8:15 – 9:15 a. m.", tipo: "Recital", t: "Recital y lectura de relatos por la esperanza", p: ["Geraudí González Olivares", "Lina María Pérez", "Gloria Elena Gutiérrez", "Yarleidy Solar Uribe", "Amelia Restrepo Hincapié"], nota: "Doce minutos por voz." },
+      { h: "9:20 – 11:20 a. m.", tipo: "Taller", t: "Taller de escritura · Mi infancia, un motivo para escribir", p: ["Yarleidy Solar Uribe", "Lina María Pérez", "Gloria Elena Gutiérrez", "Geraudí González Olivares", "Amelia Restrepo Hincapié"] }
     ]
   },
   {
@@ -184,7 +184,7 @@ const PROGRAMA = [
       { h: "8:50 – 9:30 a. m.", tipo: "Libro", t: "Presentación del libro «Entre versos y mares»", p: ["Mónica Patricia Ossa Graín"] },
       { h: "9:35 – 10:10 a. m.", tipo: "Libro", t: "Presentación del libro «Hasta los huesos: el eco de mis adentros»", p: ["Alexis Ocoró Bonilla"] },
       { h: "10:15 – 10:50 a. m.", tipo: "Recital", t: "Recital", p: ["Jim Persal"] },
-      { h: "10:55 – 11:30 a. m.", tipo: "Lectura", t: "Lectura de cuentos del libro «Expiatorio»", p: ["Geraudi Gonzáles Olivares"] },
+      { h: "10:55 – 11:30 a. m.", tipo: "Lectura", t: "Lectura de cuentos del libro «Expiatorio»", p: ["Geraudí González Olivares"] },
       { h: "11:35 a. m. – 12:10 p. m.", tipo: "Recital", t: "Recital", p: ["Mario Mathor"] },
       { h: "12:10 – 12:45 p. m.", tipo: "Recital", t: "Recital", p: ["Néstor Mendoza"] }
     ]
@@ -319,7 +319,7 @@ const PERFILES = {
   "Mónica Patricia Ossa Graín": { bio: "Poeta, editora y directora de la Fundación Grainar." },
   "Milton Fabián Solano": { bio: "Poeta, psicólogo y docente. Creador y director del Grupo Plenilunio." },
   "María Ximena Hoyos Mazuera": { foto: "assets/ponentes/ximena-hoyos.jpg", bio: "Académica, escritora y docente vinculada a la Universidad del Valle. Investiga los tejidos y la tradición oral de comunidades amerindias." },
-  "Geraudi Gonzáles Olivares": { pais: "Venezuela", foto: "assets/ponentes/geraudi-gonzales.jpg", bio: "Escritora, editora, gestora cultural y docente venezolana residente en Colombia. Coeditora de El Taller Blanco Ediciones." },
+  "Geraudí González Olivares": { pais: "Venezuela", foto: "assets/ponentes/geraudi-gonzales.jpg", bio: "Escritora, editora, gestora cultural y docente venezolana residente en Colombia. Coeditora de El Taller Blanco Ediciones." },
   "Yarleidy Solar Uribe": { foto: "assets/ponentes/yarleidy-solar.jpg", bio: "Escritora y gestora cultural de Tierralta, Córdoba. Dirige el taller literario Genuina." },
   "Istina Valoyes Waldo": { foto: "assets/ponentes/istina-valoyes.jpg", bio: "Poeta, terapeuta del lenguaje y declamadora vinculada a la cultura del Chocó." },
   "Yendier Mosquera Lemus": { foto: "assets/ponentes/yendier-mosquera.jpg", bio: "Escritor, poeta y profesional de la salud. Autor de «Así vivimos: poesías, cartas y consejos de mi región»." },
@@ -393,7 +393,7 @@ const DESTACADOS = [
   { nombre: "María Ximena Hoyos Mazuera", rol: "Universidad del Valle" },
   { nombre: "María Adiela Londoño de Copete", rol: "Unión Hispanomundial de Escritores" },
   { nombre: "Susana María Moreno Palacios", rol: "Red Étnica de Escritores del Chocó" },
-  { nombre: "Geraudi Gonzáles Olivares", rol: "Invitada internacional" }
+  { nombre: "Geraudí González Olivares", rol: "Invitada internacional" }
 ];
 
 const COLECTIVOS =["Poetas de la Calle", "Crisálidas Poéticas de Cartago", "Colectivo Caribe", "Universo de Palabras", "Colectivo Escritoras del Chocó", "Asociación Casa de Piedra", "Alfabeto del Mundo", "Remart", "Abe'scritos", "Gremio Poético Colombiano", "Fuespacol", "Verbum", "Fundación Cultural Viva Palabra", "Red Étnica de Escritores del Chocó", "Libertad Poética Femenina", "Grupo Plenilunio", "Lenguaje de Esperanzas", "Cafeletreando"];
