@@ -29,7 +29,6 @@ const ESCENARIOS = {
   sena:         { nombre: "Biblioteca Municipal SENA", dir: "Carrera 3 con Calle 47, Esmeralda" },
   rigoberta:    { nombre: "Biblioteca Municipal Rigoberta Menchú", dir: "Carrera 32A #49-50, barrio Laureano Gómez / El Retiro, Comuna 15" },
   campina:      { nombre: "Biblioteca La Campiña", dir: "" },
-  jamundi:      { nombre: "Biblioteca Samir Nasry Daccach (Jamundí)", dir: "Carrera 12 #3-77, Jamundí" },
   apapachos:    { nombre: "Apapachos", dir: "Calle 2 #10-21, barrio San Antonio, Comuna 3" },
   oromo:        { nombre: "Oromo Café Librería", dir: "Calle 17 #85-27, Comuna 17" },
   libertienda:  { nombre: "Libertienda Café Libro", dir: "Carrera 16 #2A-47" },
@@ -39,7 +38,7 @@ const ESCENARIOS = {
 
 /* Grupos de sedes (filtro de la agenda y lista de sedes). uno = etiqueta en singular. */
 const GRUPOS_ESC = [
-  { titulo: "Bibliotecas", uno: "Biblioteca", items: ["eldorado", "deporte", "eljardin", "sanluis", "lamaria", "vistahermosa", "acacias", "sena", "rigoberta", "campina", "jamundi"] },
+  { titulo: "Bibliotecas", uno: "Biblioteca", items: ["eldorado", "deporte", "eljardin", "sanluis", "lamaria", "vistahermosa", "acacias", "sena", "rigoberta", "campina"] },
   { titulo: "Librerías y centros culturales", uno: "Librería", items: ["apapachos", "oromo", "libertienda", "alejandria"] },
   { titulo: "Universidades", uno: "Universidad", items: ["unilibre"] },
   { titulo: "Teatros", uno: "Teatro", items: ["presagio"] },
@@ -137,8 +136,8 @@ const PROGRAMA = [
     dia: 6, esc: "sena", jornada: "Mañana",
     sesiones: [
       { h: "8:00 – 8:10 a. m.", tipo: "Acto", t: "Palabras iniciales", p: ["Yarleidy Solar Uribe", "Norma Constanza Calderón"] },
-      { h: "8:15 – 9:15 a. m.", tipo: "Recital", t: "Recital y lectura de relatos por la esperanza", p: ["Geraudí González Olivares", "Lina María Pérez", "Gloria Elena Gutiérrez", "Yarleidy Solar Uribe", "Amelia Restrepo Hincapié"], nota: "Doce minutos por voz." },
-      { h: "9:20 – 11:20 a. m.", tipo: "Taller", t: "Taller de escritura · Mi infancia, un motivo para escribir", p: ["Yarleidy Solar Uribe", "Lina María Pérez", "Gloria Elena Gutiérrez", "Geraudí González Olivares", "Amelia Restrepo Hincapié"] }
+      { h: "8:15 – 9:15 a. m.", tipo: "Recital", t: "Recital y lectura de relatos por la esperanza", p: ["Lina María Pérez", "Gloria Elena Gutiérrez", "Yarleidy Solar Uribe", "Amelia Restrepo Hincapié"], nota: "Doce minutos por voz." },
+      { h: "9:20 – 11:20 a. m.", tipo: "Taller", t: "Taller de escritura · Mi infancia, un motivo para escribir", p: ["Yarleidy Solar Uribe", "Lina María Pérez", "Gloria Elena Gutiérrez", "Amelia Restrepo Hincapié"] }
     ]
   },
   {
@@ -174,27 +173,6 @@ const PROGRAMA = [
       { h: "9:10 – 10:15 a. m.", tipo: "Recital", t: "Recital poético de la esperanza", p: ["Edinson Tello Bedón", "Constanza Eugenia Muñoz Flórez", "Margarita Rosa Patiño Arbeláez", "María Teresa Casas Figueroa", "Tito Nelio Cuero Murillo", "Henry Patiño Montoya"] },
       { h: "10:20 – 11:00 a. m.", tipo: "Recital", t: "Recital declamatorio", p: ["Aníbal Gilberto Pantoja Ríos", "Marino Díaz Antía"] },
       { h: "11:05 a. m. – 12:00 m.", tipo: "Taller", t: "Taller · Escribamos a la esperanza", p: ["Margarita Rosa Patiño Arbeláez", "Edinson Tello Bedón", "Marino Díaz Antía", "Aníbal Gilberto Pantoja Ríos", "Henry Patiño Montoya", "María Teresa Casas Figueroa"], nota: "Incluye cincuenta minutos de producción escrita." }
-    ]
-  },
-  {
-    dia: 6, esc: "jamundi", jornada: "Mañana",
-    sesiones: [
-      { h: "8:00 – 8:10 a. m.", tipo: "Acto", t: "Palabras iniciales", p: ["Alexis Ocoró Bonilla", "José Rubio Castro"] },
-      { h: "8:10 – 8:45 a. m.", tipo: "Libro", t: "Presentación del libro «Mapas tejidos» (antología de memorias y crónicas, 2026)", p: ["María Ximena Hoyos Mazuera"], nota: "Con el grupo Crisálidas Poéticas de Cartago." },
-      { h: "8:50 – 9:30 a. m.", tipo: "Libro", t: "Presentación del libro «Entre versos y mares»", p: ["Mónica Patricia Ossa Graín"] },
-      { h: "9:35 – 10:10 a. m.", tipo: "Libro", t: "Presentación del libro «Hasta los huesos: el eco de mis adentros»", p: ["Alexis Ocoró Bonilla"] },
-      { h: "10:15 – 10:50 a. m.", tipo: "Recital", t: "Recital", p: ["Jim Persal"] },
-      { h: "10:55 – 11:30 a. m.", tipo: "Lectura", t: "Lectura de cuentos del libro «Expiatorio»", p: ["Geraudí González Olivares"] },
-      { h: "11:35 a. m. – 12:10 p. m.", tipo: "Recital", t: "Recital", p: ["Mario Mathor"] },
-      { h: "12:10 – 12:45 p. m.", tipo: "Recital", t: "Recital", p: ["Néstor Mendoza"] }
-    ]
-  },
-  {
-    dia: 6, esc: "jamundi", jornada: "Tarde",
-    sesiones: [
-      { h: "2:00 – 2:30 p. m.", tipo: "Recital", t: "Recital", p: ["Marino Díaz Antía"] },
-      { h: "2:35 – 3:05 p. m.", tipo: "Recital", t: "Recital", p: ["Félix Domingo Cabezas"] },
-      { h: "3:10 – 3:40 p. m.", tipo: "Recital", t: "Recital", p: ["Margarita Peñalosa Flórez"] }
     ]
   },
   {
@@ -254,7 +232,7 @@ const PROGRAMA = [
     sesiones: [
       { h: "8:00 – 8:30 a. m.", tipo: "Libro", t: "Palabras iniciales, presentación del libro «Palabras que convergen» (recital) y apertura de la exposición de pinturas contra la guerra (écfrasis)", p: ["Miriam Castillo Mendoza", "Robinson Villalobos Velásquez", "Diomar Leclerc Martínez", "Martha Eugenia Uribe Mutis", "Pablo Emilio Beltrán Bejarano", "Germán Félix Calvo Sarmiento", "Sandy Gaviota", "Gloria Inés Sánchez Duque", "Marino Díaz Antía", "María Antonia Ledesma"] },
       { h: "8:35 – 9:20 a. m.", tipo: "Conversatorio", t: "Conversatorio · Mejora de textos: cómo corregir, pulir y estructurar una obra sin perder la voz del autor", p: ["Joseph Berolo Ramos", "Mónica Patricia Ossa Graín", "Milton Fabián Solano"] },
-      { h: "9:25 – 9:40 a. m.", tipo: "Escena", t: "Intervención artística", p: ["Néstor Mendoza", "Robinson Villalobos Velásquez", "Digna Damaris Escobar Torres", "Xiomara Martínez Deluque"] },
+      { h: "9:25 – 9:40 a. m.", tipo: "Escena", t: "Intervención artística", p: ["Robinson Villalobos Velásquez", "Digna Damaris Escobar Torres", "Xiomara Martínez Deluque"] },
       { h: "9:45 – 9:55 a. m.", tipo: "Recital", t: "Intervención declamatoria", p: ["Diego Jaramillo"] },
       { h: "10:00 – 10:10 a. m.", tipo: "Escena", t: "Salsa caleña · Muestra de baile", p: [], nota: "Grupo artístico de la Junta de Acción Comunal." },
       { h: "10:15 – 10:30 a. m.", tipo: "Recital", t: "Recital · Un poema de hasta pronto a Palabras que convergen", p: ["Constanza Eugenia Muñoz Flórez", "Jhelga Lorena Pineda", "Jim Persal", "Judith Cartagena", "Istina Valoyes Waldo", "Roger Lázaro Ynca", "María Adiela Londoño de Copete"], nota: "Un poema por voz." },
@@ -267,15 +245,15 @@ const PROGRAMA = [
 ];
 
 /* Anfitriones de cada sede: aparecen en la agenda pero no en la sección de ponentes. */
-const ANFITRIONES = ["Marcela Obando", "Roxi Gómez", "Alicia Gómez", "Melisa Castaño", "Andrés Acosta", "Jheni Amelia Velazco", "Norma Constanza Calderón", "Eccehomo Hazzi", "Sandra Patricia Koson", "Claudia", "Diego", "José Rubio Castro"];
+const ANFITRIONES = ["Marcela Obando", "Roxi Gómez", "Alicia Gómez", "Melisa Castaño", "Andrés Acosta", "Jheni Amelia Velazco", "Norma Constanza Calderón", "Eccehomo Hazzi", "Sandra Patricia Koson", "Claudia", "Diego"];
 
 /* Reseñas. alias = nombre artístico. foto = retrato cuadrado en assets/ponentes/ (opcional).
    pais = país de origen; si no se indica, se asume PAIS_SEDE. */
 const PAIS_SEDE = "Colombia";
 // Países presentes en el festival (cifra del inicio y texto de la sección de ponentes).
-const PAISES = ["Colombia", "México", "Panamá", "Perú", "Puerto Rico", "Venezuela"];
+const PAISES = ["Colombia", "México", "Panamá", "Perú", "Puerto Rico"];
 // Archivo de bandera de cada país, en assets/banderas/.
-const BANDERAS = { "Colombia": "co", "México": "mx", "Panamá": "pa", "Perú": "pe", "Puerto Rico": "pr", "Venezuela": "ve" };
+const BANDERAS = { "Colombia": "co", "México": "mx", "Panamá": "pa", "Perú": "pe", "Puerto Rico": "pr" };
 const PERFILES = {
   "Miriam Castillo Mendoza": { foto: "assets/ponentes/miriam-castillo.jpg", bio: "Coordinadora de Palabras que Convergen. Trabajadora social, investigadora, poeta y gestora cultural nacida en Sincelejo y radicada en Chinú, Córdoba; firma como Mara Castell. Premio Nacional de Literatura y embajadora hispanomundial de paz." },
   "Robinson Villalobos Velásquez": { foto: "assets/ponentes/robinson-villalobos.jpg", bio: "Coordinador de Palabras que Convergen. Escritor y poeta nacido en Medellín y residente en Cali, autor de libros de literatura fantástica y de realismo social." },
@@ -305,7 +283,6 @@ const PERFILES = {
   "Adalgiza Charria Quintero": { foto: "assets/ponentes/adalgiza-charria.jpg" },
   "Pablo Emilio Beltrán Bejarano": { foto: "assets/ponentes/pablo-emilio-beltran.jpg", bio: "Comunicador social, periodista, escritor y locutor de Facatativá, Cundinamarca. Subdirector de Cafeletreando." },
   "Roger Lázaro Ynca": { foto: "assets/ponentes/roger-lazaro-ynca.jpg", pais: "Perú", bio: "Poeta y narrador de Trujillo, Perú. Primer premio OROLA 2016 (Madrid) y del Certamen de Poesía Enrique Pleguezuelo 2021 (Córdoba, España)." },
-  "Néstor Mendoza": { pais: "Venezuela", foto: "assets/ponentes/nestor-mendoza.jpg", bio: "Poeta, ensayista, editor y gestor cultural venezolano. Uno de sus libros de poemas está traducido al alemán, al inglés y al francés." },
   "Gloria Inés Sánchez Duque": { bio: "Escritora, poeta y artista plástica de Buga." },
   "Dora Luz Muñoz de Cobo": { foto: "assets/ponentes/dora-luz-munoz.jpg" },
   "Ángela Penagos Londoño": { foto: "assets/ponentes/angela-penagos.jpg", bio: "Poeta, contadora de historias y gestora cultural. Fundadora y presidenta de la Red de Mujeres Artistas de Medellín (Remart)." },
@@ -319,7 +296,6 @@ const PERFILES = {
   "Mónica Patricia Ossa Graín": { bio: "Poeta, editora y directora de la Fundación Grainar." },
   "Milton Fabián Solano": { bio: "Poeta, psicólogo y docente. Creador y director del Grupo Plenilunio." },
   "María Ximena Hoyos Mazuera": { foto: "assets/ponentes/ximena-hoyos.jpg", bio: "Académica, escritora y docente vinculada a la Universidad del Valle. Investiga los tejidos y la tradición oral de comunidades amerindias." },
-  "Geraudí González Olivares": { pais: "Venezuela", foto: "assets/ponentes/geraudi-gonzales.jpg", bio: "Escritora, editora, gestora cultural y docente venezolana residente en Colombia. Coeditora de El Taller Blanco Ediciones." },
   "Yarleidy Solar Uribe": { foto: "assets/ponentes/yarleidy-solar.jpg", bio: "Escritora y gestora cultural de Tierralta, Córdoba. Dirige el taller literario Genuina." },
   "Istina Valoyes Waldo": { foto: "assets/ponentes/istina-valoyes.jpg", bio: "Poeta, terapeuta del lenguaje y declamadora vinculada a la cultura del Chocó." },
   "Yendier Mosquera Lemus": { foto: "assets/ponentes/yendier-mosquera.jpg", bio: "Escritor, poeta y profesional de la salud. Autor de «Así vivimos: poesías, cartas y consejos de mi región»." },
@@ -392,8 +368,7 @@ const DESTACADOS = [
   { nombre: "Ángela Penagos Londoño", rol: "Poeta" },
   { nombre: "María Ximena Hoyos Mazuera", rol: "Universidad del Valle" },
   { nombre: "María Adiela Londoño de Copete", rol: "Unión Hispanomundial de Escritores" },
-  { nombre: "Susana María Moreno Palacios", rol: "Red Étnica de Escritores del Chocó" },
-  { nombre: "Geraudí González Olivares", rol: "Invitada internacional" }
+  { nombre: "Susana María Moreno Palacios", rol: "Red Étnica de Escritores del Chocó" }
 ];
 
 const COLECTIVOS =["Poetas de la Calle", "Crisálidas Poéticas de Cartago", "Colectivo Caribe", "Universo de Palabras", "Colectivo Escritoras del Chocó", "Asociación Casa de Piedra", "Alfabeto del Mundo", "Remart", "Abe'scritos", "Gremio Poético Colombiano", "Fuespacol", "Verbum", "Fundación Cultural Viva Palabra", "Red Étnica de Escritores del Chocó", "Libertad Poética Femenina", "Grupo Plenilunio", "Lenguaje de Esperanzas", "Cafeletreando"];
