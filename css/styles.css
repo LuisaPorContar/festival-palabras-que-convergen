@@ -537,7 +537,7 @@ mark { background: #ffe9a8; color: inherit; border-radius: 3px; padding: 0 2px; 
 }
 
 /* ---------- Celular: menos cajas, lectura más liviana ---------- */
-.why__ico, .day__caras, .blk__hora { display: none; }
+.why__ico, .day__caras, .blk__hora, .opt__corto { display: none; }
 .mia-movil:empty { display: none; }
 @media (max-width: 760px) {
   .sec { padding: 56px 0; }
@@ -601,6 +601,16 @@ mark { background: #ffe9a8; color: inherit; border-radius: 3px; padding: 0 2px; 
   .person__bio, .person__bio.bio--larga { display: block; margin-left: 74px; overflow: visible; font-size: .88rem; line-height: 1.45; }
   .person > .link { margin-left: 74px; }
 
+  /* Agenda: en celular, solo el día y un buscador */
+  #agenda .sec__sub, .fq--extra, .fq--dia legend, .fq--buscar label { display: none; }
+  .opts.opts--dia { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; margin: 0; padding: 4px; overflow: visible; border-radius: 999px; background: var(--paper); border: 1px solid var(--line); }
+  .opts--dia .opt { justify-content: center; align-items: center; padding: 10px 4px; border: 0; background: none; }
+  .opts--dia .opt b, .opts--dia .opt span { display: none; }
+  .opts--dia .opt__corto { display: inline; font-style: normal; font-weight: 700; font-size: .95rem; color: var(--navy); white-space: nowrap; }
+  .opts--dia .opt[aria-pressed="true"] { background: var(--navy); }
+  .opts--dia .opt[aria-pressed="true"] .opt__corto { color: #fff; }
+  .fq--buscar input { padding-left: 46px; border-radius: 999px; background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23586381' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M20 20l-4-4'/%3E%3C/svg%3E") no-repeat 16px center / 20px; }
+
   /* Agenda: filtros como botones pequeños que se deslizan */
   .filters { gap: 16px; padding: 0; border: 0; background: none; }
   .fq legend, .fq label { margin-bottom: 8px; font-size: .95rem; }
@@ -611,6 +621,7 @@ mark { background: #ffe9a8; color: inherit; border-radius: 3px; padding: 0 2px; 
   .opt span { display: none; }
   .fq select, .fq input { min-height: 48px; font-size: 1rem; border-width: 1.5px; }
   .results { margin: 18px 0 6px; font-size: .95rem; }
+  .results .btn-clear { padding: 6px 14px; font-size: .86rem; border-width: 1.5px; }
 
   /* Agenda: la hora a la izquierda, como un horario */
   .dayhead { position: sticky; top: var(--header-h); z-index: 5; margin: 24px -16px 0; padding: 10px 16px 8px; font-size: 1.35rem; background: rgba(255, 255, 255, .97); border-bottom: 3px solid var(--sun); }

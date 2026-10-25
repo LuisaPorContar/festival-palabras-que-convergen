@@ -271,11 +271,12 @@
 
   function pintarFiltros() {
     ajustarFiltros();
-    const op = (attr, valor, activo, titulo, sub, n) =>
-      `<button type="button" class="opt" ${attr}="${valor}" aria-pressed="${activo}"${n ? "" : " disabled"}><b>${titulo}</b><span>${n ? sub : "No hay actividades"}</span></button>`;
+    // corto = etiqueta breve que se usa en celular («Jue 5»).
+    const op = (attr, valor, activo, titulo, sub, n, corto) =>
+      `<button type="button" class="opt" ${attr}="${valor}" aria-pressed="${activo}"${n ? "" : " disabled"}><b>${titulo}</b><span>${n ? sub : "No hay actividades"}</span>${corto ? `<i class="opt__corto">${corto}</i>` : ""}</button>`;
 
-    $("#tabs-dia").innerHTML = op("data-dia", 0, estado.dia === 0, "Todos los días", "5, 6 y 7 de noviembre", 1) +
-      Object.keys(DIAS).map((d) => op("data-dia", d, estado.dia === Number(d), DIAS[d].largo.split(" ")[0], d + " de noviembre", 1)).join("");
+    $("#tabs-dia").innerHTML = op("data-dia", 0, estado.dia === 0, "Todos los días", "5, 6 y 7 de noviembre", 1, "Todos") +
+      Object.keys(DIAS).map((d) => op("data-dia", d, estado.dia === Number(d), DIAS[d].largo.split(" ")[0], d + " de noviembre", 1, DIAS[d].corto)).join("");
 
     $("#tabs-jor").innerHTML = [["", "Todo el día", "Mañana y tarde"], ["Mañana", "Mañana", "Antes del mediodía"], ["Tarde", "Tarde", "Después de las 2:00"]]
       .map(([j, t, sub]) => op("data-jor", j, estado.jor === j, t, sub, nAct(estado.dia, "", j))).join("");
@@ -501,6 +502,10 @@
   };
   enCelular.addEventListener("change", ubicarBuscador);
   ubicarBuscador();
+  // En celular la agenda se filtra solo por día y con un buscador.
+  const ponerAyuda = () => { $("#buscar-agenda").placeholder = enCelular.matches ? "Busca un nombre, sede o actividad" : "Escribe un nombre, por ejemplo: Mary Grueso"; };
+  enCelular.addEventListener("change", ponerAyuda);
+  ponerAyuda();
 
   pintarPaises();
   // Enlace personal: ?nombre=Carlos%20Rivera abre la página con su agenda ya buscada.
