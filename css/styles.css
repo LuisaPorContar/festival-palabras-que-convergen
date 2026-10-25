@@ -598,8 +598,8 @@ mark { background: #ffe9a8; color: inherit; border-radius: 3px; padding: 0 2px; 
   .people { gap: 0; }
   .person { gap: 4px; padding: 12px 0; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; background: none; }
   .avatar, .avatar--foto { width: 60px; height: 60px; }
-  .person__bio, .person__bio.bio--larga { display: none; }
-  .person .link { margin-left: 74px; }
+  .person__bio, .person__bio.bio--larga { display: block; margin-left: 74px; overflow: visible; font-size: .88rem; line-height: 1.45; }
+  .person > .link { margin-left: 74px; }
 
   /* Agenda: filtros como botones pequeños que se deslizan */
   .filters { gap: 16px; padding: 0; border: 0; background: none; }

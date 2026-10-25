@@ -5,17 +5,22 @@
   const $ = (sel) => document.querySelector(sel);
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   // Reseñas largas: se ve el comienzo y un botón «Leer más», para no descuadrar las tarjetas.
+  // En la lista de ponentes en celular el comienzo es más corto todavía.
   function bioHtml(bio, cls) {
-    if (bio.length <= 220) return `<p class="${cls}">${esc(bio)}</p>`;
-    const punto = bio.lastIndexOf(". ", 200);
-    const i = punto > 40 ? punto + 1 : bio.lastIndexOf(" ", 180);
-    return `<p class="${cls} bio--larga">${esc(bio.slice(0, i))}<span class="bio__resto" hidden>${esc(bio.slice(i))}</span> <button type="button" class="link bio__mas" aria-expanded="false">Leer más</button></p>`;
+    const corta = cls === "person__bio" && matchMedia("(max-width: 760px)").matches;
+    const max = corta ? 90 : 220;
+    if (bio.length <= max) return `<p class="${cls}">${esc(bio)}</p>`;
+    const punto = bio.lastIndexOf(". ", max - 20);
+    const enFrase = punto > 40;
+    const i = enFrase ? punto + 1 : bio.lastIndexOf(" ", max - 10);
+    return `<p class="${cls} bio--larga">${esc(bio.slice(0, i))}${enFrase ? "" : `<span class="bio__pts">…</span>`}<span class="bio__resto" hidden>${esc(bio.slice(i))}</span> <button type="button" class="link bio__mas" aria-expanded="false">Leer más</button></p>`;
   }
   document.addEventListener("click", (e) => {
     const b = e.target.closest(".bio__mas");
     if (!b) return;
-    const resto = b.previousElementSibling, abrir = resto.hidden;
+    const resto = b.previousElementSibling, abrir = resto.hidden, pts = resto.previousElementSibling;
     resto.hidden = !abrir;
+    if (pts && pts.matches(".bio__pts")) pts.hidden = abrir;
     b.setAttribute("aria-expanded", abrir);
     b.textContent = abrir ? "Leer menos" : "Leer más";
   });
