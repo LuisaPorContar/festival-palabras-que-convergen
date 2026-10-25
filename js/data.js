@@ -248,8 +248,12 @@ const PROGRAMA = [
   {
     dia: 6, esc: "alejandria", jornada: "Tarde",
     sesiones: [
-      { h: "4:00 – 7:00 p. m.", tipo: "Recital", t: "Recital", p: ["Mateo Rose", "Digna Damaris Escobar Torres", "Xiomara Martínez Deluque", "Aníbal Gilberto Pantoja Ríos", "Martha Estela Aguilar Guayara"], nota: "Treinta minutos por voz." },
-      { h: "4:00 – 7:00 p. m.", tipo: "Libro", t: "Presentación del libro «Preso en la libertad de mi existir»", p: ["Darinel Restrepo"] }
+      { h: "4:00 – 4:30 p. m.", tipo: "Recital", t: "Recital", p: ["Mateo Rose"] },
+      { h: "4:30 – 5:00 p. m.", tipo: "Recital", t: "Recital", p: ["Digna Damaris Escobar Torres"] },
+      { h: "5:00 – 5:30 p. m.", tipo: "Recital", t: "Recital", p: ["Xiomara Martínez Deluque"] },
+      { h: "5:30 – 6:00 p. m.", tipo: "Recital", t: "Recital", p: ["Aníbal Gilberto Pantoja Ríos"] },
+      { h: "6:00 – 6:30 p. m.", tipo: "Recital", t: "Recital", p: ["Martha Estela Aguilar Guayara"] },
+      { h: "6:30 – 7:00 p. m.", tipo: "Libro", t: "Presentación del libro «Preso en la libertad de mi existir»", p: ["Darinel Restrepo"] }
     ]
   },
   {
