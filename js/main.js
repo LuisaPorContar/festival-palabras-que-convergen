@@ -75,7 +75,7 @@
   // Al inicio solo dos filas de tarjetas; en celular (una columna), cuatro.
   const inicial = () => {
     const cols = getComputedStyle($("#people")).gridTemplateColumns.split(" ").length;
-    return cols > 1 ? cols * 2 : 4;
+    return cols > 1 ? cols * 2 : 8;
   };
   let verTodos = false, paisSel = "";
 
@@ -286,7 +286,8 @@
     const q = norm($("#buscar-agenda").value.trim());
     let html = "", diaActual = 0, nSes = 0, nBloques = 0;
 
-    PROGRAMA.forEach((b) => {
+    // Cada día, las sedes en orden de hora de inicio.
+    [...PROGRAMA].sort((x, y) => x.dia - y.dia || minutos(x.sesiones[0].h) - minutos(y.sesiones[0].h)).forEach((b) => {
       if (estado.dia && b.dia !== estado.dia) return;
       if (estado.esc && b.esc !== estado.esc) return;
       if (estado.jor && b.jornada !== estado.jor) return;
@@ -305,6 +306,7 @@
       <details class="blk" data-abrir>
         <summary>
           <span class="blk__jor blk__jor--${b.jornada === "Tarde" ? "t" : "m"}">${esc(b.jornada)}</span>
+          <span class="blk__hora blk__hora--${b.jornada === "Tarde" ? "t" : "m"}"><b>${esc(desde.replace(/ ?(?:[ap]\. )?m\.$/, ""))}</b><small>${esc((desde.match(/[ap]\. m\./) || hasta.match(/[ap]\. m\./) || [""])[0])}</small></span>
           <span class="blk__main">
             <b>${esc(e.nombre)}</b>
             <small>${desde === hasta ? esc(desde) : esc(desde) + " – " + esc(hasta)} · ${sesiones.length} ${sesiones.length === 1 ? "actividad" : "actividades"}${b.publico ? " · " + esc(b.publico) : ""}</small>
@@ -377,6 +379,13 @@
   document.querySelectorAll("[data-tipos]").forEach((el) => {
     const tipos = el.dataset.tipos.split(",");
     el.textContent = PROGRAMA.reduce((n, b) => n + b.sesiones.filter((s) => tipos.includes(s.tipo)).length, 0);
+  });
+  // En celular, cada día muestra las caras de algunos de sus participantes.
+  document.querySelectorAll("[data-caras-dia]").forEach((el) => {
+    const d = Number(el.dataset.carasDia);
+    const gente = [...new Set(PROGRAMA.filter((b) => b.dia === d).flatMap((b) => b.sesiones.flatMap((s) => s.p.concat(s.mod || [], s.pres || []))))].filter((n) => !ANFITRIONES.includes(n));
+    const conFoto = gente.filter((n) => PERFILES[n] && PERFILES[n].foto).slice(0, 6);
+    el.innerHTML = conFoto.map((n) => `<img src="${esc(PERFILES[n].foto)}" alt="" width="34" height="34" loading="lazy">`).join("") + `<span>${gente.length} voces</span>`;
   });
   $("#st-esc").textContent = Object.keys(ESCENARIOS).length;
   $("#st-act").textContent = PROGRAMA.reduce((n, b) => n + b.sesiones.length, 0);
@@ -468,10 +477,25 @@
     ok.focus();
   });
 
-  // El botón flotante se oculta cuando el formulario ya está a la vista.
+  // El botón flotante se oculta mientras se ven los botones de la portada o el formulario, y mientras se escribe.
+  const fab = $(".fab"), ocultaFab = { portada: false, form: false, escribe: false };
+  const pintarFab = () => fab.classList.toggle("is-hidden", ocultaFab.portada || ocultaFab.form || ocultaFab.escribe);
   if ("IntersectionObserver" in window) {
-    new IntersectionObserver(([en]) => $(".fab").classList.toggle("is-hidden", en.isIntersecting)).observe($("#inscripcion"));
+    new IntersectionObserver(([en]) => { ocultaFab.form = en.isIntersecting; pintarFab(); }).observe($("#inscripcion"));
+    new IntersectionObserver(([en]) => { ocultaFab.portada = en.isIntersecting; pintarFab(); }).observe($(".hero__cta"));
   }
+  document.addEventListener("focusin", (e) => { ocultaFab.escribe = e.target.matches("input, select, textarea"); pintarFab(); });
+  document.addEventListener("focusout", () => { ocultaFab.escribe = false; pintarFab(); });
+
+  // En celular, el buscador «¿Dónde me toca?» va justo después del carrusel; en computador, con los ponentes.
+  const enCelular = matchMedia("(max-width: 760px)");
+  const ubicarBuscador = () => {
+    const caja = $("#donde-me-toca");
+    if (enCelular.matches) $("#mia-movil").append(caja);
+    else $("#chips-pais").before(caja);
+  };
+  enCelular.addEventListener("change", ubicarBuscador);
+  ubicarBuscador();
 
   pintarPaises();
   // Enlace personal: ?nombre=Carlos%20Rivera abre la página con su agenda ya buscada.

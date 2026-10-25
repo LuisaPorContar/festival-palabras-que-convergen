@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=34">
+  <link rel="stylesheet" href="css/styles.css?v=35">
 </head>
 <body>
   <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -114,6 +114,9 @@
       <div class="feat__track" id="feat-track" tabindex="0" aria-label="Carrusel de voces destacadas"></div>
     </section>
 
+    <!-- En celular, aquí se ubica el buscador «¿Dónde me toca?» -->
+    <div class="mia-movil" id="mia-movil"></div>
+
     <!-- POR QUÉ VENIR -->
     <section class="sec why" id="vive">
       <div class="wrap">
@@ -123,12 +126,12 @@
           <p class="sec__sub">Ven a escuchar, a conversar y a escribir. Elige lo que más te guste o quédate a todo.</p>
         </div>
         <div class="why__grid">
-          <article class="why__card"><b data-tipos="Recital"></b><h3>Recitales</h3><p>Poesía dicha en voz alta por sus autores y por declamadores de varias regiones y países.</p></article>
-          <article class="why__card"><b data-tipos="Taller"></b><h3>Talleres de escritura</h3><p>Para jóvenes, adultos y adultos mayores. Llegas a escuchar y sales con un texto tuyo.</p></article>
-          <article class="why__card"><b data-tipos="Conversatorio"></b><h3>Conversatorios</h3><p>Escritores, músicos y gente de teatro hablando de su oficio, cara a cara con el público.</p></article>
-          <article class="why__card"><b data-tipos="Libro"></b><h3>Presentaciones de libros</h3><p>Conoce las obras nuevas de la mano de quienes las escribieron.</p></article>
-          <article class="why__card"><b data-tipos="Cuentería,Lectura"></b><h3>Cuentería y lecturas</h3><p>Historias contadas y leídas para todas las edades.</p></article>
-          <article class="why__card"><b data-tipos="Música,Escena"></b><h3>Música y escena</h3><p>Intervenciones artísticas que acompañan cada jornada.</p></article>
+          <article class="why__card"><i class="why__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3z"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></i><b data-tipos="Recital"></b><h3>Recitales</h3><p>Poesía dicha en voz alta por sus autores y por declamadores de varias regiones y países.</p></article>
+          <article class="why__card"><i class="why__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16v4z"/><path d="M13 7l4 4"/></svg></i><b data-tipos="Taller"></b><h3>Talleres de escritura</h3><p>Para jóvenes, adultos y adultos mayores. Llegas a escuchar y sales con un texto tuyo.</p></article>
+          <article class="why__card"><i class="why__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h11v8H8l-4 3V5z"/><path d="M15 9h5v8l-3-2h-6v-2"/></svg></i><b data-tipos="Conversatorio"></b><h3>Conversatorios</h3><p>Escritores, músicos y gente de teatro hablando de su oficio, cara a cara con el público.</p></article>
+          <article class="why__card"><i class="why__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5c3-1 6-1 8 1v14c-2-2-5-2-8-1V5z"/><path d="M20 5c-3-1-6-1-8 1v14c2-2 5-2 8-1V5z"/></svg></i><b data-tipos="Libro"></b><h3>Presentaciones de libros</h3><p>Conoce las obras nuevas de la mano de quienes las escribieron.</p></article>
+          <article class="why__card"><i class="why__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5h14v10H9l-4 4V5z"/><path d="M9 9h6M9 12h4"/></svg></i><b data-tipos="Cuentería,Lectura"></b><h3>Cuentería y lecturas</h3><p>Historias contadas y leídas para todas las edades.</p></article>
+          <article class="why__card"><i class="why__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg></i><b data-tipos="Música,Escena"></b><h3>Música y escena</h3><p>Intervenciones artísticas que acompañan cada jornada.</p></article>
         </div>
         <div class="why__cta">
           <p>Reserva tu lugar y recibe la programación en tu correo.</p>
@@ -149,6 +152,7 @@
           <article class="day">
             <div class="day__date"><b>5</b><span>Jueves<small>de noviembre</small></span></div>
             <h3>Inauguración</h3>
+            <div class="day__caras" data-caras-dia="5" aria-hidden="true"></div>
             <p class="day__desc">Acto de instalación, foro, simposio, recitales del «Manifiesto de la esperanza» y presentaciones de libros.</p>
             <ul class="day__meta">
               <li>Teatro El Presagio, Universidad Libre, Libertienda y Casa Alejandría</li>
@@ -160,6 +164,7 @@
           <article class="day">
             <div class="day__date"><b>6</b><span>Viernes<small>de noviembre</small></span></div>
             <h3>La palabra en los barrios</h3>
+            <div class="day__caras" data-caras-dia="6" aria-hidden="true"></div>
             <p class="day__desc">Recitales, cuentería y talleres de escritura para jóvenes y adultos mayores.</p>
             <ul class="day__meta">
               <li>Bibliotecas públicas, librerías y colegios de Cali</li>
@@ -171,6 +176,7 @@
           <article class="day">
             <div class="day__date"><b>7</b><span>Sábado<small>de noviembre</small></span></div>
             <h3>Clausura</h3>
+            <div class="day__caras" data-caras-dia="7" aria-hidden="true"></div>
             <p class="day__desc">Libro «Palabras que convergen», exposición de pinturas y entrega de reconocimientos.</p>
             <ul class="day__meta">
               <li>Auditorio de la Universidad Libre</li>
@@ -407,6 +413,6 @@
   <a class="fab btn btn--sun" href="#inscripcion">Inscríbete</a>
 
   <script src="js/data.js?v=34"></script>
-  <script src="js/main.js?v=30"></script>
+  <script src="js/main.js?v=31"></script>
 </body>
 </html>
