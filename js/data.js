@@ -79,19 +79,28 @@ const PROGRAMA = [
   {
     dia: 5, esc: "libertienda", jornada: "Tarde",
     sesiones: [
-      { h: "4:00 – 7:00 p. m.", tipo: "Recital", t: "Recitales y declamación", p: ["Edinson Tello Bedón", "Tito Nelio Cuero Murillo", "Sor María Jiménez", "Claudia Andrea Torres", "José Ignacio Cáceres Serna", "Marino Díaz Antía", "María Teresa Casas Figueroa", "María Dolly Montes Tangarife", "Lina María Pérez"], nota: "Treinta minutos por voz." }
+      { h: "4:00 – 4:30 p. m.", tipo: "Recital", t: "Recital", p: ["Edinson Tello Bedón"] },
+      { h: "4:30 – 5:00 p. m.", tipo: "Recital", t: "Recital", p: ["Tito Nelio Cuero Murillo"] },
+      { h: "5:00 – 5:30 p. m.", tipo: "Recital", t: "Recital", p: ["Sor María Jiménez"] },
+      { h: "5:30 – 6:00 p. m.", tipo: "Recital", t: "Recital", p: ["Claudia Andrea Torres"] },
+      { h: "6:00 – 6:30 p. m.", tipo: "Recital", t: "Recital", p: ["José Ignacio Cáceres Serna"] },
+      { h: "6:30 – 7:00 p. m.", tipo: "Recital", t: "Declamación", p: ["Marino Díaz Antía"] },
+      { h: "7:00 – 7:30 p. m.", tipo: "Recital", t: "Recital", p: ["María Teresa Casas Figueroa"] },
+      { h: "7:30 – 8:00 p. m.", tipo: "Recital", t: "Recital", p: ["María Dolly Montes Tangarife"] },
+      { h: "8:00 – 8:30 p. m.", tipo: "Recital", t: "Recital", p: ["Lina María Pérez"] }
     ]
   },
   {
     dia: 5, esc: "alejandria", jornada: "Tarde",
     sesiones: [
-      { h: "4:00 – 10:00 p. m.", tipo: "Libro", t: "Presentación del poemario «Savia entre mis venas»", p: ["Ángela Penagos Londoño"] },
-      { h: "4:00 – 10:00 p. m.", tipo: "Libro", t: "Presentación del libro de poesías y reflexiones «Nuevos vuelos»", p: ["Pablo Emilio Beltrán Bejarano"] },
-      { h: "4:00 – 10:00 p. m.", tipo: "Libro", t: "Presentación del libro «El incendio que arrasó con todo»", p: ["Amelia Restrepo Hincapié"] },
-      { h: "4:00 – 10:00 p. m.", tipo: "Libro", t: "Presentación del libro «Secretos de la cocina tradicional del Pacífico biodiverso y cultural de Colombia»", p: ["Félix Domingo Cabezas"] },
-      { h: "4:00 – 10:00 p. m.", tipo: "Libro", t: "Presentación del libro «El aún y la existencia: el libro de las odasías»", p: ["Roger Lázaro Ynca"] },
-      { h: "4:00 – 10:00 p. m.", tipo: "Libro", t: "Presentación de su revista virtual", p: ["Lucero Jordán Molina"] },
-      { h: "4:00 – 10:00 p. m.", tipo: "Recital", t: "Recital", p: ["Tatiana Suárez Vásquez", "Maya Chalez"], nota: "Treinta minutos por participante en todas las actividades de la tarde." }
+      { h: "4:00 – 4:30 p. m.", tipo: "Libro", t: "Presentación del poemario «Savia entre mis venas»", p: ["Ángela Penagos Londoño"] },
+      { h: "4:30 – 5:00 p. m.", tipo: "Recital", t: "Recital", p: ["Tatiana Suárez Vásquez"] },
+      { h: "5:00 – 5:30 p. m.", tipo: "Libro", t: "Presentación del libro de poesías y reflexiones «Nuevos vuelos»", p: ["Pablo Emilio Beltrán Bejarano"] },
+      { h: "5:30 – 6:00 p. m.", tipo: "Libro", t: "Presentación del libro «El incendio que arrasó con todo»", p: ["Amelia Restrepo Hincapié"] },
+      { h: "6:00 – 6:30 p. m.", tipo: "Libro", t: "Presentación del libro «Secretos de la cocina tradicional del Pacífico biodiverso y cultural de Colombia»", p: ["Félix Domingo Cabezas"] },
+      { h: "6:30 – 7:00 p. m.", tipo: "Libro", t: "Presentación del libro «El aún y la existencia: el libro de las odasías»", p: ["Roger Lázaro Ynca"] },
+      { h: "7:00 – 7:30 p. m.", tipo: "Libro", t: "Presentación de su revista virtual", p: ["Lucero Jordán Molina"] },
+      { h: "7:30 – 8:00 p. m.", tipo: "Recital", t: "Recital", p: ["Maya Chalez"] }
     ]
   },
 
@@ -220,29 +229,39 @@ const PROGRAMA = [
   {
     dia: 6, esc: "apapachos", jornada: "Tarde",
     sesiones: [
-      { h: "3:00 – 6:00 p. m.", tipo: "Recital", t: "Recital poético", p: ["Johana Marulanda Botero", "Jaime Eduardo Muñoz Flórez", "Yarleidy Solar Uribe", "Israel Agudelo Castro", "Henry Patiño Montoya", "Gloria Inés Sánchez Duque"], nota: "Treinta minutos por voz." }
+      { h: "3:00 – 3:30 p. m.", tipo: "Recital", t: "Recital", p: ["Johana Marulanda Botero"] },
+      { h: "3:30 – 4:00 p. m.", tipo: "Recital", t: "Recital", p: ["Jaime Eduardo Muñoz Flórez"] },
+      { h: "4:00 – 4:30 p. m.", tipo: "Recital", t: "Recital", p: ["Yarleidy Solar Uribe"] },
+      { h: "4:30 – 5:00 p. m.", tipo: "Recital", t: "Recital", p: ["Israel Agudelo Castro"] },
+      { h: "5:00 – 5:30 p. m.", tipo: "Recital", t: "Recital", p: ["Henry Patiño Montoya"] },
+      { h: "5:30 – 6:00 p. m.", tipo: "Recital", t: "Recital", p: ["Gloria Inés Sánchez Duque"] }
     ]
   },
   {
     dia: 6, esc: "oromo", jornada: "Tarde",
     sesiones: [
-      { h: "3:00 – 8:00 p. m.", tipo: "Taller", t: "Taller · Laboratorio de palabras vivas", p: ["Judith Cartagena", "María Adiela Londoño de Copete"], nota: "Noventa minutos." },
-      { h: "3:00 – 8:00 p. m.", tipo: "Libro", t: "Presentación del libro «Al oído del fénix»", p: ["Daniel Rivera Meza"] },
-      { h: "3:00 – 8:00 p. m.", tipo: "Libro", t: "Presentación del libro «Pedazos de vida»", p: ["Roberto Toala Núñez"] },
-      { h: "3:00 – 8:00 p. m.", tipo: "Recital", t: "Recital", p: ["Nataly Tabima Suárez", "María Florenia Vivas Bohórquez", "Luz Dolly Atehortúa", "Wilson Blandón Caicedo", "Stefani UV"], nota: "Veinte minutos por voz." }
+      { h: "3:00 – 4:30 p. m.", tipo: "Taller", t: "Taller · Laboratorio de palabras vivas", p: ["Judith Cartagena", "María Adiela Londoño de Copete"] },
+      { h: "4:30 – 5:00 p. m.", tipo: "Libro", t: "Presentación del libro «Al oído del fénix»", p: ["Daniel Rivera Meza"] },
+      { h: "5:00 – 5:20 p. m.", tipo: "Recital", t: "Recital", p: ["Nataly Tabima Suárez"] },
+      { h: "5:20 – 5:40 p. m.", tipo: "Recital", t: "Recital", p: ["María Florenia Vivas Bohórquez"] },
+      { h: "5:40 – 6:00 p. m.", tipo: "Recital", t: "Recital", p: ["Luz Dolly Atehortúa"] },
+      { h: "6:00 – 6:20 p. m.", tipo: "Recital", t: "Recital", p: ["Wilson Blandón Caicedo"] },
+      { h: "6:20 – 6:50 p. m.", tipo: "Libro", t: "Presentación del libro «Pedazos de vida»", p: ["Roberto Toala Núñez"] },
+      { h: "6:50 – 7:10 p. m.", tipo: "Recital", t: "Recital", p: ["Stefani UV"] }
     ]
   },
   {
     dia: 6, esc: "libertienda", jornada: "Tarde",
     sesiones: [
-      { h: "4:00 – 7:00 p. m.", tipo: "Libro", t: "Presentación del poemario «Carne de papel»", p: ["Gloria Judith López Soto"] },
-      { h: "4:00 – 7:00 p. m.", tipo: "Libro", t: "Presentación del libro «El perdón negado»", p: ["Alfredo «Cheo» Angulo"] },
-      { h: "4:00 – 7:00 p. m.", tipo: "Libro", t: "Presentación del libro «Polonia la cimarrona»", p: ["Antonio Prada Fortul"] },
-      { h: "4:00 – 7:00 p. m.", tipo: "Libro", t: "Presentación de la novela «La mueca bufa de la hiena»", p: ["Carlos Manuel Rivera Rosado"] },
-      { h: "4:00 – 7:00 p. m.", tipo: "Libro", t: "Presentación de la novela «El vendedor de libros y la Maricuya»", p: ["Roberto Montes Mathieu"] },
-      { h: "4:00 – 7:00 p. m.", tipo: "Libro", t: "Presentación del poemario «Canto Cenú por el borde del camino»", p: ["Miriam Castillo Mendoza"] },
-      { h: "4:00 – 7:00 p. m.", tipo: "Libro", t: "Presentación del libro «El faro del lobo, el regreso»", p: ["Robinson Villalobos Velásquez"] },
-      { h: "4:00 – 7:00 p. m.", tipo: "Recital", t: "Recital y declamación", p: ["Diomar Leclerc Martínez", "Luz Stella Vargas Vásquez"], nota: "Treinta y cinco minutos por participante en todas las actividades de la tarde." }
+      { h: "4:00 – 4:35 p. m.", tipo: "Libro", t: "Presentación del poemario «Carne de papel»", p: ["Gloria Judith López Soto"] },
+      { h: "4:35 – 5:10 p. m.", tipo: "Recital", t: "Recital", p: ["Diomar Leclerc Martínez"] },
+      { h: "5:10 – 5:45 p. m.", tipo: "Libro", t: "Presentación del libro «El perdón negado»", p: ["Alfredo «Cheo» Angulo"] },
+      { h: "5:45 – 6:20 p. m.", tipo: "Libro", t: "Presentación del libro «Polonia la cimarrona»", p: ["Antonio Prada Fortul"] },
+      { h: "6:20 – 6:55 p. m.", tipo: "Libro", t: "Presentación de la novela «La mueca bufa de la hiena»", p: ["Carlos Manuel Rivera Rosado"] },
+      { h: "6:55 – 7:30 p. m.", tipo: "Libro", t: "Presentación de la novela «El vendedor de libros y la Maricuya»", p: ["Roberto Montes Mathieu"] },
+      { h: "7:30 – 8:05 p. m.", tipo: "Libro", t: "Presentación del poemario «Canto Cenú por el borde del camino»", p: ["Miriam Castillo Mendoza"] },
+      { h: "8:05 – 8:40 p. m.", tipo: "Libro", t: "Presentación del libro «El faro del lobo, el regreso»", p: ["Robinson Villalobos Velásquez"] },
+      { h: "8:40 – 9:00 p. m.", tipo: "Recital", t: "Declamación", p: ["Luz Stella Vargas Vásquez"] }
     ]
   },
   {
