@@ -584,13 +584,17 @@ mark { background: #ffe9a8; color: inherit; border-radius: 3px; padding: 0 2px; 
   .why__card p { display: block; margin-top: 6px; font-size: .92rem; }
   .why__cta { margin-top: 30px; }
 
-  /* Fechas: tarjetas cortas con caras */
-  .days { gap: 14px; }
-  .day { padding: 18px 18px 16px; border: 0; box-shadow: 0 8px 22px -14px rgba(11, 30, 91, .45); }
-  .day__date b { font-size: 3.2rem; }
-  .day__date span { font-size: 1.35rem; }
-  .day h3 { margin-top: 10px; font-size: 1.12rem; }
-  .day__desc { display: none; }
+  /* Fechas: carrusel deslizable, una tarjeta por día con caras */
+  #fechas .sec__head { margin-bottom: 18px; }
+  #fechas .sec__head::after { content: "Desliza →"; display: block; margin-top: 12px; font-size: .88rem; font-weight: 700; color: var(--teal); }
+  .days { display: flex; gap: 12px; margin-inline: -16px; padding: 4px 16px 18px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: 16px; scrollbar-width: none; }
+  .days::-webkit-scrollbar { display: none; }
+  .day { flex: 0 0 80vw; scroll-snap-align: start; padding: 20px 20px 18px; border: 0; box-shadow: 0 10px 24px -14px rgba(11, 30, 91, .45); }
+  .day:hover { transform: none; }
+  .day__date b { font-size: 3.4rem; }
+  .day__date span { font-size: 1.4rem; }
+  .day h3 { margin-top: 12px; font-size: 1.15rem; }
+  .day__desc { margin-top: 10px; font-size: .92rem; }
   .day__caras { display: flex; align-items: center; margin-top: 12px; }
   .day__caras img { width: 34px; height: 34px; margin-left: -9px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; }
   .day__caras img:first-child { margin-left: 0; }
