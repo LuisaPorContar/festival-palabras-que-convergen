@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="/">
+  <title>¿Dónde me toca? · Festival Palabras que Convergen</title>
+  <meta name="description" content="Escribe tu nombre y mira tu día, hora y lugar en el Festival Palabras que Convergen, Cali, 5, 6 y 7 de noviembre de 2026.">
+  <meta property="og:title" content="¿Dónde me toca? · Festival Palabras que Convergen">
+  <meta property="og:description" content="Escribe tu nombre y mira tu día, hora y lugar en el festival. Cali, 5, 6 y 7 de noviembre de 2026.">
+  <meta property="og:image" content="https://festival-palabras-que-convergen.netlify.app/assets/og.jpg">
+  <meta property="og:url" content="https://festival-palabras-que-convergen.netlify.app/donde-me-toca/">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0B1E5B">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=39">
+  <style>
+    /* Página propia del buscador: fondo azul con rayos, todo centrado en una columna. */
+    body { background: var(--navy); color: #fff; min-height: 100vh; }
+    .dmt { position: relative; overflow: hidden; min-height: 100vh; }
+    .dmt::before { content: ""; position: absolute; inset: 0; background: repeating-conic-gradient(from 0deg at 50% 0, transparent 0 4deg, rgba(10, 165, 196, .16) 4deg 4.6deg); -webkit-mask-image: radial-gradient(circle at 50% 0, #000 0 120px, transparent 640px); mask-image: radial-gradient(circle at 50% 0, #000 0 120px, transparent 640px); pointer-events: none; }
+    .dmt__in { position: relative; width: min(760px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 56px; }
+    .dmt__top { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+    .dmt__top a { display: flex; align-items: center; gap: 12px; color: #fff; text-decoration: none; }
+    .dmt__top img { width: 64px; height: auto; filter: drop-shadow(0 6px 12px rgba(0, 0, 0, .35)); }
+    .dmt__top span { font-family: var(--display); font-weight: 700; font-size: 1.05rem; line-height: 1.05; text-transform: uppercase; letter-spacing: .04em; }
+    .dmt__top small { display: block; color: var(--sun); }
+    .dmt__volver { flex: none; font-size: .9rem; font-weight: 600; color: #9fe3f1 !important; }
+    .dmt h1 { margin-top: 44px; font-family: var(--display); font-weight: 800; font-size: clamp(2.8rem, 11vw, 4.6rem); line-height: .95; text-transform: uppercase; color: var(--sun); }
+    .dmt__sub { margin-top: 12px; font-size: 1.12rem; color: #d6def0; }
+    .dmt__buscar { display: block; margin-top: 24px; }
+    .dmt__buscar input { width: 100%; padding: 18px 22px 18px 54px; font-size: 1.15rem; border: 0; border-radius: 999px; color: var(--ink); background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23586381' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M20 20l-4-4'/%3E%3C/svg%3E") no-repeat 20px center / 22px; box-shadow: 0 16px 36px -16px rgba(0, 0, 0, .6); }
+    .dmt__buscar input:focus { outline: 4px solid rgba(255, 197, 61, .6); }
+    .dmt__res { display: grid; gap: 14px; margin-top: 22px; }
+    .dmt__ayuda { color: #b9c6e4; font-size: .95rem; }
+    .dmt__pie { margin-top: 34px; display: flex; flex-wrap: wrap; gap: 10px 22px; font-size: .95rem; }
+    .dmt__pie a { color: #9fe3f1; font-weight: 600; }
+    .dmt .mia__p { box-shadow: 0 16px 36px -18px rgba(0, 0, 0, .6); }
+    @media (max-width: 760px) {
+      .dmt__in { padding-top: 18px; }
+      .dmt__top img { width: 54px; }
+      .dmt h1 { margin-top: 32px; }
+      .mia__lista li { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="dmt">
+    <div class="dmt__in">
+      <div class="dmt__top">
+        <a href="/" aria-label="Ir a la web del festival">
+          <img src="assets/logo-menu.png" alt="" width="238" height="240">
+          <span>Festival Palabras que Convergen<small>5 · 6 · 7 nov 2026 · Cali</small></span>
+        </a>
+        <a class="dmt__volver" href="/">Ver la web →</a>
+      </div>
+
+      <h1>¿Dónde me toca?</h1>
+      <p class="dmt__sub">Escribe tu nombre o tu apellido y mira tu día, hora y lugar.</p>
+      <label class="dmt__buscar">
+        <span class="sr-only">Escribe tu nombre</span>
+        <input type="search" id="buscar" placeholder="Escribe tu nombre…" autocomplete="off" autofocus>
+      </label>
+
+      <div class="dmt__res" id="resultado" aria-live="polite"></div>
+
+      <p class="dmt__pie">
+        <a href="/#agenda">Ver toda la programación</a>
+        <a href="/#inscripcion">Inscribirme al festival</a>
+      </p>
+    </div>
+  </main>
+
+  <script src="js/data.js?v=34"></script>
+  <script src="js/donde.js?v=1"></script>
+</body>
+</html>

@@ -3,7 +3,8 @@
   "use strict";
 
   const $ = (sel) => document.querySelector(sel);
-  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  // Utilidades compartidas con la página /donde-me-toca (js/donde.js).
+  const { esc, norm, resaltar, iniciales, minutos } = DondeMeToca;
   // Reseñas largas: se ve el comienzo y un botón «Leer más», para no descuadrar las tarjetas.
   // En la lista de ponentes en celular el comienzo es más corto todavía.
   function bioHtml(bio, cls) {
@@ -24,15 +25,6 @@
     b.setAttribute("aria-expanded", abrir);
     b.textContent = abrir ? "Leer menos" : "Leer más";
   });
-  const norm = (s) => String(s).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
-
-  // Resalta la búsqueda dentro de un texto, ignorando tildes y mayúsculas.
-  function resaltar(texto, q) {
-    if (!q) return esc(texto);
-    const i = norm(texto).indexOf(q);
-    if (i < 0 || norm(texto).length !== texto.length) return esc(texto);
-    return esc(texto.slice(0, i)) + "<mark>" + esc(texto.slice(i, i + q.length)) + "</mark>" + esc(texto.slice(i + q.length));
-  }
 
   /* ---------- Menú móvil ---------- */
   const burger = $("#burger"), nav = $("#nav");
@@ -67,16 +59,8 @@
   tick();
 
   /* ---------- Ponentes (se derivan del programa) ---------- */
-  const mapa = new Map();
-  PROGRAMA.forEach((b) => b.sesiones.forEach((s) => {
-    s.p.concat(s.mod || [], s.pres || []).forEach((n) => {
-      if (ANFITRIONES.includes(n)) return;
-      if (!mapa.has(n)) mapa.set(n, { nombre: n, n: 0, pais: PAIS_SEDE, ...(PERFILES[n] || {}) });
-      mapa.get(n).n++;
-    });
-  }));
-  // Primero quienes tienen foto, luego quienes tienen reseña; dentro de cada grupo, por número de actividades.
-  const ponentes = [...mapa.values()].sort((a, b) => (!!b.foto - !!a.foto) || (!!b.bio - !!a.bio) || (b.n - a.n) || a.nombre.localeCompare(b.nombre, "es"));
+  const ponentes = DondeMeToca.personas();
+  const mapa = new Map(ponentes.map((p) => [p.nombre, p]));
   // Al inicio solo dos filas de tarjetas; en celular (una columna), cuatro.
   const inicial = () => {
     const cols = getComputedStyle($("#people")).gridTemplateColumns.split(" ").length;
@@ -84,12 +68,10 @@
   };
   let verTodos = false, paisSel = "";
 
-  const iniciales = (n) => n.replace(/«.*?»/g, "").trim().split(/\s+/).filter((w) => /^[A-ZÁÉÍÓÚÑ]/.test(w)).slice(0, 2).map((w) => w[0]).join("");
-
   function pintarPonentes() {
     const q = norm($("#buscar-ponente").value.trim());
     // Con un nombre escrito, en lugar de las tarjetas se muestra la agenda de cada persona encontrada.
-    pintarMiAgenda(q);
+    DondeMeToca.pintar($("#mi-agenda"), q, ponentes);
     $("#chips-pais").hidden = $("#people").hidden = !!q;
     if (q) { $("#ver-todos").hidden = true; return; }
     let lista = ponentes.filter((p) => (!q || norm(p.nombre + " " + (p.alias || "")).includes(q)) && (!paisSel || p.pais === paisSel));
@@ -117,61 +99,7 @@
   }
   $("#buscar-ponente").addEventListener("input", pintarPonentes);
 
-  /* ---------- ¿Dónde me toca? ---------- */
-  // Hora de inicio en minutos, para ordenar las actividades de cada persona.
-  function minutos(h) {
-    const ini = h.split(" – ")[0], m = ini.match(/(\d+):(\d+)/);
-    const pm = /p\. m\./.test(/[ap]\. m\./.test(ini) ? ini : h);
-    return (Number(m[1]) % 12 + (pm ? 12 : 0)) * 60 + Number(m[2]);
-  }
-  const actividadesDe = (n) => PROGRAMA.flatMap((b) => b.sesiones
-    .filter((s) => s.p.includes(n) || [].concat(s.mod || [], s.pres || []).includes(n))
-    .map((s) => ({ b, s, rol: [].concat(s.mod || []).includes(n) ? "Modera" : (s.pres || []).includes(n) ? "Presenta la jornada" : "" })))
-    .sort((x, y) => x.b.dia - y.b.dia || minutos(x.s.h) - minutos(y.s.h));
-  const mapaDe = (e) => "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(e.nombre.split(" · ")[0] + ", Cali, Colombia");
 
-  function pintarMiAgenda(q) {
-    const caja = $("#mi-agenda");
-    if (!q) { caja.innerHTML = ""; return; }
-    // Cada palabra escrita debe estar en el nombre, en cualquier orden: «rivera carlos» también sirve.
-    const palabras = q.split(/\s+/);
-    const hallados = ponentes.filter((p) => palabras.every((w) => norm(p.nombre + " " + (p.alias || "")).includes(w)));
-    if (!hallados.length) {
-      caja.innerHTML = `<p class="mia__nada">No encontramos ese nombre. Prueba solo con tu apellido. Si participas y no apareces, <a href="https://wa.me/${CONFIG.whatsappPatrocinio}" target="_blank" rel="noopener">escríbenos por WhatsApp</a>.</p>`;
-      return;
-    }
-    const MAX = 5;
-    caja.innerHTML = hallados.slice(0, MAX).map((p) => {
-      const acts = actividadesDe(p.nombre);
-      return `
-      <article class="mia__p">
-        <div class="person__top">
-          ${p.foto
-            ? `<img class="avatar avatar--foto" src="${esc(p.foto)}" alt="Retrato de ${esc(p.nombre)}" width="400" height="400" loading="lazy">`
-            : `<div class="avatar avatar--${ponentes.indexOf(p) % 4}" aria-hidden="true">${esc(iniciales(p.nombre))}</div>`}
-          <div>
-            <h3>${resaltar(p.nombre, q)}</h3>
-            <p class="person__pais">${acts.length} ${acts.length === 1 ? "actividad" : "actividades"}</p>
-          </div>
-        </div>
-        <ol class="mia__lista">${acts.map(({ b, s, rol }) => {
-          const e = ESCENARIOS[b.esc];
-          // Quien presenta la jornada la acompaña completa, no solo la primera actividad.
-          const jornada = rol === "Presenta la jornada";
-          const hora = jornada ? s.h.split(" – ")[0] + " – " + b.sesiones[b.sesiones.length - 1].h.split(" – ").pop() : s.h;
-          const titulo = jornada ? "Presentación de la jornada" + (b.titulo ? " · " + b.titulo : "") : s.t;
-          return `
-          <li>
-            <p class="mia__cuando"><b>${esc(DIAS[b.dia].largo)}</b><span>${esc(hora)}</span></p>
-            <div>
-              <h4>${esc(titulo)}${rol && !jornada ? ` <span class="mia__rol">${rol}</span>` : ""}</h4>
-              <p class="mia__donde"><b>${esc(e.nombre)}</b>${e.dir ? ` · ${esc(e.dir)} · <a href="${mapaDe(e)}" target="_blank" rel="noopener">Cómo llegar ↗</a>` : ""}</p>
-            </div>
-          </li>`;
-        }).join("")}</ol>
-      </article>`;
-    }).join("") + (hallados.length > MAX ? `<p class="mia__nada">Hay ${hallados.length - MAX} ${hallados.length - MAX === 1 ? "persona más" : "personas más"} con ese nombre. Escribe también tu apellido.</p>` : "");
-  }
   let anchoPrevio = window.innerWidth;
   window.addEventListener("resize", () => { if (window.innerWidth !== anchoPrevio) { anchoPrevio = window.innerWidth; pintarPonentes(); } });
 
