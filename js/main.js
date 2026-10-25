@@ -4,6 +4,21 @@
 
   const $ = (sel) => document.querySelector(sel);
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  // Reseñas largas: se ve el comienzo y un botón «Leer más», para no descuadrar las tarjetas.
+  function bioHtml(bio, cls) {
+    if (bio.length <= 220) return `<p class="${cls}">${esc(bio)}</p>`;
+    const punto = bio.lastIndexOf(". ", 200);
+    const i = punto > 40 ? punto + 1 : bio.lastIndexOf(" ", 180);
+    return `<p class="${cls} bio--larga">${esc(bio.slice(0, i))}<span class="bio__resto" hidden>${esc(bio.slice(i))}</span> <button type="button" class="link bio__mas" aria-expanded="false">Leer más</button></p>`;
+  }
+  document.addEventListener("click", (e) => {
+    const b = e.target.closest(".bio__mas");
+    if (!b) return;
+    const resto = b.previousElementSibling, abrir = resto.hidden;
+    resto.hidden = !abrir;
+    b.setAttribute("aria-expanded", abrir);
+    b.textContent = abrir ? "Leer menos" : "Leer más";
+  });
   const norm = (s) => String(s).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
 
   // Resalta la búsqueda dentro de un texto, ignorando tildes y mayúsculas.
@@ -84,7 +99,7 @@
             ${p.pais ? `<p class="person__pais">${esc(p.pais)}</p>` : ""}
           </div>
         </div>
-        ${p.bio ? `<p class="person__bio">${esc(p.bio)}</p>` : ""}
+        ${p.bio ? bioHtml(p.bio, "person__bio") : ""}
         <button class="link" data-ponente="${esc(p.nombre)}">Ver en la agenda (${p.n}) →</button>
       </article>`).join("") : `<p class="empty">No encontramos a nadie con ese nombre.</p>`;
     const btn = $("#ver-todos");
@@ -137,7 +152,7 @@
         <div class="fcard__body">
           <p class="fcard__rol">${esc(d.rol)}</p>
           <h3>${esc(p.nombre)}</h3>
-          ${p.bio ? `<p class="fcard__bio">${esc(p.bio)}</p>` : ""}
+          ${p.bio ? bioHtml(p.bio, "fcard__bio") : ""}
           <button class="link" data-ponente="${esc(p.nombre)}">Ver en la agenda (${p.n}) →</button>
         </div>
       </article>`;
