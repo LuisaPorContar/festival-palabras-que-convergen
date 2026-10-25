@@ -61,9 +61,7 @@ button, input, select { font: inherit; color: inherit; }
 /* Header */
 .header { position: sticky; top: 0; z-index: 50; background: rgba(255, 255, 255, .96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
 .header__in { display: flex; align-items: center; gap: 18px; height: var(--header-h); }
-.brand { display: flex; align-items: center; gap: 10px; }
-.brand img { height: 52px; width: auto; }
-.brand .brand__aro { height: 64px; filter: drop-shadow(0 4px 8px rgba(11, 30, 91, .18)); }
+.brand img { height: 64px; width: auto; filter: drop-shadow(0 4px 8px rgba(11, 30, 91, .18)); }
 .datechip { display: flex; align-items: center; gap: 10px; padding-left: 18px; border-left: 2px solid var(--line); color: var(--navy); line-height: 1.05; }
 .datechip strong { font-family: var(--display); font-size: 1.9rem; font-weight: 800; white-space: nowrap; }
 .datechip span { font-family: var(--display); font-weight: 700; font-size: .95rem; letter-spacing: .06em; color: var(--teal); }
@@ -213,6 +211,25 @@ button, input, select { font: inherit; color: inherit; }
 }
 
 /* Organizadores */
+/* El colectivo, con su logo en grande sobre rayos de luz */
+.colectivo { position: relative; overflow: hidden; display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 40px; margin-bottom: 22px; padding: 40px 48px; border-radius: 22px; background: var(--navy); color: #fff; }
+.colectivo::before { content: ""; position: absolute; inset: 0; background: repeating-conic-gradient(from 0deg at 190px 50%, transparent 0 4deg, rgba(10, 165, 196, .2) 4deg 4.6deg); -webkit-mask-image: radial-gradient(circle at 190px 50%, #000 0 120px, transparent 520px); mask-image: radial-gradient(circle at 190px 50%, #000 0 120px, transparent 520px); }
+.colectivo__logo { position: relative; width: 280px; aspect-ratio: 1; display: grid; place-items: center; }
+.colectivo__logo::before { content: ""; position: absolute; inset: 6%; border-radius: 50%; background: radial-gradient(circle, rgba(255, 255, 255, .35), transparent 70%); }
+.colectivo__logo img { position: relative; width: 100%; height: auto; filter: drop-shadow(0 20px 30px rgba(0, 0, 0, .45)); }
+.colectivo__txt { position: relative; max-width: 34em; }
+.colectivo .org__rol { color: var(--sun); }
+.colectivo h3 { margin-top: 6px; font-family: var(--display); font-weight: 800; font-size: clamp(2.2rem, 4.4vw, 3.4rem); line-height: .95; text-transform: uppercase; }
+.colectivo__txt > p:last-child { margin-top: 14px; font-size: 1.08rem; color: #d6def0; }
+@media (prefers-reduced-motion: no-preference) {
+  .colectivo__logo img { animation: flotar 6s ease-in-out infinite; }
+}
+@keyframes flotar { 50% { transform: translateY(-8px); } }
+@media (max-width: 760px) {
+  .colectivo { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 22px; padding: 30px 22px; }
+  .colectivo::before { background: repeating-conic-gradient(from 0deg at 50% 30%, transparent 0 4deg, rgba(10, 165, 196, .2) 4deg 4.6deg); -webkit-mask-image: radial-gradient(circle at 50% 30%, #000 0 100px, transparent 420px); mask-image: radial-gradient(circle at 50% 30%, #000 0 100px, transparent 420px); }
+  .colectivo__logo { width: 220px; }
+}
 .orgs { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
 .org { display: flex; align-items: center; gap: 26px; padding: 28px; background: #fff; border: 1px solid var(--line); border-radius: 18px; }
 .org img { flex: none; width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid var(--cyan); }
@@ -483,9 +500,7 @@ mark { background: #ffe9a8; color: inherit; border-radius: 3px; padding: 0 2px; 
 }
 @media (max-width: 860px) {
   :root { --header-h: 64px; }
-  .brand img { height: 40px; }
-  .brand .brand__aro { height: 50px; }
-  .brand { gap: 6px; }
+  .brand img { height: 54px; }
   .burger { display: block; }
   .nav { position: absolute; top: var(--header-h); left: 0; right: 0; margin: 0; background: #fff; border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 0; padding: 8px 20px 20px; display: none; box-shadow: var(--shadow); }
   .nav.is-open { display: flex; }
