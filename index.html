@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=28">
+  <link rel="stylesheet" href="css/styles.css?v=30">
 </head>
 <body>
   <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -38,6 +38,7 @@
         <a href="#vive">El festival</a>
         <a href="#fechas">Fechas</a>
         <a href="#ponentes">Ponentes</a>
+        <a href="#donde-me-toca">¿Dónde me toca?</a>
         <a href="#agenda">Agenda</a>
         <a href="#aliados">Patrocinadores</a>
         <a class="btn btn--sun btn--sm" href="#inscripcion">Inscríbete</a>
@@ -181,10 +182,17 @@
             <h2>Las voces que convergen</h2>
             <p class="sec__sub" id="txt-paises"></p>
           </div>
-          <label class="search">
-            <span class="sr-only">Buscar ponente</span>
-            <input type="search" id="buscar-ponente" placeholder="Buscar por nombre…" autocomplete="off">
+        </div>
+        <div class="mia" id="donde-me-toca">
+          <div class="mia__txt">
+            <h3>¿Participas en el festival? Mira dónde te toca</h3>
+            <p>Escribe tu nombre o tu apellido y verás tus actividades con día, hora y lugar.</p>
+          </div>
+          <label class="search mia__search">
+            <span class="sr-only">Escribe tu nombre</span>
+            <input type="search" id="buscar-ponente" placeholder="Escribe tu nombre…" autocomplete="off">
           </label>
+          <div class="mia__res" id="mi-agenda" aria-live="polite"></div>
         </div>
         <div class="chips chips--pais" role="group" aria-label="Filtrar por país" id="chips-pais"></div>
         <div class="people" id="people"></div>
@@ -369,6 +377,7 @@
       <nav class="footer__nav" aria-label="Pie de página">
         <a href="#fechas">Fechas</a>
         <a href="#ponentes">Ponentes</a>
+        <a href="#donde-me-toca">¿Dónde me toca?</a>
         <a href="#agenda">Agenda</a>
         <a href="#inscripcion">Inscripción</a>
         <a href="#aliados">Patrocinadores</a>
@@ -379,7 +388,7 @@
 
   <a class="fab btn btn--sun" href="#inscripcion">Inscríbete</a>
 
-  <script src="js/data.js?v=28"></script>
-  <script src="js/main.js?v=28"></script>
+  <script src="js/data.js?v=30"></script>
+  <script src="js/main.js?v=30"></script>
 </body>
 </html>

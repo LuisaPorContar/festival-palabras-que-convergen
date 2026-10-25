@@ -210,6 +210,29 @@ button, input, select { font: inherit; color: inherit; }
 
 /* Ponentes */
 .people { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+/* ¿Dónde me toca? */
+.mia { background: var(--navy); color: #fff; border-radius: var(--radius); padding: 26px 28px; margin-bottom: 26px; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 14px 28px; }
+.mia h3 { font-family: var(--display); font-size: 1.7rem; line-height: 1.1; text-transform: uppercase; color: var(--sun); }
+.mia__txt p { margin-top: 6px; color: #d6def0; }
+.mia__search input { width: 380px; padding: 15px 22px; font-size: 1.05rem; border-color: transparent; color: var(--ink); }
+.mia__res { grid-column: 1 / -1; display: grid; gap: 14px; }
+.mia__res:empty { display: none; }
+.mia__p { background: #fff; color: var(--ink); border-radius: var(--radius); padding: 20px; }
+.mia__p h3 { font-family: var(--body); font-size: 1.1rem; text-transform: none; color: var(--navy); }
+.mia__lista { list-style: none; margin: 14px 0 0; padding: 0; }
+.mia__lista li { display: grid; grid-template-columns: 210px 1fr; gap: 4px 18px; padding: 12px 0; border-top: 1px solid var(--line); }
+.mia__cuando b { display: block; color: var(--teal); }
+.mia__cuando span { font-size: .92rem; color: var(--muted); }
+.mia__lista h4 { margin: 0; font-size: 1rem; color: var(--navy); line-height: 1.35; }
+.mia__donde { margin-top: 3px; font-size: .92rem; color: var(--muted); }
+.mia__donde b { color: var(--ink); font-weight: 600; }
+.mia__rol { display: inline-block; margin-left: 6px; padding: 1px 8px; border-radius: 999px; background: var(--sun); color: var(--navy); font-size: .74rem; font-weight: 700; vertical-align: 2px; }
+.mia__nada { background: #fff; color: var(--ink); border-radius: var(--radius); padding: 16px 20px; }
+@media (max-width: 760px) {
+  .mia { grid-template-columns: 1fr; padding: 20px 18px; }
+  .mia__search input { width: 100%; }
+  .mia__lista li { grid-template-columns: 1fr; }
+}
 .person { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 12px; }
 .person__top { display: flex; align-items: center; gap: 14px; }
 .avatar { flex: none; width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; font-family: var(--display); font-weight: 700; font-size: 1.4rem; color: #fff; background: var(--navy); }
@@ -221,6 +244,7 @@ button, input, select { font: inherit; color: inherit; }
 .person__alias { font-size: .85rem; color: var(--teal); font-weight: 600; }
 .person__pais { font-size: .74rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-top: 2px; }
 .chips--pais { display: flex !important; margin-bottom: 20px; }
+.chips--pais[hidden] { display: none !important; }
 .person__bio { font-size: .92rem; color: var(--muted); flex: 1; }
 .bio__mas { font-size: .85rem; white-space: nowrap; }
 .person .link { font-size: .88rem; }

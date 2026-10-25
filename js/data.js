@@ -46,12 +46,12 @@ const GRUPOS_ESC = [
 ];
 
 /* Cada bloque = un escenario en una jornada.
-   Sesión: h = hora, tipo, t = título, p = participantes, mod = modera/presenta, nota = texto adicional. */
+   Sesión: h = hora, tipo, t = título, p = participantes, mod = modera, pres = presenta la jornada, nota = texto adicional. */
 const PROGRAMA = [
   {
     dia: 5, esc: "presagio", jornada: "Mañana", titulo: "Programación inaugural",
     sesiones: [
-      { h: "8:20 a. m.", tipo: "Acto", t: "Himno Nacional", p: ["Lucero Jordán Molina"], nota: "Presentan la jornada: Judith Cartagena y Diomar Leclerc Martínez." },
+      { h: "8:20 a. m.", tipo: "Acto", t: "Himno Nacional", p: ["Lucero Jordán Molina"], pres: ["Judith Cartagena", "Diomar Leclerc Martínez"] },
       { h: "8:25 – 8:35 a. m.", tipo: "Acto", t: "Acto de instalación del festival", p: ["Miriam Castillo Mendoza", "Robinson Villalobos Velásquez"] },
       { h: "8:40 – 8:50 a. m.", tipo: "Acto", t: "Reconocimiento «Palabras que convergen: Manifiesto de la esperanza»", p: ["Germán Félix Calvo Sarmiento"] },
       { h: "8:55 – 9:45 a. m.", tipo: "Recital", t: "Recital 1 · Manifiesto de la esperanza", p: ["Ángela Penagos Londoño", "Edinson Tello Bedón", "Dora Luz Muñoz de Cobo", "Roger Lázaro Ynca", "Mary Grueso", "Adalgiza Charria Quintero", "Wilson Blandón Caicedo", "Mario Mathor"], nota: "Seis minutos por voz, tres poemas." },
