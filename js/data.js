@@ -404,7 +404,7 @@ const PERFILES = {
   "Lina María Pérez": { bio: "Poeta de Remart y del nodo de literatura." },
   "Gloria Elena Gutiérrez": { alias: "Guty" },
   "José Ignacio Cáceres Serna": { alias: "Nacho", bio: "Artista plástico, gestor cultural y escritor de Los Patios, Norte de Santander. Asociación Sociocultural Casa de Piedra." },
-  "Marisol Quiroga": { foto: "assets/ponentes/marisol-quiroga.jpg", alias: "Guatipana" },
+  "Marisol Quiroga": { foto: "assets/ponentes/marisol-quiroga.jpg", alias: "Guaytipan" },
   "Feliciano Saa Riascos": { alias: "Cheo Saa" },
   "Luz Stella Salazar López": { foto: "assets/ponentes/luz-stella-salazar.jpg", bio: "Pluma, verso y canción." },
   "Nauro Torres Quintero": { bio: "Escritor de la cultura campesina andina de Santander. Investiga e integra los saberes guanes y muiscas." },
