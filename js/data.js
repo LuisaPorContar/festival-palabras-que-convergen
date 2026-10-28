@@ -127,15 +127,13 @@ const PROGRAMA = [
   {
     dia: 6, esc: "capitolio", jornada: "Mañana",
     sesiones: [
-      { h: "8:00 – 8:10 a. m.", tipo: "Acto", t: "Palabras iniciales", p: ["Germán Félix Calvo Sarmiento"] },
-      { h: "8:15 – 8:50 a. m.", tipo: "Libro", t: "Presentación del libro «Tránsitos cruzados» (antología de memorias y crónicas, 2026)", p: ["María Ximena Hoyos Mazuera"] },
-      { h: "8:55 – 9:35 a. m.", tipo: "Libro", t: "Presentación del libro «Entre versos y mares»", p: ["Mónica Patricia Ossa Graín"] },
-      { h: "9:40 – 10:25 a. m.", tipo: "Libro", t: "Presentación de su libro y recital", p: ["Jim Persal"] },
-      { h: "10:30 – 10:45 a. m.", tipo: "Lectura", t: "Lectura de poemas jurídicos", p: ["María Teresa Aristizábal Mejía"] },
-      { h: "10:50 – 11:00 a. m.", tipo: "Recital", t: "Recital", p: ["Mario Mathor"] },
-      { h: "11:05 – 11:20 a. m.", tipo: "Recital", t: "Recital", p: ["Miriam Castillo Mendoza"] },
-      { h: "11:25 – 11:40 a. m.", tipo: "Recital", t: "Recital", p: ["Antonio Prada Fortul"] },
-      { h: "11:45 a. m. – 12:15 p. m.", tipo: "Música", t: "Intervención musical", p: ["Sandra Patricia «La Voz»"] }
+      { h: "8:00 – 8:45 a. m.", tipo: "Acto", t: "Palabras iniciales y reconocimiento «Palabras que convergen»", p: ["Germán Félix Calvo Sarmiento"] },
+      { h: "8:50 – 9:30 a. m.", tipo: "Libro", t: "Presentación del libro «Tránsitos cruzados» (antología de memorias y crónicas, 2026)", p: ["María Ximena Hoyos Mazuera"] },
+      { h: "9:35 – 10:15 a. m.", tipo: "Libro", t: "Presentación del libro «Entre versos y mares»", p: ["Mónica Patricia Ossa Graín"] },
+      { h: "10:20 – 11:00 a. m.", tipo: "Libro", t: "Presentación de su libro y recital", p: ["Jim Persal"] },
+      { h: "11:05 – 11:20 a. m.", tipo: "Lectura", t: "Lectura de poemas jurídicos", p: ["María Teresa Aristizábal Mejía"] },
+      { h: "11:25 – 11:50 a. m.", tipo: "Conversatorio", t: "Conversatorio · El cimarronaje en el Caribe colombiano", p: ["Antonio Prada Fortul"] },
+      { h: "12:00 – 12:30 p. m.", tipo: "Música", t: "Intervención musical", p: ["Sandra Patricia «La Voz»"] }
     ]
   },
   {
