@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=42">
+  <link rel="stylesheet" href="css/styles.css?v=43">
   <style>
     /* Landing solo para escritores: mismo fondo azul con rayos de /donde-me-toca. */
     body { background: var(--navy); color: #fff; min-height: 100vh; }
@@ -124,7 +124,7 @@
   <script>
     (function () {
       "use strict";
-      // Va a la misma hoja de inscripciones; «Asiste como» identifica a los escritores.
+      // Va al mismo Apps Script de inscripciones; «tipo=escritor» lo guarda en la pestaña «Escritores».
       const form = document.getElementById("form"), err = document.getElementById("form-error"), btn = document.getElementById("form-btn");
       form.addEventListener("submit", async (e) => {
         e.preventDefault();
@@ -140,6 +140,7 @@
           return;
         }
         const datos = new URLSearchParams(new FormData(form));
+        datos.set("tipo", "escritor");
         datos.set("perfil", "Escritor(a) del festival · avisos por WhatsApp");
         datos.set("fecha", new Date().toISOString());
         // Identificador del envío: el script de la hoja lo usa para no guardar dos veces lo mismo.

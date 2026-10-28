@@ -116,7 +116,7 @@ const DondeMeToca = (function () {
             <p class="mia__hora"><b>${esc(num)}</b><span>${esc(suf)}</span>${ter ? `<small>hasta ${esc(ter).replace(/ /g, "&nbsp;")}</small>` : ""}</p>
             <div>
               <h4>${esc(titulo)}${rol && !jornada ? ` <span class="mia__rol">${rol}</span>` : ""}</h4>
-              <p class="mia__lugar"><span>📍 <b>${esc(e.nombre)}</b></span>${e.dir ? `<a class="mia__mapa" href="${mapaDe(e)}" target="_blank" rel="noopener">Cómo llegar</a>` : ""}</p>
+              <p class="mia__lugar"><span>📍&nbsp;<b>${esc(e.nombre)}</b></span>${e.dir ? `<a class="mia__mapa" href="${mapaDe(e)}" target="_blank" rel="noopener">Cómo llegar</a>` : ""}</p>
             </div>
           </li>${aviso}`;
         }).join("")}</ol>
