@@ -36,6 +36,7 @@ const ESCENARIOS = {
   capitolio:    { nombre: "Centro Cultural El Capitolio", dir: "Calle 5 #66B-67, piso 4" },
   carbonell:    { nombre: "I.E. José María Carbonell", dir: "Calle 13 #32-88, barrio Colseguros" },
   cread:        { nombre: "Colegio CREAD", dir: "Calle 27 #32-77, Polideportivo, barrio El Jardín" },
+  agustin:      { nombre: "I.E. Agustín Nieto Caballero (sede principal)", dir: "Carrera 36 #26B-28, barrio El Jardín" },
   casamono:     { nombre: "Fundación Casa del Mono", dir: "Carrera 25 #5-112, barrio 3 de Julio" }
 };
 
@@ -45,7 +46,7 @@ const GRUPOS_ESC = [
   { titulo: "Librerías y centros culturales", uno: "Librería", items: ["apapachos", "oromo", "libertienda", "alejandria", "capitolio", "casamono"] },
   { titulo: "Universidades", uno: "Universidad", items: ["unilibre"] },
   { titulo: "Teatros", uno: "Teatro", items: ["presagio"] },
-  { titulo: "Colegios", uno: "Colegio", items: ["carbonell", "cread"] }
+  { titulo: "Colegios", uno: "Colegio", items: ["carbonell", "cread", "agustin"] }
 ];
 
 /* Cada bloque = un escenario en una jornada.
@@ -56,8 +57,8 @@ const PROGRAMA = [
     sesiones: [
       { h: "8:20 a. m.", tipo: "Acto", t: "Himno Nacional", p: ["Lucero Jordán Molina"], pres: ["Judith Cartagena", "Diomar Leclerc Martínez"] },
       { h: "8:25 – 8:35 a. m.", tipo: "Acto", t: "Palabras de instalación del festival", p: ["Miriam Castillo Mendoza", "Robinson Villalobos Velásquez"] },
-      { h: "8:40 – 8:50 a. m.", tipo: "Acto", t: "Reconocimiento «Palabras que convergen: Manifiesto de la esperanza»", p: ["Germán Félix Calvo Sarmiento"] },
-      { h: "8:55 – 9:45 a. m.", tipo: "Recital", t: "Recital 1 · Manifiesto de la esperanza", p: ["Ángela Penagos Londoño", "Edinson Tello Bedón", "Dora Luz Muñoz de Cobo", "Roger Lázaro Ynca", "Mary Grueso Romero", "Adalgiza Charria Quintero", "Wilson Blandón Caicedo", "Mario Mathor"], nota: "Seis minutos por voz, tres poemas." },
+      { h: "8:40 – 9:30 a. m.", tipo: "Recital", t: "Recital 1 · Manifiesto de la esperanza", p: ["Ángela Penagos Londoño", "Edinson Tello Bedón", "Dora Luz Muñoz de Cobo", "Roger Lázaro Ynca", "Mary Grueso Romero", "Adalgiza Charria Quintero", "Wilson Blandón Caicedo", "Mario Mathor"], nota: "Seis minutos por voz, tres poemas." },
+      { h: "9:30 – 9:50 a. m.", tipo: "Música", t: "Intervención musical", p: ["Daniel Rivera Meza"] },
       { h: "9:50 – 10:05 a. m.", tipo: "Escena", t: "Intervención escénica 1 · Vuela con tus sueños", p: ["Luz Stella Salazar López"] },
       { h: "10:10 – 11:10 a. m.", tipo: "Conversatorio", t: "Foro · Literatura de la memoria, la oralidad y el territorio", p: ["Félix Domingo Cabezas", "Yendier Mosquera Lemus", "Miriam Castillo Mendoza", "Antonio Prada Fortul", "Alexis Ocoró Bonilla"], mod: "Gloria Amparo Murillo", nota: "Temas: el territorio como personaje y cuerpo; de la oralidad a la escritura (la palabra viva); lengua e identidad cultural; literatura infantil y educación propia." },
       { h: "11:15 – 11:35 a. m.", tipo: "Recital", t: "Recital declamatorio 1 · Voces de la esperanza", p: ["Diego Jaramillo", "Luz Stella Vargas Vásquez", "Jim Persal", "Darinel Restrepo"] },
@@ -110,7 +111,8 @@ const PROGRAMA = [
       { h: "7:30 – 8:00 p. m.", tipo: "Recital", t: "Micrófono abierto · Grupo Crisálidas Poéticas", p: [] },
       { h: "8:00 – 8:15 p. m.", tipo: "Recital", t: "Micrófono abierto", p: ["Mario Mathor"] },
       { h: "8:15 – 8:30 p. m.", tipo: "Lectura", t: "Lectura de poemas", p: ["María Ximena Hoyos Mazuera"] },
-      { h: "8:30 – 8:45 p. m.", tipo: "Lectura", t: "Lectura de poemas", p: ["María Teresa Aristizábal Mejía"] }
+      { h: "8:30 – 8:45 p. m.", tipo: "Lectura", t: "Lectura de poemas", p: ["María Teresa Aristizábal Mejía"] },
+      { h: "8:45 – 9:00 p. m.", tipo: "Recital", t: "Micrófono abierto", p: ["Nevis Balanta"] }
     ]
   },
 
@@ -177,8 +179,8 @@ const PROGRAMA = [
     dia: 6, esc: "acacias", jornada: "Mañana",
     sesiones: [
       { h: "8:00 a. m.", tipo: "Acto", t: "Saludo inicial", p: ["Leticia Truque Vélez", "Jenny Amelia Velazco"] },
-      { h: "8:00 – 9:00 a. m.", tipo: "Taller", t: "Lectura de poemas y taller para niños con discapacidad cognitiva leve · Palabras que pintan y cantan", p: ["Milton Fabián Solano", "Lina Johana Pérez Montoya"], nota: "Treinta minutos por voz." },
-      { h: "9:30 – 11:00 a. m.", tipo: "Taller", t: "Taller y recital · Palabras que transforman", p: ["Jhelga Lorena Pineda", "Milton Fabián Solano", "Lina Johana Pérez Montoya", "Leticia Truque Vélez"] }
+      { h: "8:00 – 9:00 a. m.", tipo: "Taller", t: "Taller · Ojos de búho, el arte de pensar en imágenes", p: ["Ángela Penagos Londoño", "Tatiana Suárez Vásquez"] },
+      { h: "9:30 – 11:00 a. m.", tipo: "Taller", t: "Taller y recital · Palabras que transforman", p: ["Jhelga Lorena Pineda", "Leticia Truque Vélez"] }
     ]
   },
   {
@@ -186,6 +188,12 @@ const PROGRAMA = [
     sesiones: [
       { h: "10:45 – 11:45 a. m.", tipo: "Lectura", t: "Lectura de poemas", p: ["María Adiela Londoño de Copete", "Nataly Tabima Suárez", "María Florenia Vivas Bohórquez", "Luz Dolly Atehortúa"] },
       { h: "10:45 – 11:45 a. m.", tipo: "Taller", t: "Charla y ejercicio de escritura · La importancia de querer al territorio", p: ["Judith Cartagena", "María Adiela Londoño de Copete"] }
+    ]
+  },
+  {
+    dia: 6, esc: "agustin", jornada: "Mañana",
+    sesiones: [
+      { h: "10:45 – 11:45 a. m.", tipo: "Lectura", t: "Lectura de poemas", p: ["Milton Fabián Solano", "Mario Mathor", "Xiomara Martínez Deluque"], mod: "Digna Damaris Escobar Torres" }
     ]
   },
   {
@@ -223,9 +231,8 @@ const PROGRAMA = [
   {
     dia: 6, esc: "eljardin", jornada: "Tarde", publico: "Adultos",
     sesiones: [
-      { h: "2:00 p. m.", tipo: "Acto", t: "Saludo inicial", p: ["Alicia Gómez"] },
-      { h: "2:00 – 4:00 p. m.", tipo: "Recital", t: "Recital", p: ["Stefany Vanegas Mondragón"] },
-      { h: "4:00 – 5:00 p. m.", tipo: "Recital", t: "Recital poético de la esperanza", p: ["Alejandrino Santos Hurtado", "Margarita Peñalosa Flórez", "Jaime Eduardo Muñoz Flórez", "María Antonia Ledesma", "Martha Estela Aguilar Guayara"] },
+      { h: "4:00 p. m.", tipo: "Acto", t: "Saludo inicial", p: ["Alicia Gómez"] },
+      { h: "4:00 – 5:00 p. m.", tipo: "Recital", t: "Recital poético de la esperanza", p: ["Alejandrino Santos Hurtado", "Margarita Peñalosa Flórez", "Jaime Eduardo Muñoz Flórez", "María Antonia Ledesma", "Martha Estela Aguilar Guayara", "Stefany Vanegas Mondragón"] },
       { h: "5:15 – 6:00 p. m.", tipo: "Recital", t: "Recital declamatorio", p: ["Franz Wisley Aguirre Muñoz", "María de los Ángeles Londoño"], nota: "Quince minutos por voz." }
     ]
   },
