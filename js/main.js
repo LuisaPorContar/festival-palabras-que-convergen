@@ -38,7 +38,7 @@
 
   /* ---------- Cuenta regresiva ---------- */
   const inicio = new Date(CONFIG.inicio).getTime();
-  const fin = new Date("2026-11-07T13:00:00-05:00").getTime();
+  const fin = new Date("2026-11-07T14:20:00-05:00").getTime();
   const count = $("#count");
   function tick() {
     const ahora = Date.now();
