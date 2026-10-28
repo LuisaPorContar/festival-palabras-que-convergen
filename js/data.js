@@ -76,7 +76,7 @@ const PROGRAMA = [
       { h: "3:35 – 4:05 p. m.", tipo: "Recital", t: "Recital · Manifiesto de la esperanza", p: ["Joseph Berolo Ramos", "Miriam Castillo Mendoza", "Alfredo «Cheo» Angulo", "Daniel Rivera Meza", "Gloria Judith López Soto"], nota: "Seis minutos por voz." },
       { h: "4:10 – 4:35 p. m.", tipo: "Recital", t: "Recital declamatorio", p: ["Germán Félix Calvo Sarmiento", "Marco Rogelio Rubio López", "Martha Luz De León Naar", "José Fernando Cano"] },
       { h: "4:40 – 5:00 p. m.", tipo: "Escena", t: "Recital escénico «Raúl Gómez Jattin siempre vivo» · Anecdotario", p: ["Mateo Rose", "Antonio Prada Fortul"] },
-      { h: "5:05 – 5:40 p. m.", tipo: "Recital", t: "Concierto de colectivos · Manifiesto de la esperanza", p: ["Martha Eugenia Uribe Mutis", "Robinson Villalobos Velásquez", "Alexis Ocoró Bonilla", "Alfredo Otero Ortega", "Diomar Leclerc Martínez", "Pablo Emilio Beltrán Bejarano", "Leticia Truque Vélez", "Lucero Jordán Molina", "María Florenia Vivas Bohórquez", "Judith Cartagena", "Lina Johana Pérez Montoya", "Yendier Mosquera Lemus", "Istina Valoyes Waldo", "Jaime Eduardo Muñoz Flórez", "Margarita Peñalosa Flórez", "Mónica Patricia Ossa Graín"], nota: "Dos minutos por voz, un poema cada uno. Colectivos: Abe'scritos, Gremio Poético Colombiano, Colectivo Caribe, Cafeletreando, Fuespacol, Verbum, Casa de Piedra, Crisálidas Poéticas, Remart, Red de Escritores del Chocó, Poetas de la Calle y Lenguaje de Esperanzas." },
+      { h: "5:05 – 5:40 p. m.", tipo: "Recital", t: "Concierto de colectivos · Manifiesto de la esperanza", p: ["Martha Eugenia Uribe Mutis", "Robinson Villalobos Velásquez", "Alexis Ocoró Bonilla", "Alfredo Otero Ortega", "Diomar Leclerc Martínez", "Pablo Emilio Beltrán Bejarano", "Colombia Truque", "Lucero Jordán Molina", "María Florenia Vivas Bohórquez", "Judith Cartagena", "Lina Johana Pérez Montoya", "Yendier Mosquera Lemus", "Istina Valoyes Waldo", "Jaime Eduardo Muñoz Flórez", "Margarita Peñalosa Flórez", "Mónica Patricia Ossa Graín"], nota: "Dos minutos por voz, un poema cada uno. Colectivos: Abe'scritos, Gremio Poético Colombiano, Colectivo Caribe, Cafeletreando, Fuespacol, Verbum, Casa de Piedra, Crisálidas Poéticas, Remart, Red de Escritores del Chocó, Poetas de la Calle y Lenguaje de Esperanzas." },
       { h: "5:40 – 6:00 p. m.", tipo: "Música", t: "Intervención musical", p: ["Marisol Quiroga"] }
     ]
   },
@@ -180,9 +180,9 @@ const PROGRAMA = [
   {
     dia: 6, esc: "acacias", jornada: "Mañana",
     sesiones: [
-      { h: "8:00 a. m.", tipo: "Acto", t: "Saludo inicial", p: ["Leticia Truque Vélez", "Jenny Amelia Velazco"] },
+      { h: "8:00 a. m.", tipo: "Acto", t: "Saludo inicial", p: ["Colombia Truque", "Jenny Amelia Velazco"] },
       { h: "8:00 – 9:00 a. m.", tipo: "Taller", t: "Taller · Ojos de búho, el arte de pensar en imágenes", p: ["Ángela Penagos Londoño", "Tatiana Suárez Vásquez"] },
-      { h: "9:30 – 11:00 a. m.", tipo: "Taller", t: "Taller y recital · Palabras que transforman", p: ["Jhelga Lorena Pineda", "Leticia Truque Vélez"] }
+      { h: "9:30 – 11:00 a. m.", tipo: "Taller", t: "Taller y recital · Palabras que transforman", p: ["Jhelga Lorena Pineda", "Colombia Truque"] }
     ]
   },
   {
@@ -303,7 +303,7 @@ const PROGRAMA = [
   {
     dia: 7, esc: "unilibre", jornada: "Mañana", titulo: "Jornada de clausura · Auditorio",
     sesiones: [
-      { h: "8:00 – 8:45 a. m.", tipo: "Libro", t: "Palabras iniciales, presentación del libro «Palabras que convergen» (recital) y apertura de la exposición de pinturas contra la guerra (écfrasis)", p: ["Miriam Castillo Mendoza", "Robinson Villalobos Velásquez", "Diomar Leclerc Martínez", "Martha Eugenia Uribe Mutis", "Pablo Emilio Beltrán Bejarano", "Germán Félix Calvo Sarmiento", "Edinson Tello Bedón", "Gloria Inés Sánchez Duque", "Marino Díaz Antía", "María Antonia Ledesma", "Leticia Truque Vélez", "Constanza Eugenia Muñoz Flórez", "Istina Valoyes Waldo", "Roger Lázaro Ynca"], pres: ["Diomar Leclerc Martínez", "Pablo Emilio Beltrán Bejarano", "Judith Cartagena"] },
+      { h: "8:00 – 8:45 a. m.", tipo: "Libro", t: "Palabras iniciales, presentación del libro «Palabras que convergen» (recital) y apertura de la exposición de pinturas contra la guerra (écfrasis)", p: ["Miriam Castillo Mendoza", "Robinson Villalobos Velásquez", "Diomar Leclerc Martínez", "Martha Eugenia Uribe Mutis", "Pablo Emilio Beltrán Bejarano", "Germán Félix Calvo Sarmiento", "Edinson Tello Bedón", "Gloria Inés Sánchez Duque", "Marino Díaz Antía", "María Antonia Ledesma", "Colombia Truque", "Constanza Eugenia Muñoz Flórez", "Istina Valoyes Waldo", "Roger Lázaro Ynca"], pres: ["Diomar Leclerc Martínez", "Pablo Emilio Beltrán Bejarano", "Judith Cartagena"] },
       { h: "8:45 – 9:30 a. m.", tipo: "Conversatorio", t: "Conversatorio · Mejora de textos: cómo corregir, pulir y estructurar una obra sin perder la voz del autor", p: ["Joseph Berolo Ramos", "Mónica Patricia Ossa Graín", "Milton Fabián Solano"], mod: "Judith Cartagena" },
       { h: "9:30 – 9:50 a. m.", tipo: "Escena", t: "Intervención artística", p: ["Robinson Villalobos Velásquez", "Digna Damaris Escobar Torres", "Xiomara Martínez Deluque"] },
       { h: "9:50 – 10:00 a. m.", tipo: "Recital", t: "Intervención declamatoria", p: ["Diego Jaramillo"] },
@@ -373,7 +373,7 @@ const PERFILES = {
   "Yarleidy Solar Uribe": { foto: "assets/ponentes/yarleidy-solar.jpg", bio: "Escritora y gestora cultural de Tierralta, Córdoba. Dirige el taller literario Genuina." },
   "Istina Valoyes Waldo": { foto: "assets/ponentes/istina-valoyes.jpg", bio: "Poeta, terapeuta del lenguaje y declamadora vinculada a la cultura del Chocó." },
   "Yendier Mosquera Lemus": { foto: "assets/ponentes/yendier-mosquera.jpg", bio: "Escritor, poeta y profesional de la salud. Autor de «Así vivimos: poesías, cartas y consejos de mi región»." },
-  "Leticia Truque Vélez": { alias: "Colombia Truque", bio: "Escritora y traductora. Premio Nacional de Cuento." },
+  "Colombia Truque": { bio: "Escritora y traductora. Premio Nacional de Cuento." },
   "María Dolly Montes Tangarife": { bio: "Escritora, pintora, escultora y gestora cultural de Caldas. Creadora del premio de literatura DOMOTA." },
   "Lina Johana Pérez Montoya": { alias: "Lilimar", bio: "Poeta de Remart. Une la palabra con la psicología del bienestar, el mindfulness y la inteligencia emocional." },
   "Roberto Toala Núñez": { bio: "Escritor de microrrelatos vinculado a la identidad de Cali y el Valle." },
