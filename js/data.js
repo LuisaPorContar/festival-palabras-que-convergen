@@ -209,7 +209,7 @@ const PROGRAMA = [
     dia: 6, esc: "sanluis", jornada: "Mañana",
     sesiones: [
       { h: "9:00 – 9:10 a. m.", tipo: "Acto", t: "Saludo inicial", p: ["Constanza Eugenia Muñoz Flórez", "Diego"] },
-      { h: "9:10 – 11:10 a. m.", tipo: "Recital", t: "Recital poético declamatorio de la esperanza", p: ["Constanza Eugenia Muñoz Flórez", "María Teresa Casas Figueroa", "Henry Patiño Montoya", "Aníbal Gilberto Pantoja Ríos", "Tito Nelio Cuero Murillo", "Margarita Peñalosa Flórez", "Marino Díaz Antía"], nota: "Diecisiete minutos por voz." }
+      { h: "9:10 – 11:10 a. m.", tipo: "Recital", t: "Recital poético declamatorio de la esperanza", p: ["Constanza Eugenia Muñoz Flórez", "María Teresa Casas Figueroa", "Henry Patiño Montoya", "Aníbal Gilberto Pantoja Ríos", "Tito Nelio Cuero Murillo", "Margarita Peñalosa Flórez"], nota: "Diecisiete minutos por voz." }
     ]
   },
   {
