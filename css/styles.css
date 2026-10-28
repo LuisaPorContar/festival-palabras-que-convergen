@@ -267,6 +267,8 @@ button, input, select { font: inherit; color: inherit; }
 .mia__donde { margin-top: 3px; font-size: .92rem; color: var(--muted); }
 .mia__donde b { color: var(--ink); font-weight: 600; }
 .mia__rol { display: inline-block; margin-left: 6px; padding: 1px 8px; border-radius: 999px; background: var(--sun); color: var(--navy); font-size: .74rem; font-weight: 700; vertical-align: 2px; }
+.mia__lista li.mia__viaje { display: block; margin: 0 0 12px; padding: 8px 12px; border-top: 0; border-radius: 10px; background: var(--cyan-soft); font-size: .86rem; line-height: 1.45; color: var(--teal); }
+.mia__viaje b { color: var(--navy); font-weight: 600; }
 .mia__nada { background: #fff; color: var(--ink); border-radius: var(--radius); padding: 16px 20px; }
 @media (max-width: 760px) {
   .mia { grid-template-columns: 1fr; padding: 20px 18px; }

@@ -43,6 +43,23 @@ const DondeMeToca = (function () {
     .sort((x, y) => x.b.dia - y.b.dia || minutos(x.s.h) - minutos(y.s.h));
   const mapaDe = (e) => "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(e.nombre.split(" · ")[0] + ", Cali, Colombia");
 
+  // Hora de fin en minutos («12:00 m.» es mediodía).
+  function fin(h) {
+    const ult = h.split(" – ").pop(), m = ult.match(/(\d+):(\d+)/);
+    if (/^12:\d\d m\./.test(ult)) return 720 + Number(m[2]);
+    const pm = /p\. m\./.test(/[ap]\. m\./.test(ult) ? ult : h);
+    return (Number(m[1]) % 12 + (pm ? 12 : 0)) * 60 + Number(m[2]);
+  }
+  // Distancia aproximada por calle entre dos sedes (línea recta × 1,35) y tiempo en carro con tráfico de Cali.
+  function traslado(a, b) {
+    if (!a.geo || !b.geo) return null;
+    const rad = Math.PI / 180, [la1, lo1] = a.geo, [la2, lo2] = b.geo;
+    const x = (lo2 - lo1) * rad * Math.cos((la1 + la2) / 2 * rad), y = (la2 - la1) * rad;
+    const km = Math.sqrt(x * x + y * y) * 6371 * 1.35;
+    return { km: Math.round(km), min: Math.round((km * 2.6 + 10) / 5) * 5 };
+  }
+  const duracion = (m) => m < 60 ? `${m} min` : `${Math.floor(m / 60)} h${m % 60 ? " " + (m % 60) + " min" : ""}`;
+
   // Pinta en «caja» la agenda de cada persona de «gente» cuyo nombre coincide con «q» (ya normalizada).
   function pintar(caja, q, gente) {
     if (!q) { caja.innerHTML = ""; return; }
@@ -67,12 +84,22 @@ const DondeMeToca = (function () {
             <p class="person__pais">${acts.length} ${acts.length === 1 ? "actividad" : "actividades"}</p>
           </div>
         </div>
-        <ol class="mia__lista">${acts.map(({ b, s, rol }) => {
+        <ol class="mia__lista">${acts.map(({ b, s, rol }, i) => {
           const e = ESCENARIOS[b.esc];
           // Quien presenta la jornada la acompaña completa, no solo la primera actividad.
           const jornada = rol === "Presenta la jornada";
           const hora = jornada ? s.h.split(" – ")[0] + " – " + b.sesiones[b.sesiones.length - 1].h.split(" – ").pop() : s.h;
           const titulo = jornada ? "Presentación de la jornada" + (b.titulo ? " · " + b.titulo : "") : s.t;
+          // Si lo siguiente del mismo día queda lejos o con el tiempo justo, una nota discreta para salir con tiempo.
+          let aviso = "";
+          const sig = acts[i + 1];
+          if (sig && sig.b.dia === b.dia && sig.b.esc !== b.esc) {
+            const t = traslado(e, ESCENARIOS[sig.b.esc]), libre = minutos(sig.s.h) - fin(hora);
+            if (t && libre >= 0 && (t.km >= 8 || libre < t.min + 15)) {
+              aviso = `
+          <li class="mia__viaje">🚗 Luego vas a <b>${esc(ESCENARIOS[sig.b.esc].nombre)}</b>: unos ${t.km} km (≈ ${t.min} min en carro). Tienes ${duracion(libre)} entre una y otra; sal con tiempo.</li>`;
+            }
+          }
           return `
           <li>
             <p class="mia__cuando"><b>${esc(DIAS[b.dia].largo)}</b><span>${esc(hora)}</span></p>
@@ -80,7 +107,7 @@ const DondeMeToca = (function () {
               <h4>${esc(titulo)}${rol && !jornada ? ` <span class="mia__rol">${rol}</span>` : ""}</h4>
               <p class="mia__donde"><b>${esc(e.nombre)}</b>${e.dir ? ` · ${esc(e.dir)} · <a href="${mapaDe(e)}" target="_blank" rel="noopener">Cómo llegar ↗</a>` : ""}</p>
             </div>
-          </li>`;
+          </li>${aviso}`;
         }).join("")}</ol>
       </article>`;
     }).join("") + (hallados.length > MAX ? `<p class="mia__nada">Hay ${hallados.length - MAX} ${hallados.length - MAX === 1 ? "persona más" : "personas más"} con ese nombre. Escribe también tu apellido.</p>` : "");

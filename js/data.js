@@ -16,28 +16,29 @@ const DIAS = {
   7: { corto: "Sáb 7", largo: "Sábado 7 de noviembre" }
 };
 
+// geo = [latitud, longitud] aproximadas, para avisar de traslados largos en «¿Dónde me toca?».
 const ESCENARIOS = {
-  presagio:     { nombre: "Teatro El Presagio", dir: "Av. 9A Norte #10N-50, barrio Granada" },
-  unilibre:     { nombre: "Universidad Libre Seccional Cali", dir: "Carrera 109 #22-00, Campus Valle del Lili" },
-  eldorado:     { nombre: "Biblioteca El Dorado", dir: "Calle 13C #36A-31, barrio El Dorado, Comuna 10" },
-  deporte:      { nombre: "Biblioteca de la Recreación y el Deporte", dir: "Carrera 34 con Calle 5B, San Fernando · Tribuna occidental del Estadio Pascual Guerrero" },
-  eljardin:     { nombre: "Biblioteca El Jardín", dir: "Calle 27 #36-10" },
-  sanluis:      { nombre: "Biblioteca Pública San Luis", dir: "Calle 71 #1A-10, barrio San Luis, Comuna 6" },
-  lamaria:      { nombre: "Biblioteca La María", dir: "Carrera 5 #2-69, barrio San Antonio, Comuna 3" },
-  vistahermosa: { nombre: "Biblioteca de Vista Hermosa (Biblioteca Verde)", dir: "Av. 5A Oeste #44-69, Centro Cultural Comuna 1, barrio Vista Hermosa" },
-  acacias:      { nombre: "Biblioteca Centro Cultural Las Acacias", dir: "Carrera 24B #19A-14, barrio Las Acacias, Comuna 10" },
-  sena:         { nombre: "Biblioteca Municipal SENA", dir: "Carrera 3 con Calle 47, Esmeralda" },
-  rigoberta:    { nombre: "Biblioteca Municipal Rigoberta Menchú", dir: "Carrera 32A #49-50, barrio Laureano Gómez / El Retiro, Comuna 15" },
-  campina:      { nombre: "Biblioteca La Campiña", dir: "Calle 43 Norte #7N-03" },
-  apapachos:    { nombre: "Apapachos", dir: "Calle 2 #10-21, barrio San Antonio, Comuna 3" },
-  oromo:        { nombre: "Oromo Café Librería", dir: "Calle 17 #85-27, Comuna 17" },
-  libertienda:  { nombre: "Libertienda Café Libro", dir: "Carrera 16 #2A-47" },
-  alejandria:   { nombre: "Centro Cultural Casa Alejandría", dir: "Carrera 10 #4-13, barrio San Antonio" },
-  capitolio:    { nombre: "Centro Cultural El Capitolio", dir: "Calle 5 #66B-67, piso 4" },
-  carbonell:    { nombre: "I.E. José María Carbonell", dir: "Calle 13 #32-88, barrio Colseguros" },
-  cread:        { nombre: "Colegio CREAD", dir: "Calle 27 #32-77, Polideportivo, barrio El Jardín" },
-  agustin:      { nombre: "I.E. Agustín Nieto Caballero (sede principal)", dir: "Carrera 36 #26B-28, barrio El Jardín" },
-  casamono:     { nombre: "Fundación Casa del Mono", dir: "Carrera 25 #5-112, barrio 3 de Julio" }
+  presagio:     { nombre: "Teatro El Presagio", dir: "Av. 9A Norte #10N-50, barrio Granada", geo: [3.4593, -76.5336] },
+  unilibre:     { nombre: "Universidad Libre Seccional Cali", dir: "Carrera 109 #22-00, Campus Valle del Lili", geo: [3.3642, -76.5164] },
+  eldorado:     { nombre: "Biblioteca El Dorado", dir: "Calle 13C #36A-31, barrio El Dorado, Comuna 10", geo: [3.4206, -76.5286] },
+  deporte:      { nombre: "Biblioteca de la Recreación y el Deporte", dir: "Carrera 34 con Calle 5B, San Fernando · Tribuna occidental del Estadio Pascual Guerrero", geo: [3.4299, -76.5411] },
+  eljardin:     { nombre: "Biblioteca El Jardín", dir: "Calle 27 #36-10", geo: [3.4246, -76.5181] },
+  sanluis:      { nombre: "Biblioteca Pública San Luis", dir: "Calle 71 #1A-10, barrio San Luis, Comuna 6", geo: [3.4807, -76.4871] },
+  lamaria:      { nombre: "Biblioteca La María", dir: "Carrera 5 #2-69, barrio San Antonio, Comuna 3", geo: [3.4474, -76.5385] },
+  vistahermosa: { nombre: "Biblioteca de Vista Hermosa (Biblioteca Verde)", dir: "Av. 5A Oeste #44-69, Centro Cultural Comuna 1, barrio Vista Hermosa", geo: [3.4550, -76.5756] },
+  acacias:      { nombre: "Biblioteca Centro Cultural Las Acacias", dir: "Carrera 24B #19A-14, barrio Las Acacias, Comuna 10", geo: [3.4337, -76.5212] },
+  sena:         { nombre: "Biblioteca Municipal SENA", dir: "Carrera 3 con Calle 47, Esmeralda", geo: [3.4594, -76.5089] },
+  rigoberta:    { nombre: "Biblioteca Municipal Rigoberta Menchú", dir: "Carrera 32A #49-50, barrio Laureano Gómez / El Retiro, Comuna 15", geo: [3.4118, -76.4956] },
+  campina:      { nombre: "Biblioteca La Campiña", dir: "Calle 43 Norte #7N-03", geo: [3.4812, -76.5269] },
+  apapachos:    { nombre: "Apapachos", dir: "Calle 2 #10-21, barrio San Antonio, Comuna 3", geo: [3.4474, -76.5385] },
+  oromo:        { nombre: "Oromo Café Librería", dir: "Calle 17 #85-27, Comuna 17", geo: [3.3563, -76.5341] },
+  libertienda:  { nombre: "Libertienda Café Libro", dir: "Carrera 16 #2A-47", geo: [3.4431, -76.5377] },
+  alejandria:   { nombre: "Centro Cultural Casa Alejandría", dir: "Carrera 10 #4-13, barrio San Antonio", geo: [3.4474, -76.5385] },
+  capitolio:    { nombre: "Centro Cultural El Capitolio", dir: "Calle 5 #66B-67, piso 4", geo: [3.4026, -76.5296] },
+  carbonell:    { nombre: "I.E. José María Carbonell", dir: "Calle 13 #32-88, barrio Colseguros", geo: [3.4279, -76.5324] },
+  cread:        { nombre: "Colegio CREAD", dir: "Calle 27 #32-77, Polideportivo, barrio El Jardín", geo: [3.4246, -76.5181] },
+  agustin:      { nombre: "I.E. Agustín Nieto Caballero (sede principal)", dir: "Carrera 36 #26B-28, barrio El Jardín", geo: [3.4246, -76.5181] },
+  casamono:     { nombre: "Fundación Casa del Mono", dir: "Carrera 25 #5-112, barrio 3 de Julio", geo: [3.4330, -76.5399] }
 };
 
 /* Grupos de sedes (filtro de la agenda y lista de sedes). uno = etiqueta en singular. */
@@ -187,8 +188,8 @@ const PROGRAMA = [
   {
     dia: 6, esc: "cread", jornada: "Mañana",
     sesiones: [
-      { h: "10:45 – 11:45 a. m.", tipo: "Lectura", t: "Lectura de poemas", p: ["María Adiela Londoño de Copete", "Nataly Tabima Suárez", "María Florenia Vivas Bohórquez", "Luz Dolly Atehortúa"] },
-      { h: "10:45 – 11:45 a. m.", tipo: "Taller", t: "Charla y ejercicio de escritura · La importancia de querer al territorio", p: ["Judith Cartagena", "María Adiela Londoño de Copete"] }
+      { h: "10:45 – 11:15 a. m.", tipo: "Lectura", t: "Lectura de poemas", p: ["María Adiela Londoño de Copete", "Nataly Tabima Suárez", "María Florenia Vivas Bohórquez", "Luz Dolly Atehortúa"] },
+      { h: "11:20 – 11:50 a. m.", tipo: "Taller", t: "Charla y ejercicio de escritura · La importancia de querer al territorio", p: ["Judith Cartagena", "María Adiela Londoño de Copete"] }
     ]
   },
   {
