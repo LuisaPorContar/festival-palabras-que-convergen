@@ -58,7 +58,6 @@ const DondeMeToca = (function () {
     const km = Math.sqrt(x * x + y * y) * 6371 * 1.35;
     return { km: Math.round(km), min: Math.round((km * 2.6 + 10) / 5) * 5 };
   }
-  const duracion = (m) => m < 60 ? `${m} min` : `${Math.floor(m / 60)} h${m % 60 ? " " + (m % 60) + " min" : ""}`;
 
   // Pinta en «caja» la agenda de cada persona de «gente» cuyo nombre coincide con «q» (ya normalizada).
   function pintar(caja, q, gente) {
@@ -90,22 +89,36 @@ const DondeMeToca = (function () {
           const jornada = rol === "Presenta la jornada";
           const hora = jornada ? s.h.split(" – ")[0] + " – " + b.sesiones[b.sesiones.length - 1].h.split(" – ").pop() : s.h;
           const titulo = jornada ? "Presentación de la jornada" + (b.titulo ? " · " + b.titulo : "") : s.t;
-          // Si lo siguiente del mismo día queda lejos o con el tiempo justo, una nota discreta para salir con tiempo.
+          // Para leer de un vistazo: la hora de inicio grande y, debajo, hasta qué hora.
+          const [ini, ter] = hora.split(" – ");
+          const num = ini.replace(/ ?(?:[ap]\. )?m\.$/, "");
+          // «8:00 – 8:45 a. m.» o «11:30 – 12:30 p. m.»: si el inicio no dice a. m./p. m., se deduce del final de la propia actividad.
+          let suf = (ini.match(/[ap]\. m\.$|m\.$/) || [""])[0];
+          if (!suf) {
+            const fin1 = s.h.split(" – ").pop(), h0 = Number(num.split(":")[0]), h1 = Number(fin1.split(":")[0]);
+            suf = /p\. m\.|^12:\d\d m\./.test(fin1) && h0 % 12 <= h1 % 12 ? "p. m." : "a. m.";
+          }
+          // El día se nombra una sola vez, al empezar cada día.
+          const dia = i === 0 || acts[i - 1].b.dia !== b.dia ? `
+          <li class="mia__dia">${esc(DIAS[b.dia].largo)}</li>` : "";
+          // Si lo siguiente del mismo día queda lejos o con el tiempo justo, una línea corta para salir con tiempo.
           let aviso = "";
           const sig = acts[i + 1];
           if (sig && sig.b.dia === b.dia && sig.b.esc !== b.esc) {
             const t = traslado(e, ESCENARIOS[sig.b.esc]), libre = minutos(sig.s.h) - fin(hora);
             if (t && libre >= 0 && (t.km >= 8 || libre < t.min + 15)) {
               aviso = `
-          <li class="mia__viaje">🚗 Luego vas a <b>${esc(ESCENARIOS[sig.b.esc].nombre)}</b>: unos ${t.km} km (≈ ${t.min} min en carro). Tienes ${duracion(libre)} entre una y otra; sal con tiempo.</li>`;
+          <li class="mia__viaje">🚗 ${t.km >= 8 ? "La siguiente queda lejos" : "Tienes poco tiempo para la siguiente"}: unos ${t.min} min en carro.</li>`;
             }
           }
-          return `
-          <li>
-            <p class="mia__cuando"><b>${esc(DIAS[b.dia].largo)}</b><span>${esc(hora)}</span></p>
+          return `${dia}
+          <li class="mia__act">
+            <p class="mia__hora"><b>${esc(num)}</b><span>${esc(suf)}</span>${ter ? `<small>hasta ${esc(ter).replace(/ /g, "&nbsp;")}</small>` : ""}</p>
             <div>
               <h4>${esc(titulo)}${rol && !jornada ? ` <span class="mia__rol">${rol}</span>` : ""}</h4>
-              <p class="mia__donde"><b>${esc(e.nombre)}</b>${e.dir ? ` · ${esc(e.dir)} · <a href="${mapaDe(e)}" target="_blank" rel="noopener">Cómo llegar ↗</a>` : ""}</p>
+              <p class="mia__lugar">📍 <b>${esc(e.nombre)}</b></p>
+              ${e.dir ? `<p class="mia__dir">${esc(e.dir)}</p>
+              <a class="mia__mapa" href="${mapaDe(e)}" target="_blank" rel="noopener">Cómo llegar</a>` : ""}
             </div>
           </li>${aviso}`;
         }).join("")}</ol>
