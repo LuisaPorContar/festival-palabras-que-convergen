@@ -200,9 +200,9 @@ const PROGRAMA = [
   {
     dia: 6, esc: "lamaria", jornada: "Mañana", publico: "Niños y jóvenes de 11 a 17 años",
     sesiones: [
-      { h: "9:00 – 9:10 a. m.", tipo: "Acto", t: "Saludo inicial", p: ["Leticia Truque Vélez", "Melisa Castaño"] },
-      { h: "9:15 – 10:00 a. m.", tipo: "Recital", t: "Recital poético y lectura de cuentos y relatos", p: ["Leticia Truque Vélez", "María Dolly Montes Tangarife", "Roberto Toala Núñez"], nota: "Nueve minutos por voz." },
-      { h: "10:00 – 11:00 a. m.", tipo: "Taller", t: "Taller de escritura para la esperanza · Donde nacen los dragones", p: ["Leticia Truque Vélez", "María Dolly Montes Tangarife", "Roberto Toala Núñez"] }
+      { h: "9:00 – 9:10 a. m.", tipo: "Acto", t: "Saludo inicial", p: ["Melisa Castaño"] },
+      { h: "9:15 – 10:00 a. m.", tipo: "Recital", t: "Recital poético y lectura de cuentos y relatos", p: ["María Dolly Montes Tangarife", "Roberto Toala Núñez"], nota: "Nueve minutos por voz." },
+      { h: "10:00 – 11:00 a. m.", tipo: "Taller", t: "Taller de escritura para la esperanza · Donde nacen los dragones", p: ["María Dolly Montes Tangarife", "Roberto Toala Núñez"] }
     ]
   },
   {
