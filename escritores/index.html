@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="/">
+  <title>Escritores: te avisamos por WhatsApp · Festival Palabras que Convergen</title>
+  <meta name="description" content="Si lees en el Festival Palabras que Convergen, déjanos tu WhatsApp y te avisamos tu día, hora y sede. Cali, 5, 6 y 7 de noviembre de 2026.">
+  <meta property="og:title" content="Escritores: te avisamos por WhatsApp">
+  <meta property="og:description" content="Déjanos tu WhatsApp y te avisamos tu día, hora y sede en el Festival Palabras que Convergen.">
+  <meta property="og:image" content="https://festival-palabras-que-convergen.netlify.app/assets/og.jpg">
+  <meta property="og:url" content="https://festival-palabras-que-convergen.netlify.app/escritores/">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0B1E5B">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=41">
+  <style>
+    /* Landing solo para escritores: mismo fondo azul con rayos de /donde-me-toca. */
+    body { background: var(--navy); color: #fff; min-height: 100vh; }
+    .esc { position: relative; overflow: hidden; min-height: 100vh; }
+    .esc::before { content: ""; position: absolute; inset: 0; background: repeating-conic-gradient(from 0deg at 50% 0, transparent 0 4deg, rgba(10, 165, 196, .16) 4deg 4.6deg); -webkit-mask-image: radial-gradient(circle at 50% 0, #000 0 120px, transparent 640px); mask-image: radial-gradient(circle at 50% 0, #000 0 120px, transparent 640px); pointer-events: none; }
+    .esc__in { position: relative; width: min(1040px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 56px; }
+    .esc__top { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+    .esc__top a { display: flex; align-items: center; gap: 12px; color: #fff; text-decoration: none; }
+    .esc__top img { width: 64px; height: auto; filter: drop-shadow(0 6px 12px rgba(0, 0, 0, .35)); }
+    .esc__top span { font-family: var(--display); font-weight: 700; font-size: 1.05rem; line-height: 1.05; text-transform: uppercase; letter-spacing: .04em; }
+    .esc__top small { display: block; color: var(--sun); }
+    .esc__volver { flex: none; font-size: .9rem; font-weight: 600; color: #9fe3f1 !important; }
+    .esc__grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: center; margin-top: 48px; }
+    .esc__kicker { display: inline-block; padding: 6px 14px; border-radius: 999px; background: rgba(255, 197, 61, .16); color: var(--sun); font-family: var(--display); font-weight: 700; font-size: 1rem; letter-spacing: .1em; text-transform: uppercase; }
+    .esc h1 { margin-top: 16px; font-family: var(--display); font-weight: 800; font-size: clamp(3rem, 8vw, 5.2rem); line-height: .92; text-transform: uppercase; color: #fff; }
+    .esc h1 em { font-style: normal; color: var(--sun); }
+    .esc__sub { margin-top: 16px; font-size: 1.15rem; line-height: 1.5; color: #d6def0; max-width: 34em; }
+    .esc__sub b { color: #fff; }
+    .esc__pros { list-style: none; margin: 26px 0 0; padding: 0; display: grid; gap: 12px; }
+    .esc__pros li { display: flex; align-items: center; gap: 12px; font-size: 1.02rem; font-weight: 600; }
+    .esc__pros i { flex: none; width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; background: rgba(255, 255, 255, .1); font-style: normal; font-size: 1.2rem; }
+    .esc .form h2 { font-family: var(--display); font-weight: 800; font-size: 1.9rem; line-height: 1; text-transform: uppercase; color: var(--navy); }
+    .esc .form h2 + p { margin-top: -8px; font-size: .92rem; color: var(--muted); }
+    .esc .form input[type="text"], .esc .form input[type="email"], .esc .form input[type="tel"] { font-size: 1.05rem; padding: 15px 16px; }
+    .esc__nota { font-size: .82rem; color: var(--muted); text-align: center; }
+    .esc__pie { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 10px 22px; font-size: .95rem; }
+    .esc__pie a { color: #9fe3f1; font-weight: 600; }
+    @media (max-width: 760px) {
+      .esc__in { padding-top: 18px; }
+      .esc__top img { width: 54px; }
+      .esc__grid { grid-template-columns: 1fr; gap: 28px; margin-top: 32px; }
+      .esc__sub { font-size: 1.05rem; }
+      .esc__pros { margin-top: 20px; gap: 10px; }
+      .esc__pros li { font-size: .96rem; }
+      .esc .form { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="esc">
+    <div class="esc__in">
+      <div class="esc__top">
+        <a href="/" aria-label="Ir a la web del festival">
+          <img src="assets/logo-menu.png" alt="" width="238" height="240">
+          <span>Festival Palabras que Convergen<small>5 · 6 · 7 nov 2026 · Cali</small></span>
+        </a>
+        <a class="esc__volver" href="/">Ver la web →</a>
+      </div>
+
+      <div class="esc__grid">
+        <div>
+          <span class="esc__kicker">Solo para escritores del festival</span>
+          <h1>Tu voz ya tiene <em>cita</em></h1>
+          <p class="esc__sub">Déjanos tu WhatsApp y <b>te avisamos tu día, tu hora y tu sede</b>. Si algo cambia a última hora, te enteras antes que nadie.</p>
+          <ul class="esc__pros">
+            <li><i aria-hidden="true">📲</i>Tu agenda directo en el celular</li>
+            <li><i aria-hidden="true">🔔</i>Avisos de cambios de última hora</li>
+            <li><i aria-hidden="true">📍</i>Cómo llegar a tu sede, sin perderte</li>
+          </ul>
+        </div>
+
+        <div>
+          <form class="form" id="form" novalidate>
+            <h2>Llénalo en 30 segundos</h2>
+            <p>Solo tres datos y listo.</p>
+            <label>Nombre y apellido
+              <input type="text" name="nombre" autocomplete="name" required>
+            </label>
+            <label>Correo electrónico
+              <input type="email" name="correo" autocomplete="email" inputmode="email" required>
+            </label>
+            <label>Teléfono (WhatsApp)
+              <input type="tel" name="whatsapp" autocomplete="tel" inputmode="tel" placeholder="300 000 0000" required>
+            </label>
+            <label class="check">
+              <input type="checkbox" name="acepto" required>
+              <span>Autorizo usar mis datos para recibir avisos del festival por WhatsApp y correo.</span>
+            </label>
+            <p class="form__error" id="form-error" role="alert" hidden></p>
+            <button class="btn btn--sun btn--block" type="submit" id="form-btn">Avísenme por WhatsApp</button>
+            <p class="esc__nota">Nada de cadenas ni spam: solo lo que necesitas para llegar a leer.</p>
+          </form>
+
+          <div class="form form--ok" id="form-ok" hidden tabindex="-1">
+            <div class="okmark" aria-hidden="true">✓</div>
+            <h3>¡Listo, <span id="ok-nombre"></span>!</h3>
+            <p>Ya estás en la lista. Te escribiremos por WhatsApp con todo lo que necesitas para tu lectura.</p>
+            <a class="btn btn--sun" id="ok-donde" href="/donde-me-toca/">Ver dónde me toca</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="esc__pie">
+        <a href="/donde-me-toca/">¿Dónde me toca?</a>
+        <a href="/#agenda">Ver toda la programación</a>
+      </p>
+    </div>
+  </main>
+
+  <script src="js/data.js?v=45"></script>
+  <script>
+    (function () {
+      "use strict";
+      // Va a la misma hoja de inscripciones; «Asiste como» identifica a los escritores.
+      const form = document.getElementById("form"), err = document.getElementById("form-error"), btn = document.getElementById("form-btn");
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        err.hidden = true;
+        form.querySelectorAll(".is-bad").forEach((el) => el.classList.remove("is-bad"));
+        const malos = [...form.querySelectorAll("input[required]")].filter((el) => !el.checkValidity());
+        if (form.whatsapp.value.replace(/\D/g, "").length < 7 && !malos.includes(form.whatsapp)) malos.push(form.whatsapp);
+        if (malos.length) {
+          malos.forEach((el) => el.classList.add("is-bad"));
+          err.textContent = malos[0].name === "acepto" ? "Marca la autorización para poder avisarte." : "Revisa los campos marcados.";
+          err.hidden = false;
+          malos[0].focus();
+          return;
+        }
+        const datos = new URLSearchParams(new FormData(form));
+        datos.set("perfil", "Escritor(a) del festival · avisos por WhatsApp");
+        datos.set("fecha", new Date().toISOString());
+        // Identificador del envío: el script de la hoja lo usa para no guardar dos veces lo mismo.
+        datos.set("id", Date.now().toString(36) + Math.random().toString(36).slice(2, 10));
+        btn.disabled = true; btn.textContent = "Enviando…";
+        try {
+          await fetch(CONFIG.endpoint, { method: "POST", mode: "no-cors", body: datos });
+        } catch (_) {
+          btn.disabled = false; btn.textContent = "Avísenme por WhatsApp";
+          err.textContent = "No pudimos enviar tus datos. Revisa tu conexión e inténtalo de nuevo.";
+          err.hidden = false;
+          return;
+        }
+        const nombre = form.nombre.value.trim();
+        document.getElementById("ok-nombre").textContent = nombre.split(/\s+/)[0];
+        document.getElementById("ok-donde").href = "/donde-me-toca/?nombre=" + encodeURIComponent(nombre);
+        form.hidden = true;
+        const ok = document.getElementById("form-ok");
+        ok.hidden = false;
+        ok.focus();
+      });
+    })();
+  </script>
+</body>
+</html>
