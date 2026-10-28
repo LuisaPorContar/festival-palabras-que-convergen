@@ -120,9 +120,9 @@ const PROGRAMA = [
     dia: 6, esc: "carbonell", jornada: "Mañana",
     sesiones: [
       { h: "8:00 – 10:00 a. m.", tipo: "Taller", t: "Recital poético declamatorio y taller de iniciación a la palabra escrita", p: ["Maya Chalez", "Diomar Leclerc Martínez", "José Fernando Cano"], nota: "Seis grupos de 9.º, en el auditorio." },
-      { h: "8:00 – 11:45 a. m.", tipo: "Taller", t: "Recital poético declamatorio y taller de escritura", p: ["Joseph Berolo Ramos", "Martha Luz De León Naar", "Roger Lázaro Ynca"], nota: "Dos grupos de 10.º, en la sala bilingüe." },
+      { h: "8:00 – 11:45 a. m.", tipo: "Taller", t: "Recital poético declamatorio y taller de escritura", p: ["Martha Luz De León Naar", "Roger Lázaro Ynca"], nota: "Dos grupos de 10.º, en la sala bilingüe." },
       { h: "8:00 – 11:45 a. m.", tipo: "Taller", t: "Recital poético declamatorio y taller de escritura", p: ["Edinson Tello Bedón", "Marino Díaz Antía"], nota: "Un grupo de 10.º, en el laboratorio de física." },
-      { h: "8:00 – 11:45 a. m.", tipo: "Libro", t: "Presentación especial · Lectura de poemas y presentación de libros", p: ["Robinson Villalobos Velásquez", "Roberto Montes Mathieu", "Miriam Castillo Mendoza"], nota: "Un grupo de 11.º, en la sala de química." },
+      { h: "8:00 – 11:45 a. m.", tipo: "Libro", t: "Presentación especial · Lectura de poemas y presentación de libros", p: ["Robinson Villalobos Velásquez", "Roberto Montes Mathieu", "Miriam Castillo Mendoza", "Joseph Berolo Ramos"], nota: "Un grupo de 11.º, en la sala de química." },
       { h: "8:00 – 11:45 a. m.", tipo: "Recital", t: "Recital declamatorio, intervención artística y presentación especial", p: ["Marco Rogelio Rubio López", "José Fernando Cano", "Luz Stella Salazar López", "Carlos Manuel Rivera Rosado"], nota: "Un grupo de 11.º, en la cafetería." }
     ]
   },
