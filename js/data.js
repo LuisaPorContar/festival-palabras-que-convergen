@@ -71,7 +71,7 @@ const PROGRAMA = [
       { h: "2:30 – 2:45 p. m.", tipo: "Acto", t: "Palabras iniciales", p: ["Miriam Castillo Mendoza", "Robinson Villalobos Velásquez"] },
       { h: "2:50 – 3:30 p. m.", tipo: "Conversatorio", t: "Conversatorio 2 · El legado de Palenque en Colombia", p: ["Antonio Prada Fortul", "Gloria Amparo Murillo"] },
       { h: "3:35 – 4:05 p. m.", tipo: "Recital", t: "Recital · Manifiesto de la esperanza", p: ["Joseph Berolo Ramos", "Miriam Castillo Mendoza", "Alfredo «Cheo» Angulo", "Daniel Rivera Meza", "Gloria Judith López Soto"], nota: "Seis minutos por voz." },
-      { h: "4:10 – 4:35 p. m.", tipo: "Recital", t: "Recital declamatorio", p: ["Germán Félix Calvo Sarmiento", "Marco Rogelio Rubio López", "Martha Luz De León Naar", "José Fernando Cano"] },
+      { h: "4:10 – 4:35 p. m.", tipo: "Recital", t: "Recital declamatorio", p: ["Germán Félix Calvo Sarmiento", "José Fernando Cano"] },
       { h: "4:40 – 5:00 p. m.", tipo: "Escena", t: "Recital escénico «Raúl Gómez Jattin siempre vivo» · Anecdotario", p: ["Mateo Rose", "Antonio Prada Fortul"] },
       { h: "5:05 – 5:40 p. m.", tipo: "Recital", t: "Concierto de colectivos · Manifiesto de la esperanza", p: ["Martha Eugenia Uribe Mutis", "Robinson Villalobos Velásquez", "Alexis Ocoró Bonilla", "Alfredo Otero Ortega", "Diomar Leclerc Martínez", "Pablo Emilio Beltrán Bejarano", "Colombia Truque", "Lucero Jordán Molina", "María Florenia Vivas Bohórquez", "Judith Cartagena", "Lina Johana Pérez Montoya", "Yendier Mosquera Lemus", "Istina Valoyes Waldo", "Jaime Eduardo Muñoz Flórez", "Margarita Peñalosa Flórez", "Mónica Patricia Ossa Graín"], nota: "Dos minutos por voz, un poema cada uno. Colectivos: Abe'scritos, Gremio Poético Colombiano, Colectivo Caribe, Cafeletreando, Fuespacol, Verbum, Casa de Piedra, Crisálidas Poéticas, Remart, Red de Escritores del Chocó, Poetas de la Calle y Lenguaje de Esperanzas." },
       { h: "5:40 – 6:00 p. m.", tipo: "Música", t: "Intervención musical", p: ["Marisol Quiroga"] }
@@ -118,10 +118,10 @@ const PROGRAMA = [
     dia: 6, esc: "carbonell", jornada: "Mañana",
     sesiones: [
       { h: "8:00 – 10:00 a. m.", tipo: "Taller", t: "Recital poético declamatorio y taller de iniciación a la palabra escrita", p: ["Maya Chalez", "Diomar Leclerc Martínez", "José Fernando Cano"], nota: "Seis grupos de 9.º, en el auditorio." },
-      { h: "8:00 – 11:45 a. m.", tipo: "Taller", t: "Recital poético declamatorio y taller de escritura", p: ["Martha Luz De León Naar", "Roger Lázaro Ynca"], nota: "Dos grupos de 10.º, en la sala bilingüe." },
+      { h: "8:00 – 11:45 a. m.", tipo: "Taller", t: "Recital poético declamatorio y taller de escritura", p: ["Roger Lázaro Ynca"], nota: "Dos grupos de 10.º, en la sala bilingüe." },
       { h: "8:00 – 11:45 a. m.", tipo: "Taller", t: "Recital poético declamatorio y taller de escritura", p: ["Edinson Tello Bedón", "Marino Díaz Antía"], nota: "Un grupo de 10.º, en el laboratorio de física." },
       { h: "8:00 – 11:45 a. m.", tipo: "Libro", t: "Presentación especial · Lectura de poemas y presentación de libros", p: ["Robinson Villalobos Velásquez", "Roberto Montes Mathieu", "Miriam Castillo Mendoza", "Joseph Berolo Ramos"], nota: "Un grupo de 11.º, en la sala de química." },
-      { h: "8:00 – 11:45 a. m.", tipo: "Recital", t: "Recital declamatorio, intervención artística y presentación especial", p: ["Marco Rogelio Rubio López", "Luz Stella Salazar López", "Carlos Manuel Rivera Rosado"], nota: "Un grupo de 11.º, en la cafetería." },
+      { h: "8:00 – 11:45 a. m.", tipo: "Recital", t: "Recital declamatorio, intervención artística y presentación especial", p: ["Luz Stella Salazar López", "Carlos Manuel Rivera Rosado"], nota: "Un grupo de 11.º, en la cafetería." },
       { h: "10:05 – 11:45 a. m.", tipo: "Recital", t: "Recital declamatorio, intervención artística y presentación especial", p: ["José Fernando Cano"], nota: "Se une al grupo de 11.º en la cafetería, después del auditorio." }
     ]
   },
@@ -306,9 +306,9 @@ const PROGRAMA = [
       { h: "9:50 – 10:00 a. m.", tipo: "Recital", t: "Intervención declamatoria", p: ["Diego Jaramillo"] },
       { h: "10:00 – 10:25 a. m.", tipo: "Escena", t: "Salsa caleña · Muestra de baile", p: [], nota: "Grupo artístico de la Junta de Acción Comunal." },
       { h: "10:25 – 10:35 a. m.", tipo: "Recital", t: "Recital · Un poema de hasta pronto a Palabras que convergen", p: ["Jhelga Lorena Pineda", "Roberto Toala Núñez", "Nevis Balanta", "Tatiana Suárez Vásquez"], nota: "Un poema por voz." },
-      { h: "10:35 – 11:35 a. m.", tipo: "Conversatorio", t: "Cumbre del pensamiento · Hacia dónde van el arte y la literatura", p: ["Roberto Montes Mathieu", "Alfredo «Cheo» Angulo", "Antonio Prada Fortul", "Carlos Manuel Rivera Rosado", "Adalgiza Charria Quintero", "Marco Rogelio Rubio López", "Feliciano Saa Riascos", "Fernando Tamayo Ovalle", "Alexis Ocoró Bonilla"], mod: "Miriam Castillo Mendoza", nota: "Temas: la IA, ¿herramienta o autor?; los cambios en el lenguaje y los nuevos formatos de escritura; la «ficción climática» como el género literario definitivo del siglo XXI; cómo hacer el arte y la literatura accesibles sin precarizar el trabajo de artistas y escritores." },
+      { h: "10:35 – 11:35 a. m.", tipo: "Conversatorio", t: "Cumbre del pensamiento · Hacia dónde van el arte y la literatura", p: ["Roberto Montes Mathieu", "Alfredo «Cheo» Angulo", "Antonio Prada Fortul", "Carlos Manuel Rivera Rosado", "Adalgiza Charria Quintero", "Feliciano Saa Riascos", "Fernando Tamayo Ovalle", "Alexis Ocoró Bonilla"], mod: "Miriam Castillo Mendoza", nota: "Temas: la IA, ¿herramienta o autor?; los cambios en el lenguaje y los nuevos formatos de escritura; la «ficción climática» como el género literario definitivo del siglo XXI; cómo hacer el arte y la literatura accesibles sin precarizar el trabajo de artistas y escritores." },
       { h: "11:40 a. m. – 12:00 m.", tipo: "Música", t: "Intervención musical", p: ["Marisol Quiroga"] },
-      { h: "12:05 – 1:35 p. m.", tipo: "Acto", t: "Entrega de reconocimientos y homenajes", p: ["Robinson Villalobos Velásquez", "Germán Félix Calvo Sarmiento", "Ángela Penagos Londoño", "Joseph Berolo Ramos", "Miriam Castillo Mendoza"], nota: "Palabras del coordinador Robinson Villalobos Velásquez. Homenajes a Germán Félix Calvo Sarmiento, Martha Eugenia Uribe Mutis y Robinson Villalobos Velásquez. Reconocimientos a Mary Grueso Romero, Adalgiza Charria Quintero, Alejandro Buenaventura Aldeano, Maya Chalez, Alfredo «Cheo» Angulo, Antonio Prada Fortul, Carlos Manuel Rivera Rosado, Daniel Rivera Meza, Dora Luz Muñoz de Cobo, Edinson Tello Bedón, Fernando Tamayo Ovalle, Gloria Amparo Murillo Lloreda, Roxana González Gómez, José Fernando Cano, Jim Persal, Mario Mathor, Marco Rogelio Rubio López, Roger Lázaro Ynca y Wilson Blandón Caicedo." },
+      { h: "12:05 – 1:35 p. m.", tipo: "Acto", t: "Entrega de reconocimientos y homenajes", p: ["Robinson Villalobos Velásquez", "Germán Félix Calvo Sarmiento", "Ángela Penagos Londoño", "Joseph Berolo Ramos", "Miriam Castillo Mendoza"], nota: "Palabras del coordinador Robinson Villalobos Velásquez. Homenajes a Germán Félix Calvo Sarmiento, Martha Eugenia Uribe Mutis y Robinson Villalobos Velásquez. Reconocimientos a Mary Grueso Romero, Adalgiza Charria Quintero, Alejandro Buenaventura Aldeano, Maya Chalez, Alfredo «Cheo» Angulo, Antonio Prada Fortul, Carlos Manuel Rivera Rosado, Daniel Rivera Meza, Dora Luz Muñoz de Cobo, Edinson Tello Bedón, Fernando Tamayo Ovalle, Gloria Amparo Murillo Lloreda, Roxana González Gómez, José Fernando Cano, Jim Persal, Mario Mathor, Roger Lázaro Ynca y Wilson Blandón Caicedo." },
       { h: "1:40 – 1:55 p. m.", tipo: "Acto", t: "Evaluación y clausura del evento", p: ["Miriam Castillo Mendoza", "Robinson Villalobos Velásquez", "Germán Félix Calvo Sarmiento"] },
       { h: "1:55 – 2:20 p. m.", tipo: "Música", t: "Intervención musical de cierre", p: [] }
     ]
@@ -322,7 +322,7 @@ const ANFITRIONES = ["Marcela Obando", "Roxi Gómez", "Alicia Gómez", "Melisa C
    pais = país de origen; si no se indica, se asume PAIS_SEDE. */
 const PAIS_SEDE = "Colombia";
 // Países presentes en el festival (cifra del inicio y texto de la sección de ponentes).
-const PAISES = ["Colombia", "México", "Panamá", "Perú", "Puerto Rico"];
+const PAISES = ["Colombia", "Panamá", "Perú", "Puerto Rico"];
 // Archivo de bandera de cada país, en assets/banderas/.
 const BANDERAS = { "Colombia": "co", "México": "mx", "Panamá": "pa", "Perú": "pe", "Puerto Rico": "pr" };
 const PERFILES = {
@@ -432,7 +432,6 @@ const DESTACADOS = [
   { nombre: "Alfredo «Cheo» Angulo", rol: "Compositor · Pacífico" },
   { nombre: "Félix Domingo Cabezas", rol: "Narrador e investigador cultural" },
   { nombre: "Antonio Prada Fortul", rol: "Novelista · Cartagena" },
-  { nombre: "Marco Rogelio Rubio López", rol: "Invitado internacional" },
   { nombre: "Carlos Manuel Rivera Rosado", rol: "Invitado internacional" },
   { nombre: "Alberto Rodríguez", rol: "La Casa de la Lectura de Cali" },
   { nombre: "Judith Cartagena", rol: "Periodista y poeta" },
