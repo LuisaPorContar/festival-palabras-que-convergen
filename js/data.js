@@ -215,7 +215,7 @@ const PROGRAMA = [
   {
     dia: 6, esc: "sanluis", jornada: "Mañana",
     sesiones: [
-      { h: "9:00 – 9:10 a. m.", tipo: "Acto", t: "Saludo inicial", p: ["Constanza Eugenia Muñoz Flórez", "Diego"] },
+      { h: "9:00 – 9:10 a. m.", tipo: "Acto", t: "Saludo inicial", p: ["Constanza Eugenia Muñoz Flórez", "Diego"], nota: "Coordina la jornada: Tito Nelio Cuero Murillo." },
       { h: "9:10 – 11:10 a. m.", tipo: "Recital", t: "Recital poético declamatorio de la esperanza", p: ["Constanza Eugenia Muñoz Flórez", "María Teresa Casas Figueroa", "Henry Patiño Montoya", "Aníbal Gilberto Pantoja Ríos", "Tito Nelio Cuero Murillo", "Margarita Peñalosa Flórez"], nota: "Diecisiete minutos por voz." }
     ]
   },
@@ -300,7 +300,7 @@ const PROGRAMA = [
   {
     dia: 7, esc: "capitolio", sala: "Salón Real", jornada: "Mañana", titulo: "Jornada de clausura",
     sesiones: [
-      { h: "8:00 – 8:45 a. m.", tipo: "Libro", t: "Palabras iniciales, presentación del libro «Palabras que convergen» (recital) y apertura de la exposición de pinturas contra la guerra (écfrasis)", p: ["Miriam Castillo Mendoza", "Robinson Villalobos Velásquez", "Diomar Leclerc Martínez", "Martha Eugenia Uribe Mutis", "Germán Félix Calvo Sarmiento", "Edinson Tello Bedón", "Gloria Inés Sánchez Duque", "Marino Díaz Antía", "María Antonia Ledesma", "Colombia Truque", "Constanza Eugenia Muñoz Flórez", "Istina Valoyes Waldo", "Roger Lázaro Ynca"], pres: ["Diomar Leclerc Martínez", "Judith Cartagena"] },
+      { h: "8:00 – 8:45 a. m.", tipo: "Libro", t: "Palabras iniciales, presentación del libro «Palabras que convergen» (recital) y apertura de la exposición de pinturas contra la guerra (écfrasis)", p: ["Miriam Castillo Mendoza", "Robinson Villalobos Velásquez", "Diomar Leclerc Martínez", "Martha Eugenia Uribe Mutis", "Germán Félix Calvo Sarmiento", "Edinson Tello Bedón", "Gloria Inés Sánchez Duque", "Marino Díaz Antía", "María Antonia Ledesma", "Colombia Truque", "Constanza Eugenia Muñoz Flórez", "Istina Valoyes Waldo", "Roger Lázaro Ynca"], pres: ["Diomar Leclerc Martínez", "Constanza Eugenia Muñoz Flórez", "Judith Cartagena"] },
       { h: "8:45 – 9:30 a. m.", tipo: "Conversatorio", t: "Conversatorio · Mejora de textos: cómo corregir, pulir y estructurar una obra sin perder la voz del autor", p: ["Joseph Berolo Ramos", "Mónica Patricia Ossa Graín", "Milton Fabián Solano"], mod: "Judith Cartagena" },
       { h: "9:30 – 9:50 a. m.", tipo: "Escena", t: "Intervención artística", p: ["Robinson Villalobos Velásquez", "Digna Damaris Escobar Torres", "Xiomara Martínez Deluque"] },
       { h: "9:50 – 10:00 a. m.", tipo: "Recital", t: "Intervención declamatoria", p: ["Diego Jaramillo"] },
