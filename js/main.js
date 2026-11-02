@@ -242,7 +242,7 @@
           <span class="blk__jor blk__jor--${b.jornada === "Tarde" ? "t" : "m"}">${esc(b.jornada)}</span>
           <span class="blk__hora blk__hora--${b.jornada === "Tarde" ? "t" : "m"}"><b>${esc(desde.replace(/ ?(?:[ap]\. )?m\.$/, ""))}</b><small>${esc((desde.match(/[ap]\. m\./) || hasta.match(/[ap]\. m\./) || [""])[0])}</small></span>
           <span class="blk__main">
-            <b>${esc(e.nombre)}</b>
+            <b>${esc(e.nombre)}${b.sala ? " · " + esc(b.sala) : ""}</b>
             <small>${desde === hasta ? esc(desde) : esc(desde) + " – " + esc(hasta)} · ${sesiones.length} ${sesiones.length === 1 ? "actividad" : "actividades"}${b.publico ? " · " + esc(b.publico) : ""}</small>
           </span>
 
@@ -328,7 +328,7 @@
   const GRUPOS_SEDES = [
     { titulo: "Bibliotecas", items: GRUPOS_ESC[0].items },
     { titulo: "Librerías y centros culturales", items: GRUPOS_ESC[1].items },
-    { titulo: "Teatro, universidad y colegio", items: GRUPOS_ESC.slice(2).flatMap((g) => g.items) }
+    { titulo: "Universidad y colegios", items: GRUPOS_ESC.slice(2).flatMap((g) => g.items) }
   ];
   function pintarSedes() {
     const q = norm($("#buscar-sede").value.trim());

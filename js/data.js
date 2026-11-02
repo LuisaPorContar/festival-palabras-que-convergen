@@ -18,7 +18,6 @@ const DIAS = {
 
 // geo = [latitud, longitud] aproximadas, para avisar de traslados largos en «¿Dónde me toca?».
 const ESCENARIOS = {
-  presagio:     { nombre: "Teatro El Presagio", dir: "Av. 9A Norte #10N-50, barrio Granada", geo: [3.4593, -76.5336] },
   unilibre:     { nombre: "Universidad Libre Seccional Cali", dir: "Carrera 109 #22-00, Campus Valle del Lili", geo: [3.3642, -76.5164] },
   eldorado:     { nombre: "Biblioteca El Dorado", dir: "Calle 13C #36A-31, barrio El Dorado, Comuna 10", geo: [3.4206, -76.5286] },
   deporte:      { nombre: "Biblioteca de la Recreación y el Deporte", dir: "Carrera 34 con Calle 5B, San Fernando · Tribuna occidental del Estadio Pascual Guerrero", geo: [3.4299, -76.5411] },
@@ -46,15 +45,15 @@ const GRUPOS_ESC = [
   { titulo: "Bibliotecas", uno: "Biblioteca", items: ["eldorado", "deporte", "eljardin", "sanluis", "lamaria", "vistahermosa", "acacias", "sena", "rigoberta", "campina"] },
   { titulo: "Librerías y centros culturales", uno: "Librería", items: ["apapachos", "oromo", "libertienda", "alejandria", "capitolio", "casamono"] },
   { titulo: "Universidades", uno: "Universidad", items: ["unilibre"] },
-  { titulo: "Teatros", uno: "Teatro", items: ["presagio"] },
   { titulo: "Colegios", uno: "Colegio", items: ["carbonell", "cread", "agustin"] }
 ];
 
 /* Cada bloque = un escenario en una jornada.
+   sala = salón dentro de la sede (opcional).
    Sesión: h = hora, tipo, t = título, p = participantes, mod = modera, pres = presenta la jornada, nota = texto adicional. */
 const PROGRAMA = [
   {
-    dia: 5, esc: "presagio", jornada: "Mañana", titulo: "Programación inaugural",
+    dia: 5, esc: "capitolio", sala: "Salón Real", jornada: "Mañana", titulo: "Programación inaugural",
     sesiones: [
       { h: "8:20 a. m.", tipo: "Acto", t: "Himno Nacional", p: ["Lucero Jordán Molina"], pres: ["Judith Cartagena", "Diomar Leclerc Martínez"] },
       { h: "8:25 – 8:35 a. m.", tipo: "Acto", t: "Palabras de instalación del festival", p: ["Miriam Castillo Mendoza", "Robinson Villalobos Velásquez"] },
