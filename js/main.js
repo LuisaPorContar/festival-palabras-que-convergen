@@ -328,7 +328,7 @@
   const GRUPOS_SEDES = [
     { titulo: "Bibliotecas", items: GRUPOS_ESC[0].items },
     { titulo: "Librerías y centros culturales", items: GRUPOS_ESC[1].items },
-    { titulo: "Universidad y colegios", items: GRUPOS_ESC.slice(2).flatMap((g) => g.items) }
+    { titulo: "Colegios", items: GRUPOS_ESC.slice(2).flatMap((g) => g.items) }
   ];
   function pintarSedes() {
     const q = norm($("#buscar-sede").value.trim());

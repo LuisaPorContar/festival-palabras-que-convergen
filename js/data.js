@@ -18,7 +18,6 @@ const DIAS = {
 
 // geo = [latitud, longitud] aproximadas, para avisar de traslados largos en «¿Dónde me toca?».
 const ESCENARIOS = {
-  unilibre:     { nombre: "Universidad Libre Seccional Cali", dir: "Carrera 109 #22-00, Campus Valle del Lili", geo: [3.3642, -76.5164] },
   eldorado:     { nombre: "Biblioteca El Dorado", dir: "Calle 13C #36A-31, barrio El Dorado, Comuna 10", geo: [3.4206, -76.5286] },
   deporte:      { nombre: "Biblioteca de la Recreación y el Deporte", dir: "Carrera 34 con Calle 5B, San Fernando · Tribuna occidental del Estadio Pascual Guerrero", geo: [3.4299, -76.5411] },
   eljardin:     { nombre: "Biblioteca El Jardín", dir: "Calle 27 #36-10", geo: [3.4246, -76.5181] },
@@ -44,7 +43,6 @@ const ESCENARIOS = {
 const GRUPOS_ESC = [
   { titulo: "Bibliotecas", uno: "Biblioteca", items: ["eldorado", "deporte", "eljardin", "sanluis", "lamaria", "vistahermosa", "acacias", "sena", "rigoberta", "campina"] },
   { titulo: "Librerías y centros culturales", uno: "Librería", items: ["apapachos", "oromo", "libertienda", "alejandria", "capitolio", "casamono"] },
-  { titulo: "Universidades", uno: "Universidad", items: ["unilibre"] },
   { titulo: "Colegios", uno: "Colegio", items: ["carbonell", "cread", "agustin"] }
 ];
 
@@ -68,9 +66,9 @@ const PROGRAMA = [
     ]
   },
   {
-    dia: 5, esc: "unilibre", jornada: "Tarde",
+    dia: 5, esc: "capitolio", sala: "Salón Real", jornada: "Tarde",
     sesiones: [
-      { h: "2:30 – 2:45 p. m.", tipo: "Acto", t: "Palabras iniciales", p: ["Miriam Castillo Mendoza", "Robinson Villalobos Velásquez"], nota: "Con la rectoría o la dirección de Bienestar de la Universidad Libre." },
+      { h: "2:30 – 2:45 p. m.", tipo: "Acto", t: "Palabras iniciales", p: ["Miriam Castillo Mendoza", "Robinson Villalobos Velásquez"] },
       { h: "2:50 – 3:30 p. m.", tipo: "Conversatorio", t: "Conversatorio 2 · El legado de Palenque en Colombia", p: ["Antonio Prada Fortul", "Gloria Amparo Murillo"] },
       { h: "3:35 – 4:05 p. m.", tipo: "Recital", t: "Recital · Manifiesto de la esperanza", p: ["Joseph Berolo Ramos", "Miriam Castillo Mendoza", "Alfredo «Cheo» Angulo", "Daniel Rivera Meza", "Gloria Judith López Soto"], nota: "Seis minutos por voz." },
       { h: "4:10 – 4:35 p. m.", tipo: "Recital", t: "Recital declamatorio", p: ["Germán Félix Calvo Sarmiento", "Marco Rogelio Rubio López", "Martha Luz De León Naar", "José Fernando Cano"] },
@@ -300,7 +298,7 @@ const PROGRAMA = [
   },
 
   {
-    dia: 7, esc: "unilibre", jornada: "Mañana", titulo: "Jornada de clausura · Auditorio",
+    dia: 7, esc: "capitolio", sala: "Salón Real", jornada: "Mañana", titulo: "Jornada de clausura",
     sesiones: [
       { h: "8:00 – 8:45 a. m.", tipo: "Libro", t: "Palabras iniciales, presentación del libro «Palabras que convergen» (recital) y apertura de la exposición de pinturas contra la guerra (écfrasis)", p: ["Miriam Castillo Mendoza", "Robinson Villalobos Velásquez", "Diomar Leclerc Martínez", "Martha Eugenia Uribe Mutis", "Pablo Emilio Beltrán Bejarano", "Germán Félix Calvo Sarmiento", "Edinson Tello Bedón", "Gloria Inés Sánchez Duque", "Marino Díaz Antía", "María Antonia Ledesma", "Colombia Truque", "Constanza Eugenia Muñoz Flórez", "Istina Valoyes Waldo", "Roger Lázaro Ynca"], pres: ["Diomar Leclerc Martínez", "Pablo Emilio Beltrán Bejarano", "Judith Cartagena"] },
       { h: "8:45 – 9:30 a. m.", tipo: "Conversatorio", t: "Conversatorio · Mejora de textos: cómo corregir, pulir y estructurar una obra sin perder la voz del autor", p: ["Joseph Berolo Ramos", "Mónica Patricia Ossa Graín", "Milton Fabián Solano"], mod: "Judith Cartagena" },
