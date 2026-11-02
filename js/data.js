@@ -73,7 +73,7 @@ const PROGRAMA = [
       { h: "3:35 – 4:05 p. m.", tipo: "Recital", t: "Recital · Manifiesto de la esperanza", p: ["Joseph Berolo Ramos", "Miriam Castillo Mendoza", "Alfredo «Cheo» Angulo", "Daniel Rivera Meza", "Gloria Judith López Soto"], nota: "Seis minutos por voz." },
       { h: "4:10 – 4:35 p. m.", tipo: "Recital", t: "Recital declamatorio", p: ["Germán Félix Calvo Sarmiento", "José Fernando Cano"] },
       { h: "4:40 – 5:00 p. m.", tipo: "Escena", t: "Recital escénico «Raúl Gómez Jattin siempre vivo» · Anecdotario", p: ["Mateo Rose", "Antonio Prada Fortul"] },
-      { h: "5:05 – 5:40 p. m.", tipo: "Recital", t: "Concierto de colectivos · Manifiesto de la esperanza", p: ["Martha Eugenia Uribe Mutis", "Robinson Villalobos Velásquez", "Alexis Ocoró Bonilla", "Alfredo Otero Ortega", "Diomar Leclerc Martínez", "Pablo Emilio Beltrán Bejarano", "Colombia Truque", "Lucero Jordán Molina", "María Florenia Vivas Bohórquez", "Judith Cartagena", "Lina Johana Pérez Montoya", "Yendier Mosquera Lemus", "Istina Valoyes Waldo", "Jaime Eduardo Muñoz Flórez", "Margarita Peñalosa Flórez", "Mónica Patricia Ossa Graín"], nota: "Dos minutos por voz, un poema cada uno. Colectivos: Abe'scritos, Gremio Poético Colombiano, Colectivo Caribe, Cafeletreando, Fuespacol, Verbum, Casa de Piedra, Crisálidas Poéticas, Remart, Red de Escritores del Chocó, Poetas de la Calle y Lenguaje de Esperanzas." },
+      { h: "5:05 – 5:40 p. m.", tipo: "Recital", t: "Concierto de colectivos · Manifiesto de la esperanza", p: ["Martha Eugenia Uribe Mutis", "Robinson Villalobos Velásquez", "Alexis Ocoró Bonilla", "Alfredo Otero Ortega", "Diomar Leclerc Martínez", "Constanza Eugenia Muñoz Flórez", "Colombia Truque", "Lucero Jordán Molina", "María Florenia Vivas Bohórquez", "Judith Cartagena", "Lina Johana Pérez Montoya", "Yendier Mosquera Lemus", "Istina Valoyes Waldo", "Jaime Eduardo Muñoz Flórez", "Margarita Peñalosa Flórez", "Mónica Patricia Ossa Graín"], nota: "Dos minutos por voz, un poema cada uno. Colectivos: Abe'scritos, Gremio Poético Colombiano, Colectivo Caribe, Cafeletreando, Fuespacol, Verbum, Casa de Piedra, Crisálidas Poéticas, Remart, Red de Escritores del Chocó, Poetas de la Calle y Lenguaje de Esperanzas." },
       { h: "5:40 – 6:00 p. m.", tipo: "Música", t: "Intervención musical", p: ["Marisol Quiroga"] }
     ]
   },
@@ -142,8 +142,8 @@ const PROGRAMA = [
     sesiones: [
       { h: "8:00 – 8:10 a. m.", tipo: "Acto", t: "Saludo de apertura", p: ["Gloria Inés Sánchez Duque", "Marcela Obando"] },
       { h: "8:15 – 8:55 a. m.", tipo: "Conversatorio", t: "Conversatorio · Cómo trabajar con adultos mayores", p: ["Adela Guerrero Collazos"] },
-      { h: "9:00 – 10:00 a. m.", tipo: "Recital", t: "Recital", p: ["John Raigoza", "Gloria Inés Sánchez Duque", "Martha Eugenia Uribe Mutis", "Alfredo Otero Ortega", "Pablo Emilio Beltrán Bejarano"], nota: "Doce minutos por voz." },
-      { h: "10:10 – 11:10 a. m.", tipo: "Taller", t: "Taller · La esperanza está en las manos que escriben", p: ["Adalgiza Charria Quintero", "John Raigoza", "Gloria Inés Sánchez Duque", "Martha Eugenia Uribe Mutis", "Pablo Emilio Beltrán Bejarano"] },
+      { h: "9:00 – 10:00 a. m.", tipo: "Recital", t: "Recital", p: ["John Raigoza", "Gloria Inés Sánchez Duque", "Martha Eugenia Uribe Mutis", "Alfredo Otero Ortega"], nota: "Doce minutos por voz." },
+      { h: "10:10 – 11:10 a. m.", tipo: "Taller", t: "Taller · La esperanza está en las manos que escriben", p: ["Adalgiza Charria Quintero", "John Raigoza", "Gloria Inés Sánchez Duque", "Martha Eugenia Uribe Mutis"] },
       { h: "11:15 – 11:50 a. m.", tipo: "Lectura", t: "Espacio para compartir lo escrito", p: [] }
     ]
   },
@@ -300,7 +300,7 @@ const PROGRAMA = [
   {
     dia: 7, esc: "capitolio", sala: "Salón Real", jornada: "Mañana", titulo: "Jornada de clausura",
     sesiones: [
-      { h: "8:00 – 8:45 a. m.", tipo: "Libro", t: "Palabras iniciales, presentación del libro «Palabras que convergen» (recital) y apertura de la exposición de pinturas contra la guerra (écfrasis)", p: ["Miriam Castillo Mendoza", "Robinson Villalobos Velásquez", "Diomar Leclerc Martínez", "Martha Eugenia Uribe Mutis", "Pablo Emilio Beltrán Bejarano", "Germán Félix Calvo Sarmiento", "Edinson Tello Bedón", "Gloria Inés Sánchez Duque", "Marino Díaz Antía", "María Antonia Ledesma", "Colombia Truque", "Constanza Eugenia Muñoz Flórez", "Istina Valoyes Waldo", "Roger Lázaro Ynca"], pres: ["Diomar Leclerc Martínez", "Pablo Emilio Beltrán Bejarano", "Judith Cartagena"] },
+      { h: "8:00 – 8:45 a. m.", tipo: "Libro", t: "Palabras iniciales, presentación del libro «Palabras que convergen» (recital) y apertura de la exposición de pinturas contra la guerra (écfrasis)", p: ["Miriam Castillo Mendoza", "Robinson Villalobos Velásquez", "Diomar Leclerc Martínez", "Martha Eugenia Uribe Mutis", "Germán Félix Calvo Sarmiento", "Edinson Tello Bedón", "Gloria Inés Sánchez Duque", "Marino Díaz Antía", "María Antonia Ledesma", "Colombia Truque", "Constanza Eugenia Muñoz Flórez", "Istina Valoyes Waldo", "Roger Lázaro Ynca"], pres: ["Diomar Leclerc Martínez", "Constanza Eugenia Muñoz Flórez", "Judith Cartagena"] },
       { h: "8:45 – 9:30 a. m.", tipo: "Conversatorio", t: "Conversatorio · Mejora de textos: cómo corregir, pulir y estructurar una obra sin perder la voz del autor", p: ["Joseph Berolo Ramos", "Mónica Patricia Ossa Graín", "Milton Fabián Solano"], mod: "Judith Cartagena" },
       { h: "9:30 – 9:50 a. m.", tipo: "Escena", t: "Intervención artística", p: ["Robinson Villalobos Velásquez", "Digna Damaris Escobar Torres", "Xiomara Martínez Deluque"] },
       { h: "9:50 – 10:00 a. m.", tipo: "Recital", t: "Intervención declamatoria", p: ["Diego Jaramillo"] },
