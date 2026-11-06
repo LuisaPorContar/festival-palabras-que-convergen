@@ -72,7 +72,7 @@ const PROGRAMA = [
       { h: "2:50 – 3:30 p. m.", tipo: "Conversatorio", t: "Conversatorio 2 · El legado de Palenque en Colombia", p: ["Antonio Prada Fortul", "Gloria Amparo Murillo"] },
       { h: "3:35 – 4:05 p. m.", tipo: "Recital", t: "Recital · Manifiesto de la esperanza", p: ["Joseph Berolo Ramos", "Miriam Castillo Mendoza", "Alfredo «Cheo» Angulo", "Daniel Rivera Meza", "Gloria Judith López Soto"], nota: "Seis minutos por voz." },
       { h: "4:10 – 4:35 p. m.", tipo: "Recital", t: "Recital declamatorio", p: ["Germán Félix Calvo Sarmiento", "José Fernando Cano"] },
-      { h: "4:40 – 5:00 p. m.", tipo: "Escena", t: "Recital escénico «Raúl Gómez Jattin siempre vivo» · Anecdotario", p: ["Mateo Rose", "Antonio Prada Fortul"] },
+      { h: "4:40 – 5:00 p. m.", tipo: "Escena", t: "Recital escénico «Raúl Gómez Jattin siempre vivo» · Anecdotario", p: ["Antonio Prada Fortul"] },
       { h: "5:05 – 5:40 p. m.", tipo: "Recital", t: "Concierto de colectivos · Manifiesto de la esperanza", p: ["Martha Eugenia Uribe Mutis", "Robinson Villalobos Velásquez", "Alexis Ocoró Bonilla", "Alfredo Otero Ortega", "Diomar Leclerc Martínez", "Constanza Eugenia Muñoz Flórez", "Colombia Truque", "Lucero Jordán Molina", "María Florenia Vivas Bohórquez", "Judith Cartagena", "Lina Johana Pérez Montoya", "Yendier Mosquera Lemus", "Istina Valoyes Waldo", "Jaime Eduardo Muñoz Flórez", "Margarita Peñalosa Flórez", "Mónica Patricia Ossa Graín"], nota: "Dos minutos por voz, un poema cada uno. Colectivos: Abe'scritos, Gremio Poético Colombiano, Colectivo Caribe, Cafeletreando, Fuespacol, Verbum, Casa de Piedra, Crisálidas Poéticas, Remart, Red de Escritores del Chocó, Poetas de la Calle y Lenguaje de Esperanzas." },
       { h: "5:40 – 6:00 p. m.", tipo: "Música", t: "Intervención musical", p: ["Marisol Quiroga"] }
     ]
@@ -108,7 +108,6 @@ const PROGRAMA = [
       { h: "6:00 – 7:30 p. m.", tipo: "Recital", t: "Micrófono abierto · Grupo Poetas de la Calle", p: [] },
       { h: "7:30 – 8:00 p. m.", tipo: "Recital", t: "Micrófono abierto · Grupo Crisálidas Poéticas", p: [] },
       { h: "8:00 – 8:15 p. m.", tipo: "Recital", t: "Micrófono abierto", p: ["Mario Mathor"] },
-      { h: "8:15 – 8:30 p. m.", tipo: "Lectura", t: "Lectura de poemas", p: ["María Ximena Hoyos Mazuera"] },
       { h: "8:30 – 8:45 p. m.", tipo: "Lectura", t: "Lectura de poemas", p: ["María Teresa Aristizábal Mejía"] },
       { h: "8:45 – 9:00 p. m.", tipo: "Recital", t: "Micrófono abierto", p: ["Nevis Balanta"] }
     ]
@@ -129,7 +128,6 @@ const PROGRAMA = [
     dia: 6, esc: "capitolio", jornada: "Mañana",
     sesiones: [
       { h: "8:00 – 8:45 a. m.", tipo: "Acto", t: "Palabras iniciales y reconocimiento «Palabras que convergen»", p: ["Germán Félix Calvo Sarmiento"] },
-      { h: "8:50 – 9:30 a. m.", tipo: "Libro", t: "Presentación del libro «Tránsitos cruzados» (antología de memorias y crónicas, 2026)", p: ["María Ximena Hoyos Mazuera"] },
       { h: "9:35 – 10:15 a. m.", tipo: "Libro", t: "Presentación del libro «Entre versos y mares»", p: ["Mónica Patricia Ossa Graín"] },
       { h: "10:20 – 11:00 a. m.", tipo: "Libro", t: "Presentación de su libro y recital", p: ["Jim Persal"] },
       { h: "11:05 – 11:20 a. m.", tipo: "Lectura", t: "Lectura de poemas jurídicos", p: ["María Teresa Aristizábal Mejía"] },
@@ -280,7 +278,6 @@ const PROGRAMA = [
   {
     dia: 6, esc: "alejandria", jornada: "Tarde",
     sesiones: [
-      { h: "4:00 – 4:30 p. m.", tipo: "Recital", t: "Recital", p: ["Mateo Rose"] },
       { h: "4:30 – 5:00 p. m.", tipo: "Recital", t: "Recital", p: ["Digna Damaris Escobar Torres"] },
       { h: "5:00 – 5:30 p. m.", tipo: "Recital", t: "Recital", p: ["Xiomara Martínez Deluque"] },
       { h: "5:30 – 6:00 p. m.", tipo: "Recital", t: "Recital", p: ["Aníbal Gilberto Pantoja Ríos"] },
@@ -436,7 +433,6 @@ const DESTACADOS = [
   { nombre: "Alberto Rodríguez", rol: "La Casa de la Lectura de Cali" },
   { nombre: "Judith Cartagena", rol: "Periodista y poeta" },
   { nombre: "Ángela Penagos Londoño", rol: "Poeta" },
-  { nombre: "María Ximena Hoyos Mazuera", rol: "Universidad del Valle" },
   { nombre: "María Adiela Londoño de Copete", rol: "Unión Hispanomundial de Escritores" },
   { nombre: "Susana María Moreno Palacios", rol: "Red Étnica de Escritores del Chocó" }
 ];
